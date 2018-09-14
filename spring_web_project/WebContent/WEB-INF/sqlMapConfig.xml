@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+  
+<configuration>
+	
+	<typeAliases>
+		<typeAlias type="kr.co.dinner.dto.MagazineDTO" alias="mgdto"/>
+		<typeAlias type="kr.co.dinner.dto.MemberDTO" alias="mdto"/>
+		<typeAlias type="kr.co.dinner.dto.WritingDTO" alias="wdto"/>
+	</typeAliases>
+
+	<environments default="dev">
+		<environment id="dev">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${driver}" />
+				<property name="url" value="${url}" />
+				<property name="username" value="${username}" />
+				<property name="password" value="${password}" />
+			</dataSource>
+		</environment>
+	</environments>
+	
+	<mappers>
+		<mapper resource="kr/co/dinner/mapper/magazine.xml" />
+		<mapper resource="kr/co/dinner/mapper/memberMapper.xml"/>
+		<mapper resource="kr/co/dinner/mapper/writing.xml" />
+	</mappers>
+</configuration>

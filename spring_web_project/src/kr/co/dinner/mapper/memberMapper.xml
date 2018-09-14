@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.co.dinner.member">
+
+	<select id="selectOne" resultType="mdto" parameterType="mdto">
+		select *
+		from member
+		where id = #{id} and pw = #{pw}
+	</select>
+	
+	<select id="selectId" resultType="String" parameterType="String">
+		select id
+		from member
+		where id = #{id}
+	</select>
+
+	<insert id="insertOne" parameterType="mdto">
+		insert into member
+		values
+		(SEQ_MEMBER_NO.NEXTVAL,#{name},#{id},#{pw},#{repw},#{regisno1},#{regisno2},#{addrs1},#{addrs2},#{email},#{img},#{intro},0,0)
+	</insert>
+
+</mapper>

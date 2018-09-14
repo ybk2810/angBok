@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<!-- <context:component-scan base-package="kr.co.dinner.*" /> -->
+
+	<mvc:annotation-driven />
+	
+	<bean id="main" class="kr.co.dinner.control.mainController">
+		<property name="ms" ref="ms"></property>
+		<property name="ws" ref="ws"></property>
+	</bean>
+	
+	<bean id="ms" class="kr.co.dinner.service.MagazineServiceImple">
+		<property name="dao" ref="mgdao"></property>
+	</bean>
+	
+	<bean id="mgdao" class="kr.co.dinner.dao.MagazineOracleDao">
+		<property name="ss" ref="sqlSessionTemplate"></property>
+	</bean>
+	
+	<bean id="ws" class="kr.co.dinner.service.WritingtServiceImple">
+      <property name="dao" ref="wdao"></property>
+	</bean>
+   
+   <bean id="wdao" class="kr.co.dinner.dao.WritingOracleDao">
+      <property name="ss" ref="sqlSessionTemplate"></property>
+	</bean>
+	
+	<!--  -->
+	<bean id="login" class="kr.co.dinner.control.LoginController">
+		<property name="ms1" ref="memberservice" ></property>
+	</bean>
+	
+	<bean id="reg"  class="kr.co.dinner.control.RegisterController">
+		<property name="ms2" ref="memberservice"></property>
+	</bean>	
+	
+	<bean id="img"  class="kr.co.dinner.control.ImgUploadController">
+		<property name="fileValidator" ref="FileValidator"></property>
+	</bean>	
+	
+	<bean id="mdao" class="kr.co.dinner.dao.MemberDAO">
+		<property name="ss" ref="sqlSessionTemplate"></property>
+	</bean>
+	
+	<bean id="FileValidator" class="kr.co.dinner.control.FileValidator"></bean>
+   
+    <bean id="memberservice" class="kr.co.dinner.service.MemberServiceImple">
+    	<property name="mdao" ref="mdao"></property>
+    </bean>	
+    
+    <bean id="regg" class="kr.co.dinner.control.RegController"></bean>
+    <!--이미지 임시 저장 경로  -->
+   
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="uploadTempDir" value="/WEB-INF/tmp/"></property>
+	</bean>
+	
+	<!--  -->
+	
+	<bean id="property" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+      <property name="location" value="/WEB-INF/db.properties"></property>
+   </bean>
+   
+   <bean id="dataSource" class="org.apache.tomcat.dbcp.dbcp2.BasicDataSource">
+      <property name="driverClassName" value="${driver}" />
+      <property name="url" value="${url}" />
+      <property name="username" value="${username}" />
+      <property name="password" value="${password}" />
+   </bean>
+   
+   <bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
+      <property name="dataSource" ref="dataSource" />
+      <property name="configLocation" value="/WEB-INF/sqlMapConfig.xml" />
+   </bean>
+   
+   <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+      <constructor-arg ref="sqlSessionFactoryBean"></constructor-arg>
+   </bean>
+   
+   <mvc:view-resolvers>
+      <mvc:jsp prefix="/views/" suffix=".jsp" />
+   </mvc:view-resolvers>
+   
+   <mvc:default-servlet-handler/>
+</beans>

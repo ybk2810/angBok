@@ -1,0 +1,50 @@
+package kr.co.dinner.dao;
+
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+
+import kr.co.dinner.dto.WritingDTO;
+
+public class WritingOracleDao implements WritingDao{
+	private SqlSession ss;
+	public void setSs(SqlSession ss) {
+		this.ss = ss;
+	}
+	@Override
+	public List<WritingDTO> selectAll() {
+		return ss.selectList("kr.co.dinner.writing.selectAll");
+	}
+	@Override
+	public void insertOne(WritingDTO dto) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public int getTotalData() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	@Override
+	public WritingDTO selectOne(int bno) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public void updateOne(WritingDTO dto) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void deleteOne(WritingDTO dto) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void raiseHits(int bno) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+}
