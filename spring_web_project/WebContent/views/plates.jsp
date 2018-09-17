@@ -36,6 +36,18 @@
 		<td>by ${wdto.wname }</td>
 	</tr>
 	</c:forEach>
+	<c:forEach var="wdto" items="${clist }">
+	<tr>
+		<td>${wdto.title }</td>
+		<td rowspan="3"><img src="image/360.png" alt="" /></td>	
+	</tr>
+	<tr>
+		<td>${wdto.contents }</td>
+	</tr>
+	<tr>
+		<td>by ${wdto.wname }</td>
+	</tr>
+	</c:forEach>
 </table>
 </body>
 </html>
