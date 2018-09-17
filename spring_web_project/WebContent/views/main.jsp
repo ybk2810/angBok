@@ -50,6 +50,7 @@
 			</tr>
 		</table>
 	</div>
+	<a href="write.do">글쓰기</a>
 	<div id="category">
 		<a href="#">과학</a>
 		<a href="#">음식</a>
