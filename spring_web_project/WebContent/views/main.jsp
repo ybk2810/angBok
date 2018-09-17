@@ -25,7 +25,7 @@
 	
 	<div id="container">
 	<div id="">
-		<h3>
+		<h3> 
 			글이 작품이 되는 공간, 디너
 		</h3>
 		<span>
@@ -37,6 +37,7 @@
 		<span>
 			서랍 속 간직하고 있는 글과 감성을.<br/>
 		</span>
+		<img src="${mdto.img }" alt="a" id="profile" />
 	</div>
 	<div>
 		<table>
