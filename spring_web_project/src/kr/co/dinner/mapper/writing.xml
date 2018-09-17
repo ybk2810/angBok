@@ -8,4 +8,9 @@
   		SELECT * FROM writing
   	</select>
   
+  	<select id="readAll" resultType="wdto" parameterType="String">
+  		SELECT * FROM writing
+  		where category = #{category}
+  	</select>
+  
   </mapper>

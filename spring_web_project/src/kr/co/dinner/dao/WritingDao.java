@@ -7,6 +7,7 @@ import kr.co.dinner.dto.WritingDTO;
 
 public interface WritingDao {
 	public List<WritingDTO> selectAll();
+	public List<WritingDTO> readAll(String category);
 	public void insertOne(WritingDTO dto);
 	public int getTotalData();
 	public WritingDTO selectOne(int bno);
