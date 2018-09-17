@@ -37,6 +37,19 @@ public class mainController {
 		return mav;
 	}
 	
+	
+	@RequestMapping("/allmagazine.do")
+	public ModelAndView magazine() {
+		ModelAndView mav = new ModelAndView();
+		
+		List<MagazineDTO> amlist =  ms.selectAll();
+		mav.addObject("amlist", amlist);
+		mav.setViewName("allMagazineForm");
+		
+		return mav;
+	}
+	
+	
 	@RequestMapping("/search.do")
 	public String searchForm() {
 		return "search";
@@ -52,7 +65,4 @@ public class mainController {
 	      
 	      return mav;
 	   }
-	
-/*	@RequestMapping("/mypage.do")
-	public ModelAndView */
 }
