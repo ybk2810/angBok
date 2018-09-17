@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import kr.co.dinner.dto.MagazineDTO;
@@ -55,4 +56,13 @@ public class mainController {
 	
 /*	@RequestMapping("/mypage.do")
 	public ModelAndView */
+	@RequestMapping("/category.do")
+	public ModelAndView categoryList(@RequestParam("category")String category) {
+		ModelAndView mav = new ModelAndView();
+		List<WritingDTO> clist = ws.readAll(category);
+		System.out.println(clist);
+		mav.addObject("clist", clist);
+		mav.setViewName("plates");
+		return mav;
+	}
 }
