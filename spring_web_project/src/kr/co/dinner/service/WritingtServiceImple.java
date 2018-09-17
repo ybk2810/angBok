@@ -15,5 +15,8 @@ public class WritingtServiceImple implements WritingSerivce{
 	public List<WritingDTO> selectAll() {
 		return dao.selectAll();
 	}
-
+	@Override
+	public List<WritingDTO> readAll(String category) { 
+		return dao.readAll("category");
+	}
 }
