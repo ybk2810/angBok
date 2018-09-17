@@ -50,6 +50,7 @@
 			</tr>
 		</table>
 	</div>
+	<a href="write.do">글쓰기</a>
 	<div id="category">
 		<a href="#">과학</a>
 		<a href="#">음식</a>
@@ -69,8 +70,10 @@
 			<c:forEach var="mdto" items="${mlist }">
 				<td>
 				<div>
+					<a href="viewWriting.do?mno=${mdto.mno }">
 					<img src="magazineImg/${mdto.mno }.jpg" alt="" class="magazineImg" />
 					<p>${mdto.mtitle }</p>
+					</a>
 				</div>
 				</td>
 			</c:forEach>

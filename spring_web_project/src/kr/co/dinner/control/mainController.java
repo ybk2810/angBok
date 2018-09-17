@@ -88,5 +88,10 @@ public class mainController {
 		mav.setViewName("viewWriting");
 		return mav;
 	}
+	
+	@RequestMapping("/write.do")
+	public String write() {
+		return "write";
+	}
 
 }
