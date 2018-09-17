@@ -69,8 +69,10 @@
 			<c:forEach var="mdto" items="${mlist }">
 				<td>
 				<div>
+					<a href="viewWriting.do?mno=${mdto.mno }">
 					<img src="magazineImg/${mdto.mno }.jpg" alt="" class="magazineImg" />
 					<p>${mdto.mtitle }</p>
+					</a>
 				</div>
 				</td>
 			</c:forEach>
