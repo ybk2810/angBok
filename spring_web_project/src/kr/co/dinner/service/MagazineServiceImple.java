@@ -26,4 +26,10 @@ public class MagazineServiceImple implements MagazineService{
 
 		return dao.randomSelect();
 	}
+	
+	@Override
+	public MagazineDTO selectOne(int mno) {
+		
+		return dao.selectOne(mno);
+	}
 }

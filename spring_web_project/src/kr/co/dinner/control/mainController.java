@@ -79,5 +79,14 @@ public class mainController {
 		mav.setViewName("plates");
 		return mav;
 	}
+	
+	@RequestMapping("/viewWriting.do")
+	public ModelAndView viewWriting(@RequestParam("mno")int mno) {
+		ModelAndView mav = new ModelAndView();
+		MagazineDTO mdto = ms.selectOne(mno);
+		mav.addObject("mdto",mdto);
+		mav.setViewName("viewWriting");
+		return mav;
+	}
 
 }
