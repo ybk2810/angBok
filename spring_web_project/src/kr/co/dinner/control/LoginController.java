@@ -39,6 +39,7 @@ public class LoginController {
 			mav.addObject("mdto", dto);
 			mav.setViewName("main");			
 			session.setAttribute("id",dto.getId());
+			session.setAttribute("member", dto);
 		}else {
 			mav.addObject("mdto", "실패");
 			mav.setViewName("main");

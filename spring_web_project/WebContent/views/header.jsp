@@ -1,3 +1,4 @@
+<%@page import="kr.co.dinner.dto.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <style>
@@ -121,6 +122,11 @@ function Start() {
     location.href = "login1.do";
 }
 
+function write() {
+	   
+    location.href = "write.do";
+}
+
 function Search() {
 	   
     location.href = "searchForm.do";
@@ -131,6 +137,8 @@ function Search() {
 </script>
   	<%
 		String id = (String)session.getAttribute("id");
+  		Object obj = session.getAttribute("member");
+  		MemberDTO member = (MemberDTO) obj;
 	%>
 
 	<div id="mySidenav" class="sidenav">
@@ -138,7 +146,8 @@ function Search() {
 		<%
 			if(id != null){
 		%>
-			<a href="#"><div><img src="${mdto.img }" alt="a" id="profile" /></div></a>
+			<a href="#"><div><img src="<%=member.getImg() %>" alt="a" id="profile" /></div></a>
+			<a href="#"><%=member.getName() %></a>
 			<a href="write.do">글쓰기</a>
 		<%
 			}else{
@@ -157,6 +166,16 @@ function Search() {
    </div>
    <div id="header">
       <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; <img src="image/DINNER.png" alt="" id="logoimg" /></span>
+      	<%
+			if(id != null){
+		%>
+      <button class="button" onclick=" write()"><span>글쓰기</span></button>
+      	<%
+			}else{
+      	%>
       <button class="button" onclick=" Start()"><span>함께하기</span></button>
+      <%
+			}
+      %>
 		<button class="btn success" onclick=" Search()">검색</button>
    </div>
