@@ -1,6 +1,8 @@
 package kr.co.dinner.service;
 
 
+import java.util.List;
+
 import kr.co.dinner.dto.MemberDTO;
 
 public interface memberService {
@@ -8,4 +10,5 @@ public interface memberService {
 	public MemberDTO selectOne(String id,String pw);
 	public boolean selectId(String id);
 	public MemberDTO chooseOne(String id);
+	public List<MemberDTO> randomMember();
 }

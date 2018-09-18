@@ -19,6 +19,7 @@ import kr.co.dinner.service.memberService;
 
 @Controller
 public class mainController {
+	memberService member;
 	MagazineService ms;
 	WritingSerivce ws;
 	memberService ms1;
@@ -38,13 +39,19 @@ public class mainController {
 		this.ws = ws;
 	}
 
+	public void setMember(memberService member) {
+		this.member = member;
+	}
+
 	@RequestMapping("/main.do")
 	public ModelAndView main() {
 		ModelAndView mav = new ModelAndView();
 		
 		List<MagazineDTO> mlist = ms.randomSelect();
+		List<MemberDTO> memberlist = member.randomMember();
 		
 		mav.addObject("mlist", mlist);
+		mav.addObject("memberlist", memberlist);
 		mav.setViewName("main");
 		
 		return mav;
@@ -92,19 +99,22 @@ public class mainController {
 		return mav;
 	}
 	
-	@RequestMapping("/viewWriting.do")
-	public ModelAndView viewWriting(@RequestParam("mno")int mno) {
+	@RequestMapping("/write.do")
+	public String write() {
+		return "SmartEditor/write";
+	}
+	
+	@RequestMapping("/magazineDetail.do")
+	public ModelAndView magazineDetail(@RequestParam("mno")int mno) {
 		ModelAndView mav = new ModelAndView();
 		MagazineDTO mdto = ms.selectOne(mno);
 		mav.addObject("mdto",mdto);
-		mav.setViewName("viewWriting");
+		mav.setViewName("magazineDetail");
 		return mav;
+
 	}
 	
-	@RequestMapping("/write.do")
-	public String write() {
-		return "write";
-	}
+	
 	
 	@RequestMapping("/myPage.do")
 	public ModelAndView myPage(@RequestParam("id")String id) {
@@ -118,4 +128,6 @@ public class mainController {
 		return mav;	
 	}
 
-}
+	}
+
+

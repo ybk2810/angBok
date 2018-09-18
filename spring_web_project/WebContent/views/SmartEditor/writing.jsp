@@ -4,10 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>search</title>
+<title>Insert title here</title>
 </head>
 <body>
-	<input type="text" name="search" id="" />
-	<a href="search.do"><input type="button" value="검색" /></a>
+	<%
+		String ir1 = request.getParameter("ir1");
+		out.println(ir1);
+	%>
 </body>
 </html>
