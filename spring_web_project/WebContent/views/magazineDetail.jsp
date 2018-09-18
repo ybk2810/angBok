@@ -86,32 +86,26 @@
 </head>
 <body>
 	<div class="header">
+		<%@ include file="header.jsp" %>
 		<div>
-			<span class="title">${mdto.mtitle}<br /></span> <span class="writer" id="writer1">${mdto.mwriter}</span>
+			<span class="title">${mgdto.mtitle}<br /></span> <span class="writer" id="writer1">${mgdto.mwriter}</span>
 		</div>
 	</div>
 
-
-
-
-
 	<div class="container">
-
-		<div class="writing">${mdto.mno}</div>
-
+		<div class="writing">${mgdto.mno}</div>
 		<div class="introduce">
 			<span class="profilePic">작가 사진</span>
 			<span class="writer" id="writer2">작가 필명</span>
 		</div>
-
 		<div class="reply">
 			<span>댓글</span>
 		</div>
-
-
 	</div>
 
-	<div class="footer"></div>
+	<div class="footer">
+		
+	</div>
 
 </body>
 </html>

@@ -54,7 +54,7 @@ nhn.husky.EZCreator = new (function(){
         return;
       }
 
-      var oApp = fCreator(elIFrame, elPlaceHolder);
+     var oApp = fCreator(elIFrame, elPlaceHolder);
       oApp.run(fOnAppLoad);
 
       nhn.husky.EZCreator.hideBlocker();

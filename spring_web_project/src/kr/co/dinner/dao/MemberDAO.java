@@ -40,6 +40,13 @@ public class MemberDAO implements MDao {
 	}
 
 	@Override
+	public MemberDTO chooseOne(String id) {
+		MemberDTO dto = new MemberDTO();
+		dto.setId(id);
+		return ss.selectOne("kr.co.dinner.member.chooseOne", dto);
+	}
+	
+	@Override	
 	public List<MemberDTO> randomMember() {
 		return ss.selectList("kr.co.dinner.member.randomMember");
 	}

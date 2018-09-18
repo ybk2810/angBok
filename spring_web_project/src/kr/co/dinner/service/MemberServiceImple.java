@@ -42,6 +42,10 @@ public class MemberServiceImple implements memberService{
 
 
 	@Override
+	public MemberDTO chooseOne(String id) {
+		return 	mdao.chooseOne(id);
+	}
+	@Override
 	public List<MemberDTO> randomMember() {
 		return mdao.randomMember();
 	}
