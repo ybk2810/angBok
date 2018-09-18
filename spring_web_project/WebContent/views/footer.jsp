@@ -72,10 +72,10 @@ font-size: 15px;
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <!-- Add font awesome icons -->
-<a href="#" class="fa fa-facebook"></a>
-<a href="#" class="fa fa-twitter"></a>
-<a href="#" class="fa fa-google"></a>
-<a href="#" class="fa fa-skype"></a>
+<a href="https://www.facebook.com/" class="fa fa-facebook"></a>
+<a href="https://twitter.com/?lang=ko" class="fa fa-twitter"></a>
+<a href="https://www.google.com/" class="fa fa-google"></a>
+<a href="http://skype.daesung.com/main.asp" class="fa fa-skype"></a>
 
 <p> 이용약관 | 개인정보 처리방침 | 운영정책 | 고객센터 | 출간제안 |</p>
 <p id="company">@corp.AngBok.</p>
