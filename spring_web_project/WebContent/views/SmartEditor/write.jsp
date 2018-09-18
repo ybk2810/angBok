@@ -7,10 +7,11 @@
 <title>Insert title here</title>
 <link href="css/default.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="js/HuskyEZCreator.js" charset="utf-8"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
 
-<form name="w_form" action="sample.asp" method="post">
+<form name="w_form" action="writing.jsp" method="get">
 <input type="hidden" name="filepath" value="/file"> <!-- 이미지업로드 경로 변수처리 혹은 직접 코딩.. -->
   <p>
     <input type="button" onclick="pasteHTMLDemo()" value="본문에 HTML 삽입"></input>
@@ -22,6 +23,9 @@
 </form>
 
 	<script>
+	/* $(document).ready(function(){ */
+
+
 //form변수로 지정하여 이미지업로드 페이지에서 호출하여 사용됨. form.filepath.value
 var form = document.w_form;   // 사용할 폼 이름으로 수정.
  
@@ -65,6 +69,9 @@ function onSubmit(){
   }
   return;
 }
+
+
+/* 	}); */
 </script>
 </body>
 </html>
