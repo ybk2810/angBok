@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 <link href="css/default.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="js/HuskyEZCreator.js" charset="utf-8"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
 
@@ -22,6 +23,9 @@
 </form>
 
 	<script>
+	$(document).ready(function(){
+
+
 //form변수로 지정하여 이미지업로드 페이지에서 호출하여 사용됨. form.filepath.value
 var form = document.w_form;   // 사용할 폼 이름으로 수정.
  
@@ -65,6 +69,9 @@ function onSubmit(){
   }
   return;
 }
+
+
+	});
 </script>
 </body>
 </html>

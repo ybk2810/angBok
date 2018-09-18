@@ -91,7 +91,7 @@ public class mainController {
 	
 	@RequestMapping("/write.do")
 	public String write() {
-		return "write";
+		return "SmartEditor/write";
 	}
 
 }
