@@ -157,6 +157,6 @@ function Search() {
    </div>
    <div id="header">
       <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; <img src="image/DINNER.png" alt="" id="logoimg" /></span>
-      <button class="button" onclick=" Start()"><span>로그인하기</span></button>
+      <button class="button" onclick=" Start()"><span>LOGIN</span></button>
 		<button class="btn success" onclick=" Search()">검색</button>
    </div>

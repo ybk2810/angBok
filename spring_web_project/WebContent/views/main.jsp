@@ -89,7 +89,7 @@ function clickme() {
 
 
 
-#London { background-color: green;
+#London { background-color: ;
      }
 #Paris {background-color:#3a713c;}
 #Tokyo {background-color:#478c49;}
@@ -109,7 +109,12 @@ border-radius: 20px;
 }
 #mimg{width: 100%;
 border-radius: 40px;
-height: 200px;}
+height: 200px;
+
+
+
+}
+
 #mtitle{color:#093e09;
 font-weight: bolder;
 text-align: center; 
@@ -340,8 +345,8 @@ text-align: center;
 			<tr >
 				<c:forEach var="dto" items="${memberlist }">
 				<td style="border: 2px solid #264628; width: 200px; height: 130px; position: relative; left: 460px;     border-radius: 87px;">
-					<img src="${dto.img }" alt="" class="memberimg" />
-					<p style="text-align: center;">${dto.name }</p>
+					<img src="${dto.img }" alt="" class="memberimg" style="border-radius: 50%; position: relative; left: 27.5px; top: 18px;" />
+					<p style="text-align: center;"><strong>~${dto.name }~</strong></p>
 					
 				</td>
 				
