@@ -100,7 +100,6 @@ height: 85px;}
 </head>
 <body>
 	<%@ include file="header.jsp" %>
-	
 	<div id="container">
 	<div id="">
 		<h2>
