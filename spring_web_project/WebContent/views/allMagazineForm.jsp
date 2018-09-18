@@ -5,9 +5,16 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Dinner</title>
+<style type="text/css">
+	img{
+		width: 240px;
+		height: 180px;
+	}
+</style>
 </head>
 <body>
+	<%@ include file="header.jsp" %>
 	<table>
 		<tr>
 			<th>번호</th>
@@ -17,13 +24,13 @@
 			<th>등록날짜</th>
 		</tr>
 		<c:forEach var="mdto" items="${amlist}" >
-		<tr><tr>
-		<td>${mdto.mno}</td>
-		<td>${mdto.mtitle}</td>
-		<td><img src="magazineImg/${mdto.mno}.jpg" alt="" /></td>
-		<td>${mdto.mwriter}</td>
-		<td>${mdto.mreg}</td>
-		</tr>
+			<tr>
+				<td>${mdto.mno}</td>
+				<td>${mdto.mtitle}</td>
+				<td><img src="magazineImg/${mdto.mno}.jpg" alt="" /></td>
+				<td>${mdto.mwriter}</td>
+				<td>${mdto.mreg}</td>
+			</tr>
 		</c:forEach>
 
 	</table>
