@@ -292,6 +292,7 @@ text-align: center;
 	</div>
 	<br>
 	<br>
+	<a href="write.do">글쓰기</a>
 	<br>
 	<br>
 	<%@ include file="footer.jsp" %>
