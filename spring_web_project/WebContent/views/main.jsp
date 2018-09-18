@@ -280,8 +280,10 @@ text-align: center;
 			<c:forEach var="mdto" items="${mlist }">
 				<td id="mtd">
 				<div>
-					<img src="magazineImg/${mdto.mno }.jpg" alt="" class="magazineImg" id="mimg"/>
-					<p id="mtitle">${mdto.mtitle }</p>
+					<a href="viewWriting.do?mno=${mdto.mno }">
+					<img src="magazineImg/${mdto.mno }.jpg" alt="" class="magazineImg" />
+					<p>${mdto.mtitle }</p>
+					</a>
 				</div>
 				</td>
 			</c:forEach>
