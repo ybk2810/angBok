@@ -61,7 +61,7 @@ function clickme() {
 	
 	/* Style the tab buttons */
 .tablink {
-    background-color: #555;
+    background-color:#99b775;
     color: white;
     float: left;
     border: none;
@@ -79,7 +79,7 @@ function clickme() {
 
 /* Set default styles for tab content */
 .tabcontent {
-    color: white;
+    color: #1c581e;
     display: none;
     padding: 50px;
     text-align: center;
@@ -89,7 +89,7 @@ function clickme() {
 
 
 
-#London { background-color: ;
+/* #London { background-color: ;
      }
 #Paris {background-color:#3a713c;}
 #Tokyo {background-color:#478c49;}
@@ -99,7 +99,7 @@ function clickme() {
 #Oslo3 {background-color:#74e078;}
 #Oslo4 {background-color:#79e87d;}
 #Oslo5 {background-color:#7bef7f;}
-#Oslo6 {background-color:#84ff88;}
+#Oslo6 {background-color:#84ff88;} */
 
 #mtd{
 border:4px solid #cceca7;
@@ -301,15 +301,15 @@ text-align: center;
 		</div>
 </div>
 
-<button class="tablink" onclick="openCity('London', this, 'red')" id="defaultOpen">과학</button>
+<button class="tablink" onclick="openCity('London', this, 'green')" id="defaultOpen">과학</button>
 <button class="tablink" onclick="openCity('Paris', this, 'green')">음식</button>
-<button class="tablink" onclick="openCity('Tokyo', this, 'blue')">스포츠</button>
-<button class="tablink" onclick="openCity('Oslo', this, 'orange')">동물공감</button>
-<button class="tablink" onclick="openCity('Oslo2', this, 'orange')">패션뷰티</button>
-<button class="tablink" onclick="openCity('Oslo3', this, 'orange')">게임</button>
-<button class="tablink" onclick="openCity('Oslo4', this, 'orange')">연예</button>
-<button class="tablink" onclick="openCity('Oslo5', this, 'orange')">여행</button>
-<button class="tablink" onclick="openCity('Oslo6', this, 'orange')">경제</button>
+<button class="tablink" onclick="openCity('Tokyo', this, 'green')">스포츠</button>
+<button class="tablink" onclick="openCity('Oslo', this, 'green')">동물공감</button>
+<button class="tablink" onclick="openCity('Oslo2', this, 'green')">패션뷰티</button>
+<button class="tablink" onclick="openCity('Oslo3', this, 'green')">게임</button>
+<button class="tablink" onclick="openCity('Oslo4', this, 'green')">연예</button>
+<button class="tablink" onclick="openCity('Oslo5', this, 'green')">여행</button>
+<button class="tablink" onclick="openCity('Oslo6', this, 'green')">경제</button>
 <button class="tablink" onclick="allmagazine()">전체보기</button>
 
 	<br><br><br><br><br>
