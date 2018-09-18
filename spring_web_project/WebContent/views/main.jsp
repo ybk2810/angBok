@@ -76,24 +76,29 @@ function allmagazine() {
 }
 
 /* Style each tab content individually */ 
-#London {background-color:red;}
-#Paris {background-color:green;}
-#Tokyo {background-color:blue;}
-#Oslo {background-color:orange;}
-#Oslo1 {background-color:purple;}
-#Oslo2 {background-color:aqua;}
-#Oslo3 {background-color:black;}
-#Oslo4 {background-color:blue;}
-#Oslo5 {background-color:fuchsia;}
-#Oslo6 {background-color:lime;}
+#London {background-color:#2f5d30;}
+#Paris {background-color:#3a713c;}
+#Tokyo {background-color:#478c49;}
+#Oslo {background-color:#53a556;}
+#Oslo1 {background-color:#5eb761;}
+#Oslo2 {background-color:#68cc6c;}
+#Oslo3 {background-color:#74e078;}
+#Oslo4 {background-color:#79e87d;}
+#Oslo5 {background-color:#7bef7f;}
+#Oslo6 {background-color:#84ff88;}
 
 #mtd{
-border:1px solid black;
+border:4px solid #cceca7;
 width: 25%;
 height: 200px;
 }
-#mimg{widows: 25%;
-height: 85px;}
+#mimg{width: 100%;
+
+height: 200px;}
+#mtitle{color:#093e09;
+font-weight: bolder;
+text-align: center; 
+ }
 	
 	
 </style>
@@ -120,7 +125,7 @@ height: 85px;}
 	<br /><br /><br /><br /><br /><br /><br />
 	
 	
-	
+	<p style="text-align: center; font-size: 20px; ">-CATEGORY-</p>
 	
 	<div id="London" class="tabcontent">
   <h1>과학</h1>
@@ -266,20 +271,8 @@ height: 85px;}
 <button class="tablink" onclick="openCity('Oslo6', this, 'orange')">경제</button>
 <button class="tablink" onclick="allmagazine()">전체보기</button>
 
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	<br><br><br><br><br>
+	<p style="text-align: center; font-size: 32px; font-weight:bold; color: green; "> ~T O D A Y &nbsp&nbsp&nbsp&nbsp M A G A Z I N E~</p>
 	<div id="megazine">
 		
 		<table>
@@ -287,29 +280,19 @@ height: 85px;}
 			<c:forEach var="mdto" items="${mlist }">
 				<td id="mtd">
 				<div>
-					<a href="viewWriting.do?mno=${mdto.mno }">
-					<img src="magazineImg/${mdto.mno }.jpg" alt="" class="magazineImg" />
-					<p>${mdto.mtitle }</p>
-					</a>
+					<img src="magazineImg/${mdto.mno }.jpg" alt="" class="magazineImg" id="mimg"/>
+					<p id="mtitle">${mdto.mtitle }</p>
 				</div>
 				</td>
 			</c:forEach>
 		</tr>
-		<tr>
-		<td><a href="allmagazine.do">매거진 전체보기</a></td>
-		</tr>
+		
 		</table>
 	</div>
-	<a href="write.do">글쓰기</a>
-	<div>
-		작가되기 이미지
-	</div>
-	<div>
-		작가랜덤
-	</div>
-	<div>
-		추천글
-	</div>
-	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<%@ include file="footer.jsp" %>
 </body>	
 </html>
