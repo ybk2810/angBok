@@ -35,19 +35,19 @@
 	<%@ include file="header.jsp" %>
 	
 	<c:forEach var="mdto" items="${amlist}" >
-		<table>
-			<tr>
-				<td id="magazine">
-					<h3>${mdto.mno}. ${mdto.mtitle}</h3>
-					${mdto.mcontents}
-				</td>
-				<td>
-					<a href="magazineDetail.do?mno=${mdto.mno }">
+		<a href="magazineDetail.do?mno=${mdto.mno }">
+			<table>
+				<tr>
+					<td id="magazine">
+						<h3>${mdto.mno}. ${mdto.mtitle}</h3>
+						${mdto.mcontents}
+					</td>
+					<td>
 						<img src="magazineImg/${mdto.mno}.jpg" alt=""  id="magazineimg"/>
-					</a>
-				</td>
-			</tr>
-		</table>
+					</td>
+				</tr>
+			</table>
+		</a>
 	</c:forEach>
 </body>
 </html>
