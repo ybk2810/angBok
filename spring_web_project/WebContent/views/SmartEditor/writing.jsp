@@ -7,8 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	
-	아 죽을것같아
-	
+	<%
+		String ir1 = request.getParameter("ir1");
+		out.println(ir1);
+	%>
 </body>
 </html>

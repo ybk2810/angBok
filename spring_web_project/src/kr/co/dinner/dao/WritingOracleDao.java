@@ -45,6 +45,9 @@ public class WritingOracleDao implements WritingDao{
 		// TODO Auto-generated method stub
 		
 	}
-
+	@Override
+	public List<WritingDTO> readAll(String category) {
+		return ss.selectList("kr.co.dinner.writing.readAll", category);
+	}
 
 }

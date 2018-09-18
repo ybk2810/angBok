@@ -7,10 +7,11 @@ public class MagazineDTO {
 	private String mreg;
 	private int mno;
 	private String mwriter;
+	private String mcontents;
 	
 	public MagazineDTO() { }
 
-	public MagazineDTO(String mtitle, String mtimg, String mcimg, String mreg, int mno, String mwriter) {
+	public MagazineDTO(String mtitle, String mtimg, String mcimg, String mreg, int mno, String mwriter, String mcontents) {
 		super();
 		this.mtitle = mtitle;
 		this.mtimg = mtimg;
@@ -18,6 +19,7 @@ public class MagazineDTO {
 		this.mreg = mreg;
 		this.mno = mno;
 		this.mwriter = mwriter;
+		this.mcontents = mcontents;
 	}
 
 	public String getMtitle() {
@@ -66,5 +68,13 @@ public class MagazineDTO {
 
 	public void setMwriter(String mwriter) {
 		this.mwriter = mwriter;
+	}
+
+	public String getMcontents() {
+		return mcontents;
+	}
+	
+	public void setMcontents(String mcontents) {
+		this.mcontents = mcontents;
 	}
 }
