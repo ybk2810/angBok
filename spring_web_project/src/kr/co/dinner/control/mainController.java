@@ -93,7 +93,7 @@ public class mainController {
 		ModelAndView mav = new ModelAndView();
 		MagazineDTO mdto = ms.selectOne(mno);
 		mav.addObject("mdto",mdto);
-		mav.setViewName("viewWriting");
+		mav.setViewName("magazineDetail");
 		return mav;
 	}
 }
