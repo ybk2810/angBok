@@ -20,6 +20,11 @@
 		WHERE mno = #{mno}
 	</select>
 	
+	<select id="searchList" parameterType="String" resultType="mgdto">
+		SELECT * FROM magazine
+		WHERE mtitle LIKE '% #{mtitle} %'
+	</select>
+	
 	<select id="count" resultType="int">
 		SELECT COUNT(*) FROM magazine
 	</select>

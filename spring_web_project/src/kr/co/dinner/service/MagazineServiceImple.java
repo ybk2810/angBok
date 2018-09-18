@@ -32,4 +32,9 @@ public class MagazineServiceImple implements MagazineService{
 		
 		return dao.selectOne(mno);
 	}
+
+	@Override
+	public List<MagazineDTO> searchList(String mtitle) {
+		return dao.searchList(mtitle);
+	}
 }

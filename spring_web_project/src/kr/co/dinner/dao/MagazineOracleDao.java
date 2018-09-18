@@ -39,4 +39,9 @@ public class MagazineOracleDao implements MagazineDao{
 
 		return ss.selectOne("kr.co.dinner.magazine.count");
 	}
+
+	@Override
+	public List<MagazineDTO> searchList(String mtitle) {
+		return ss.selectList("kr.co.dinner.magazine.searchList", mtitle);
+	}
 }
