@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.activation.DataSource;
 
@@ -36,6 +37,18 @@ public class MemberDAO implements MDao {
 	@Override
 	public String selectId(String id) {
 		return ss.selectOne("kr.co.dinner.member.selectId", id);
+	}
+
+	@Override
+	public MemberDTO chooseOne(String id) {
+		MemberDTO dto = new MemberDTO();
+		dto.setId(id);
+		return ss.selectOne("kr.co.dinner.member.chooseOne", dto);
+	}
+	
+	@Override	
+	public List<MemberDTO> randomMember() {
+		return ss.selectList("kr.co.dinner.member.randomMember");
 	}
 
 }

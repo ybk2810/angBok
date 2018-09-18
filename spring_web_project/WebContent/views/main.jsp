@@ -54,6 +54,11 @@ function clickme() {
 		width: 150px;
 		height:120px;
 	}
+	.memberimg{
+		width: 150px;
+		height: 120px;
+	}
+	
 	/* Style the tab buttons */
 .tablink {
     background-color: #555;
@@ -324,6 +329,17 @@ text-align: center;
 	
 	<br>
 	<br>
+		<h4>추천 작가</h4>
+		<table>
+			<tr>
+				<c:forEach var="dto" items="${memberlist }">
+				<td >
+					<img src="${dto.img }" alt="" class="memberimg" />
+					<p>${dto.name }</p>
+				</td>
+				</c:forEach>
+			</tr>
+		</table>
 	<br>
 	<br>
 	<%@ include file="footer.jsp" %>

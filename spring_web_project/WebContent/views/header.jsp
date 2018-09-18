@@ -139,7 +139,7 @@ function Search() {
 			if(id != null){
 		%>
 			<a href="#"><div><img src="${mdto.img }" alt="a" id="profile" /></div></a>
-			<a href="login1.do">글쓰기</a>
+			<a href="write.do">글쓰기</a>
 		<%
 			}else{
 		%>
@@ -148,6 +148,17 @@ function Search() {
 		<%
 			}
 		%>
+		<a href="#">--------------</a>
+		<a href="myPage.do?id=${mdto.id} ">My Dinner</a> 
+		<a href="main.do">Home</a> 
+		<a href="#">최신글</a>
+		<a href="#">매거진</a>
+	</div>
+	<div id="header">
+		<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Dinner</span>
+		<a href="login1.do">시작하기</a>
+		<a href="search.do">검색</a>
+	</div>
       <a href="#">--------------</a>
       <a href="mypage.do">My Dinner</a> 
       <a href="main.do">Home</a> 

@@ -8,6 +8,6 @@
 </head>
 <body>
 	<input type="text" name="search" id="" />
-	<input type="button" value="검색" />
+	<a href="search.do"><input type="button" value="검색" /></a>
 </body>
 </html>
