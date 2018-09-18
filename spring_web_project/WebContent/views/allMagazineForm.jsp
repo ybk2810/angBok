@@ -7,36 +7,47 @@
 <meta charset="UTF-8">
 <title>Dinner</title>
 <style type="text/css">
-	img{
-		width: 240px;
-		height: 180px;
+	table{
+		width: 850px;
+		height: 200px;
+		position: senter;
+		BORDER-BOTTOM: #d8d8d8 1px solid;
+		margin: auto;
+	}
+	
+	#magazineimg{
+		width: 200px;
+		height: 150px;
+	}
+	
+	#magazine{
+		width: 650px;
+		height: 150px;
+		margin: left;
+	}
+	
+	*{
+		background-color: #FBFBFB;
 	}
 </style>
 </head>
 <body>
 	<%@ include file="header.jsp" %>
-	<table>
-		<tr>
-			<th>번호</th>
-			<th>제목</th>
-			<th>이미지</th>
-			<th>작성자</th>
-			<th>등록날짜</th>
-		</tr>
-		<c:forEach var="mdto" items="${amlist}" >
+	
+	<c:forEach var="mdto" items="${amlist}" >
+		<table>
 			<tr>
-				<td>${mdto.mno}</td>
-				<td>${mdto.mtitle}</td>
-				<td>${mdto.mcontents}</td>
-				<td><img src="magazineImg/${mdto.mno}.jpg" alt="" /></td>
-				<td>${mdto.mwriter}</td>
-				<td>${mdto.mreg}</td>
+				<td id="magazine">
+					<h3>${mdto.mno}. ${mdto.mtitle}</h3>
+					${mdto.mcontents}
+				</td>
+				<td>
+					<a href="magazineDetail.do?mno=${mdto.mno }">
+						<img src="magazineImg/${mdto.mno}.jpg" alt=""  id="magazineimg"/>
+					</a>
+				</td>
 			</tr>
-		</c:forEach>
-
-	</table>
-
-
-
+		</table>
+	</c:forEach>
 </body>
 </html>
