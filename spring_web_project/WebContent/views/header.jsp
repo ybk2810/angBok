@@ -166,6 +166,7 @@ function Search() {
    </div>
    <div id="header">
       <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; <img src="image/DINNER.png" alt="" id="logoimg" /></span>
+<<<<<<< HEAD
       	<%
 			if(id != null){
 		%>
@@ -177,5 +178,8 @@ function Search() {
       <%
 			}
       %>
+=======
+      <button class="button" onclick=" Start()"><span>로그인하기</span></button>
+>>>>>>> branch 'master' of https://github.com/ybk2810/angBok.git
 		<button class="btn success" onclick=" Search()">검색</button>
    </div>

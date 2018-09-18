@@ -13,6 +13,9 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 
+$(function(){
+	   alert("비밀번호가 일치하지 않습니다. 혹은 빈칸이 있습니다.");
+	});
 
 	function addrfind() {
 		new daum.Postcode(

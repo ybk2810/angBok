@@ -83,7 +83,7 @@ span.psw {
 <body>
 <form action="login2.do">
   <div class="imgcontainer">
-    <h3>이곳에는 로고 박기</h3>
+    <img src="image/DINNER.png" alt="" />
   </div>
 
   <div class="container">
@@ -100,7 +100,7 @@ span.psw {
   </div>
 
   <div class="container" style="background-color:#f1f1f1">
-    <a href="main.do"><button type="button" class="cancelbtn">Cancel</button></a>
+    <button type="button" class="cancelbtn">Cancel</button>
     <span class="psw">아직 회원이 아니신가요?? <a href="reg.do">DINNER에 가입하기</a></span>
   </div>
 </form>
