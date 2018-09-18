@@ -96,8 +96,8 @@ function closeWin() {
     	이용자 피해 방지와 관리자 보호를 위해 저작권 침해가 우려되는 파일의 사용을 일부 제한하고 있습니다. 
     </div>
     <div class="btn_box">
-      <a href="javascript:submitImageUploadForm(document.getElementById('editor_upimage'));"><img src="../img/btn_layer_confirm.gif" alt="확인" width="38" height="21"></a>
-      <a href="javascript:closeWin()"><img src="../img/btn_layer_cancel.gif" alt="취소" width="38" height="21" border="0"></a>
+      <a href="javascript:submitImageUploadForm(document.getElementById('editor_upimage'));"><img src="img/btn_layer_confirm.gif" alt="확인" width="38" height="21"></a>
+      <a href="javascript:closeWin()"><img src="img/btn_layer_cancel.gif" alt="취소" width="38" height="21" border="0"></a>
     </div>
   </div>
   </form>

@@ -1,5 +1,7 @@
 package kr.co.dinner.dao;
 
+import java.util.List;
+
 import kr.co.dinner.dto.MemberDTO;
 
 public interface MDao {
@@ -8,4 +10,8 @@ public interface MDao {
 	
 	public MemberDTO selectOne(String id, String pw);
 	public String selectId(String id);
+
+	public MemberDTO chooseOne(String id);
+
+	public List<MemberDTO> randomMember();
 }

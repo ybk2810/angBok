@@ -7,7 +7,9 @@
 <title>search</title>
 </head>
 <body>
-	<input type="text" name="search" id="" />
-	<input type="button" value="검색" />
+	<form action="search.do">
+		<input type="text" name="mtitle" id="" />
+		<input type="submit" value="검색" />
+	</form>
 </body>
 </html>

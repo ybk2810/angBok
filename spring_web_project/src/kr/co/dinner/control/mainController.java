@@ -15,11 +15,21 @@ import kr.co.dinner.dto.MemberDTO;
 import kr.co.dinner.dto.WritingDTO;
 import kr.co.dinner.service.MagazineService;
 import kr.co.dinner.service.WritingSerivce;
+import kr.co.dinner.service.memberService;
 
 @Controller
 public class mainController {
+	memberService member;
 	MagazineService ms;
 	WritingSerivce ws;
+	memberService ms1;
+	public memberService getMs1() {
+		return ms1;
+	}
+
+	public void setMs1(memberService ms1) {
+		this.ms1 = ms1;
+	}
 
 	public void setMs(MagazineService ms) {
 		this.ms = ms;
@@ -29,13 +39,19 @@ public class mainController {
 		this.ws = ws;
 	}
 
+	public void setMember(memberService member) {
+		this.member = member;
+	}
+
 	@RequestMapping("/main.do")
 	public ModelAndView main() {
 		ModelAndView mav = new ModelAndView();
 		
 		List<MagazineDTO> mlist = ms.randomSelect();
+		List<MemberDTO> memberlist = member.randomMember();
 		
 		mav.addObject("mlist", mlist);
+		mav.addObject("memberlist", memberlist);
 		mav.setViewName("main");
 		
 		return mav;
@@ -53,10 +69,21 @@ public class mainController {
 		return mav;
 	}
 	
+	@RequestMapping("/searchForm.do")
+	public String search() {
+		return "search";
+	}
 	
 	@RequestMapping("/search.do")
-	public String searchForm() {
-		return "search";
+	public ModelAndView searchForm(@RequestParam("mtitle")String mtitle) {
+		ModelAndView mav = new ModelAndView();
+		List<MagazineDTO> mglist = ms.searchList(mtitle);
+		
+		mav.addObject("mglist", mglist);
+		
+		mav.setViewName("allSearch");
+		
+		return mav;
 	}
 	
 	@RequestMapping("/plates.do")
@@ -83,17 +110,35 @@ public class mainController {
 		return mav;
 	}
 	
-	@RequestMapping("/viewWriting.do")
-	public ModelAndView viewWriting(@RequestParam("mno")int mno) {
-		ModelAndView mav = new ModelAndView();
-		MagazineDTO mdto = ms.selectOne(mno);
-		mav.addObject("mdto",mdto);
-		mav.setViewName("viewWriting");
-		return mav;
-	}
-	
 	@RequestMapping("/write.do")
 	public String write() {
-		return "SmartEditor/write";
+		return "/write";
 	}
-}
+	
+	@RequestMapping("/magazineDetail.do")
+	public ModelAndView magazineDetail(@RequestParam("mno")int mno) {
+		ModelAndView mav = new ModelAndView();
+		MagazineDTO mdto = ms.selectOne(mno);
+		mav.addObject("mgdto",mdto);
+		mav.setViewName("magazineDetail");
+		return mav;
+
+	}
+	
+	
+	
+	@RequestMapping("/myPage.do")
+	public ModelAndView myPage(@RequestParam("id")String id) {
+		ModelAndView mav = new ModelAndView();
+		MemberDTO mdto = ms1.chooseOne(id);
+			mav.addObject("mdto", mdto);
+			mav.setViewName("myPage");			
+			
+	
+		
+		return mav;	
+	}
+
+	}
+
+
