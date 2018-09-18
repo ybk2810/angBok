@@ -27,6 +27,7 @@
 			<tr>
 				<td>${mdto.mno}</td>
 				<td>${mdto.mtitle}</td>
+				<td>${mdto.mcontents}</td>
 				<td><img src="magazineImg/${mdto.mno}.jpg" alt="" /></td>
 				<td>${mdto.mwriter}</td>
 				<td>${mdto.mreg}</td>

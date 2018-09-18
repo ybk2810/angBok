@@ -301,6 +301,7 @@ height: 85px;}
 		</tr>
 		</table>
 	</div>
+	<a href="write.do">글쓰기</a>
 	<div>
 		작가되기 이미지
 	</div>
