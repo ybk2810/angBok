@@ -80,7 +80,7 @@ function closeNav() {
 		%>
 		<a href="#">--------------</a>
 		<a href="#">My Dinner</a> 
-		<a href="#">Home</a> 
+		<a href="main.do">Home</a> 
 		<a href="#">최신글</a>
 		<a href="#">매거진</a>
 	</div>
