@@ -61,10 +61,21 @@ public class mainController {
 		return mav;
 	}
 	
+	@RequestMapping("/searchForm.do")
+	public String search() {
+		return "search";
+	}
 	
 	@RequestMapping("/search.do")
-	public String searchForm() {
-		return "search";
+	public ModelAndView searchForm(@RequestParam("mtitle")String mtitle) {
+		ModelAndView mav = new ModelAndView();
+		List<MagazineDTO> mglist = ms.searchList(mtitle);
+		
+		mav.addObject("mglist", mglist);
+		
+		mav.setViewName("allSearch");
+		
+		return mav;
 	}
 	
 	@RequestMapping("/plates.do")

@@ -123,7 +123,7 @@ function Start() {
 
 function Search() {
 	   
-    location.href = "search.do";
+    location.href = "searchForm.do";
 }
 
 
