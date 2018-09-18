@@ -136,14 +136,25 @@ function Search() {
 </script>
 </head>
 <body>
-   <div id="mySidenav" class="sidenav">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <a href="#">
-      <div>
-      <img src="image/a.jpg" alt="a" id="profile" />
-      </div>
-      </a>
-      <a href="login1.do">시작하기</a>
+  	<%
+		String id = (String)session.getAttribute("id");
+	%>
+
+	<div id="mySidenav" class="sidenav">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		<%
+			if(id != null){
+		%>
+			<a href="#"><div><img src="${mdto.img }" alt="a" id="profile" /></div></a>
+			<a href="login1.do">글쓰기</a>
+		<%
+			}else{
+		%>
+			<a href="#"><div><img src="image/a.jpg" alt="a" id="profile" /></div></a>
+			<a href="login1.do">시작하기</a>
+		<%
+			}
+		%>
       <a href="#">--------------</a>
       <a href="#">My Dinner</a> 
       <a href="main.do">Home</a> 

@@ -60,6 +60,8 @@ public class ImgUploadController {
 		mav.addObject("filePath", "../image/"+f.getName());
 		mav.setViewName("registerForm");
 		
+		System.out.println(filePath);
+		
 		
 		return mav;
 		
