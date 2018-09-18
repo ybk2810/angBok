@@ -93,10 +93,13 @@
 	</div>
 
 	<div class="container">
-		<div class="writing">${mgdto.mno}</div>
+		<div class="writing">${mgdto.mno}
+		
+		</div>
 		<div class="introduce">
 			<span class="profilePic">작가 사진</span>
 			<span class="writer" id="writer2">작가 필명</span>
+			<img src="magazineImg/${mgdto.mno}.png" alt=""  id="magazineimg"/>
 		</div>
 		<div class="reply">
 			<span>댓글</span>
