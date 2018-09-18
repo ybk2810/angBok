@@ -57,7 +57,7 @@ public class ImgUploadController {
 		
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("filename",f.getName());
-		mav.addObject("filePath", "../image/"+f.getName());
+		mav.addObject("filePath", "image/"+f.getName());
 		mav.setViewName("registerForm");
 		
 		System.out.println(filePath);
