@@ -15,9 +15,11 @@ import kr.co.dinner.dto.MemberDTO;
 import kr.co.dinner.dto.WritingDTO;
 import kr.co.dinner.service.MagazineService;
 import kr.co.dinner.service.WritingSerivce;
+import kr.co.dinner.service.memberService;
 
 @Controller
 public class mainController {
+	memberService member;
 	MagazineService ms;
 	WritingSerivce ws;
 
@@ -29,13 +31,19 @@ public class mainController {
 		this.ws = ws;
 	}
 
+	public void setMember(memberService member) {
+		this.member = member;
+	}
+
 	@RequestMapping("/main.do")
 	public ModelAndView main() {
 		ModelAndView mav = new ModelAndView();
 		
 		List<MagazineDTO> mlist = ms.randomSelect();
+		List<MemberDTO> memberlist = member.randomMember();
 		
 		mav.addObject("mlist", mlist);
+		mav.addObject("memberlist", memberlist);
 		mav.setViewName("main");
 		
 		return mav;

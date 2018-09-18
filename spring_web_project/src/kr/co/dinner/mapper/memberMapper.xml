@@ -16,10 +16,17 @@
 		from member
 		where id = #{id}
 	</select>
+	
+	<select id="randomMember" resultType="mdto">
+		SELECT * FROM (
+		SELECT * FROM member
+		ORDER BY dbms_random.value)
+		WHERE rownum &lt;= 4
+	</select>
 
 	<insert id="insertOne" parameterType="mdto">
 		insert into member
 		values (SEQ_MEMBER_NO.NEXTVAL,#{name},#{id},#{pw},#{repw},#{addrs1},#{addrs2},#{email},#{img},#{intro},0,0,#{regisno1},#{regisno2})
 	</insert>
-
+	
 </mapper>

@@ -1,5 +1,7 @@
 package kr.co.dinner.service;
 
+import java.util.List;
+
 import kr.co.dinner.dao.MDao;
 import kr.co.dinner.dto.MemberDTO;
 
@@ -35,6 +37,13 @@ public class MemberServiceImple implements memberService{
 		}
 		
 		return isOk;
+	}
+
+
+
+	@Override
+	public List<MemberDTO> randomMember() {
+		return mdao.randomMember();
 	}
 
 }
