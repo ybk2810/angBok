@@ -35,6 +35,11 @@ function allmagazine() {
 	location.href="plates.do";
 	
 }
+function clickme() {
+	location.href="write.do"
+	
+}
+
 
 </script>
 <style type="text/css">
@@ -76,7 +81,11 @@ function allmagazine() {
 }
 
 /* Style each tab content individually */ 
-#London {background-color:#2f5d30;}
+
+
+
+#London { background-color: green;
+     }
 #Paris {background-color:#3a713c;}
 #Tokyo {background-color:#478c49;}
 #Oslo {background-color:#53a556;}
@@ -99,12 +108,31 @@ height: 200px;}
 font-weight: bolder;
 text-align: center; 
  }
+ #write{
+ position:absolute;
+ left:800px;
+ padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+ }
+ #write:hover{background-color: #3e8e41}
+ #write:active{ background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);}
 	
 	
 </style>
 </head>
 <body>
 	<%@ include file="header.jsp" %>
+	
 	<div id="container">
 	<div id="">
 		<h2>
@@ -272,7 +300,9 @@ text-align: center;
 <button class="tablink" onclick="allmagazine()">전체보기</button>
 
 	<br><br><br><br><br>
-	<p style="text-align: center; font-size: 32px; font-weight:bold; color: green; "> ~T O D A Y &nbsp&nbsp&nbsp&nbsp M A G A Z I N E~</p>
+	<p style="text-align: center; font-size: 32px; font-weight:bold;   background: -webkit-linear-gradient(30deg, #2f5d30, #e9ff2d);
+    color: transparent;
+    -webkit-background-clip: text; "> ~T O D A Y &nbsp&nbsp&nbsp&nbsp M A G A Z I N E~</p>
 	<div id="megazine">
 		
 		<table>
@@ -280,21 +310,18 @@ text-align: center;
 			<c:forEach var="mdto" items="${mlist }">
 				<td id="mtd">
 				<div>
-					<a href="viewWriting.do?mno=${mdto.mno }">
-					<img src="magazineImg/${mdto.mno }.jpg" alt="" class="magazineImg" />
-					<p>${mdto.mtitle }</p>
-					</a>
+				<a href="viewWriting.do?mno=${mdto.mno }">
+					<img src="magazineImg/${mdto.mno }.jpg" alt="" class="magazineImg" id="mimg"/>
+					<p id="mtitle">${mdto.mtitle }</p>
 				</div>
 				</td>
 			</c:forEach>
 		</tr>
-
-		<tr>
-			<td><a href="allmagazine.do">매거진 전체보기</a></td>
-		</tr>
-
+		
 		</table>
 	</div>
+	<button class="button" onclick=" clickme()" id="write">글쓰기</button>
+	
 	<br>
 	<br>
 	<br>
