@@ -1,7 +1,50 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-
+   pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Dinner_Header</title>
 <style>
+
+.button {
+  border-radius: 4px;
+  background-color: #dcf1c5;
+  border: none;
+  color:#3f51b5;
+  text-align: center;
+  font-size: 15px;
+  padding: 20px;
+  width: 125px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
 body {
     font-family: "Lato", sans-serif;
 }
@@ -48,6 +91,27 @@ body {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
+img{
+	
+}
+#logoimg{
+
+	position: absolute;
+	left: 800px;
+}
+.btn {
+    border: none;
+    background-color: inherit;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+/* On mouse-over */
+.btn:hover {background: #eee;}
+
+.success {color: green;}
 </style>
 <script type="text/javascript">
 function openNav() {
@@ -57,35 +121,39 @@ function openNav() {
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
 }
+function Start() {
+   
+    location.href = "login1.do";
+}
+
+function Search() {
+	   
+    location.href = "search.do";
+}
+
+
+
 </script>
-
-	<%
-		String id = (String)session.getAttribute("id");
-	%>
-
-	<div id="mySidenav" class="sidenav">
-		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-		<%
-			if(id != null){
-		%>
-			<a href="#"><div><img src="${mdto.img }" alt="a" id="profile" /></div></a>
-			<a href="login1.do">글쓰기</a>
-		<%
-			}else{
-		%>
-			<a href="#"><div><img src="image/a.jpg" alt="a" id="profile" /></div></a>
-			<a href="login1.do">시작하기</a>
-		<%
-			}
-		%>
-		<a href="#">--------------</a>
-		<a href="#">My Dinner</a> 
-		<a href="main.do">Home</a> 
-		<a href="#">최신글</a>
-		<a href="#">매거진</a>
-	</div>
-	<div id="header">
-		<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Dinner</span>
-		<a href="login1.do">시작하기</a>
-		<a href="search.do">검색</a>
-	</div>
+</head>
+<body>
+   <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="#">
+      <div>
+      <img src="image/a.jpg" alt="a" id="profile" />
+      </div>
+      </a>
+      <a href="login1.do">시작하기</a>
+      <a href="#">--------------</a>
+      <a href="#">My Dinner</a> 
+      <a href="main.do">Home</a> 
+      <a href="#">최신글</a>
+      <a href="allmagazine.do">전체 매거진 </a>
+   </div>
+   <div id="header">
+      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; <img src="image/DINNER.png" alt="" id="logoimg" /></span>
+      <button class="button" onclick=" Start()"><span>함께하기</span></button>
+		<button class="btn success" onclick=" Search()">검색</button>
+   </div>
+</body>
+</html>
