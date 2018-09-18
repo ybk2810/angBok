@@ -42,7 +42,9 @@
 					${mdto.mcontents}
 				</td>
 				<td>
-					<img src="magazineImg/${mdto.mno}.jpg" alt=""  id="magazineimg"/>
+					<a href="magazineDetail.do?mno=${mdto.mno }">
+						<img src="magazineImg/${mdto.mno}.jpg" alt=""  id="magazineimg"/>
+					</a>
 				</td>
 			</tr>
 		</table>

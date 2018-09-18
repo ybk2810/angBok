@@ -96,4 +96,13 @@ public class mainController {
 	public String write() {
 		return "SmartEditor/write";
 	}
+	
+	@RequestMapping("/magazineDetail.do")
+	public ModelAndView magazineDetail(@RequestParam("mno")int mno) {
+		ModelAndView mav = new ModelAndView();
+		MagazineDTO mdto = ms.selectOne(mno);
+		mav.addObject("mdto",mdto);
+		mav.setViewName("viewWriting");
+		return mav;
+	}
 }
