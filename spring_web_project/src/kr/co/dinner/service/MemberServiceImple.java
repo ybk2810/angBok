@@ -37,4 +37,11 @@ public class MemberServiceImple implements memberService{
 		return isOk;
 	}
 
+
+
+	@Override
+	public MemberDTO chooseOne(String id) {
+		return 	mdao.chooseOne(id);
+	}
+
 }

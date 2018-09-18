@@ -7,4 +7,5 @@ public interface memberService {
 	public void add(MemberDTO dto);
 	public MemberDTO selectOne(String id,String pw);
 	public boolean selectId(String id);
+	public MemberDTO chooseOne(String id);
 }

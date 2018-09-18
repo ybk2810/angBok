@@ -8,4 +8,6 @@ public interface MDao {
 	
 	public MemberDTO selectOne(String id, String pw);
 	public String selectId(String id);
+
+	public MemberDTO chooseOne(String id);
 }

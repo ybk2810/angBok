@@ -69,7 +69,7 @@ function closeNav() {
 			if(id != null){
 		%>
 			<a href="#"><div><img src="${mdto.img }" alt="a" id="profile" /></div></a>
-			<a href="login1.do">글쓰기</a>
+			<a href="write.do">글쓰기</a>
 		<%
 			}else{
 		%>
@@ -79,7 +79,7 @@ function closeNav() {
 			}
 		%>
 		<a href="#">--------------</a>
-		<a href="#">My Dinner</a> 
+		<a href="myPage.do?id=${mdto.id} ">My Dinner</a> 
 		<a href="main.do">Home</a> 
 		<a href="#">최신글</a>
 		<a href="#">매거진</a>

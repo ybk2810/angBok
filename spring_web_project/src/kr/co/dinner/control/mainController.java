@@ -2,6 +2,8 @@ package kr.co.dinner.control;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,14 +11,24 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import kr.co.dinner.dto.MagazineDTO;
+import kr.co.dinner.dto.MemberDTO;
 import kr.co.dinner.dto.WritingDTO;
 import kr.co.dinner.service.MagazineService;
 import kr.co.dinner.service.WritingSerivce;
+import kr.co.dinner.service.memberService;
 
 @Controller
 public class mainController {
 	MagazineService ms;
 	WritingSerivce ws;
+	memberService ms1;
+	public memberService getMs1() {
+		return ms1;
+	}
+
+	public void setMs1(memberService ms1) {
+		this.ms1 = ms1;
+	}
 
 	public void setMs(MagazineService ms) {
 		this.ms = ms;
@@ -92,6 +104,18 @@ public class mainController {
 	@RequestMapping("/write.do")
 	public String write() {
 		return "write";
+	}
+	
+	@RequestMapping("/myPage.do")
+	public ModelAndView myPage(@RequestParam("id")String id) {
+		ModelAndView mav = new ModelAndView();
+		MemberDTO mdto = ms1.chooseOne(id);
+			mav.addObject("mdto", mdto);
+			mav.setViewName("myPage");			
+			
+	
+		
+		return mav;	
 	}
 
 }

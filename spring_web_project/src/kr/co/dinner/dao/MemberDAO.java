@@ -38,4 +38,12 @@ public class MemberDAO implements MDao {
 		return ss.selectOne("kr.co.dinner.member.selectId", id);
 	}
 
+	@Override
+	public MemberDTO chooseOne(String id) {
+		MemberDTO dto = new MemberDTO();
+		dto.setId(id);
+		
+		return ss.selectOne("kr.co.dinner.member.chooseOne", dto);
+	}
+
 }
