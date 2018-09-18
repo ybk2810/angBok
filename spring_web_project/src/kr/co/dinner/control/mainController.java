@@ -101,7 +101,7 @@ public class mainController {
 	
 	@RequestMapping("/write.do")
 	public String write() {
-		return "SmartEditor/write";
+		return "/write";
 	}
 	
 	@RequestMapping("/magazineDetail.do")
