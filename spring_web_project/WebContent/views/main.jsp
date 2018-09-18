@@ -295,7 +295,7 @@ height: 85px;}
 			</c:forEach>
 		</tr>
 		<tr>
-		<td><a href="allmagazine.do">매거진 전체보기</a></td>
+			<td><a href="allmagazine.do">매거진 전체보기</a></td>
 		</tr>
 		</table>
 	</div>
