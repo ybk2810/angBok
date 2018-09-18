@@ -36,6 +36,7 @@
 	<!--  -->
 	<bean id="login" class="kr.co.dinner.control.LoginController">
 		<property name="ms1" ref="memberservice" ></property>
+		<property name="mg" ref="ms"></property>
 	</bean>
 	
 	<bean id="reg"  class="kr.co.dinner.control.RegisterController">
