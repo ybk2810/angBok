@@ -128,15 +128,11 @@ public class mainController {
 	
 	
 	@RequestMapping("/myPage.do")
-	public ModelAndView myPage(@RequestParam("id")String id) {
-		ModelAndView mav = new ModelAndView();
-		MemberDTO mdto = ms1.chooseOne(id);
-			mav.addObject("mdto", mdto);
-			mav.setViewName("myPage");			
-			
+	public String myPage() {
+		
 	
 		
-		return mav;	
+		return "myPage";	
 	}
 
 	}

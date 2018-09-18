@@ -150,7 +150,7 @@ function Search() {
 		%>
 
       <a href="#">--------------</a>
-      <a href="mypage.do">My Dinner</a> 
+      <a href="myPage.do">My Dinner</a> 
       <a href="main.do">Home</a> 
       <a href="#">최신글</a>
       <a href="allmagazine.do">전체 매거진 </a>
