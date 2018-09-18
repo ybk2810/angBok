@@ -19,8 +19,7 @@
 
 	<insert id="insertOne" parameterType="mdto">
 		insert into member
-		values
-		(SEQ_MEMBER_NO.NEXTVAL,#{name},#{id},#{pw},#{repw},#{regisno1},#{regisno2},#{addrs1},#{addrs2},#{email},#{img},#{intro},0,0)
+		values (SEQ_MEMBER_NO.NEXTVAL,#{name},#{id},#{pw},#{repw},#{addrs1},#{addrs2},#{email},#{img},#{intro},0,0,#{regisno1},#{regisno2})
 	</insert>
 
 </mapper>

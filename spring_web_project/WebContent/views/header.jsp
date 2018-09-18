@@ -1,10 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-   pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Dinner_Header</title>
+    pageEncoding="UTF-8"%>
 <style>
 
 .button {
@@ -134,18 +129,27 @@ function Search() {
 
 
 </script>
-</head>
-<body>
-   <div id="mySidenav" class="sidenav">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <a href="#">
-      <div>
-      <img src="image/a.jpg" alt="a" id="profile" />
-      </div>
-      </a>
-      <a href="login1.do">시작하기</a>
+  	<%
+		String id = (String)session.getAttribute("id");
+	%>
+
+	<div id="mySidenav" class="sidenav">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		<%
+			if(id != null){
+		%>
+			<a href="#"><div><img src="${mdto.img }" alt="a" id="profile" /></div></a>
+			<a href="login1.do">글쓰기</a>
+		<%
+			}else{
+		%>
+			<a href="#"><div><img src="image/a.jpg" alt="a" id="profile" /></div></a>
+			<a href="login1.do">시작하기</a>
+		<%
+			}
+		%>
       <a href="#">--------------</a>
-      <a href="#">My Dinner</a> 
+      <a href="mypage.do">My Dinner</a> 
       <a href="main.do">Home</a> 
       <a href="#">최신글</a>
       <a href="allmagazine.do">전체 매거진 </a>
@@ -155,5 +159,3 @@ function Search() {
       <button class="button" onclick=" Start()"><span>함께하기</span></button>
 		<button class="btn success" onclick=" Search()">검색</button>
    </div>
-</body>
-</html>

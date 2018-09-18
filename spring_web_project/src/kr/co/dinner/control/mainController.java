@@ -2,6 +2,8 @@ package kr.co.dinner.control;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import kr.co.dinner.dto.MagazineDTO;
+import kr.co.dinner.dto.MemberDTO;
 import kr.co.dinner.dto.WritingDTO;
 import kr.co.dinner.service.MagazineService;
 import kr.co.dinner.service.WritingSerivce;
@@ -93,5 +96,4 @@ public class mainController {
 	public String write() {
 		return "SmartEditor/write";
 	}
-
 }
