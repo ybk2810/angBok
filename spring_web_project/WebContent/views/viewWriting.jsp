@@ -87,7 +87,7 @@
 <body>
 	<div class="header">
 		<div>
-			<span class="title">제목title제목title</span> <span class="writer" id="writer1">작성자</span>
+			<span class="title">${mdto.mtitle}<br /></span> <span class="writer" id="writer1">${mdto.mwriter}</span>
 		</div>
 	</div>
 
@@ -97,11 +97,11 @@
 
 	<div class="container">
 
-		<div class="writing">내용</div>
+		<div class="writing">${mdto.mno}</div>
 
 		<div class="introduce">
-			<span class="profilePic">작가 사진</span> <span class="writer"
-				id="writer2">작가 필명</span>
+			<span class="profilePic">작가 사진</span>
+			<span class="writer" id="writer2">작가 필명</span>
 		</div>
 
 		<div class="reply">
