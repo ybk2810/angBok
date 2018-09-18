@@ -108,7 +108,7 @@ public class mainController {
 	public ModelAndView magazineDetail(@RequestParam("mno")int mno) {
 		ModelAndView mav = new ModelAndView();
 		MagazineDTO mdto = ms.selectOne(mno);
-		mav.addObject("mdto",mdto);
+		mav.addObject("mgdto",mdto);
 		mav.setViewName("magazineDetail");
 		return mav;
 
