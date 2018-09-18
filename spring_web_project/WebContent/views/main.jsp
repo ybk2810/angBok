@@ -126,7 +126,7 @@ text-align: center;
 	<br /><br /><br /><br /><br /><br /><br />
 	
 	
-	
+	<p style="text-align: center; font-size: 20px; ">-CATEGORY-</p>
 	
 	<div id="London" class="tabcontent">
   <h1>과학</h1>
@@ -272,7 +272,8 @@ text-align: center;
 <button class="tablink" onclick="openCity('Oslo6', this, 'orange')">경제</button>
 <button class="tablink" onclick="allmagazine()">전체보기</button>
 
-	
+	<br><br><br><br><br>
+	<p style="text-align: center; font-size: 32px; font-weight:bold; color: green; "> ~T O D A Y &nbsp&nbsp&nbsp&nbsp M A G A Z I N E~</p>
 	<div id="megazine">
 		
 		<table>
