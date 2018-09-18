@@ -105,17 +105,20 @@ function clickme() {
 border:4px solid #cceca7;
 width: 25%;
 height: 200px;
+border-radius: 20px;
 }
 #mimg{width: 100%;
-
+border-radius: 40px;
 height: 200px;}
 #mtitle{color:#093e09;
 font-weight: bolder;
 text-align: center; 
+
  }
  #write{
- position:absolute;
- left:800px;
+ position:fixed;
+ right:30px;
+ bottom:30px;
  padding: 15px 25px;
   font-size: 24px;
   text-align: center;
@@ -329,17 +332,23 @@ text-align: center;
 	
 	<br>
 	<br>
-		<h4>추천 작가</h4>
-		<table>
-			<tr>
+		<h3 style="text-align: center; font-size: 18px;" >-추천 작가-</h3>
+		
+		<hr  style="color: 2px solid green;"/>
+		 <div >
+		<table >
+			<tr >
 				<c:forEach var="dto" items="${memberlist }">
-				<td >
+				<td style="border: 2px solid #264628; width: 200px; height: 130px; position: relative; left: 460px;     border-radius: 87px;">
 					<img src="${dto.img }" alt="" class="memberimg" />
-					<p>${dto.name }</p>
+					<p style="text-align: center;">${dto.name }</p>
+					
 				</td>
+				
 				</c:forEach>
 			</tr>
 		</table>
+		</div>
 	<br>
 	<br>
 	<%@ include file="footer.jsp" %>
