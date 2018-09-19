@@ -77,6 +77,14 @@
 		</div>
 		<div class="reply">
 			<span>댓글</span>
+			<table>
+				<tr>
+					<td>
+						<input type="text" name="rcontents" id="" />
+						<a href=""><p>등록</p></a>
+					</td>
+				</tr>
+			</table>
 		</div>
 	</div>
 
