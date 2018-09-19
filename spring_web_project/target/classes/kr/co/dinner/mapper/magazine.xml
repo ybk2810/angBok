@@ -16,13 +16,13 @@
 	</select>
 	
 	<select id="selectOne" resultType="mgdto" parameterType="int">
-		SELECT * FROM magazine
+		SELECT mtitle, mtimg, mcimg, to_char(mreg, 'yyyy/mm/dd') mreg, mno, mwriter, mcontents FROM magazine
 		WHERE mno = #{mno}
 	</select>
 	
 	<select id="searchList" parameterType="String" resultType="mgdto">
 		SELECT * FROM magazine
-		WHERE mtitle LIKE '% #{mtitle} %'
+		WHERE mtitle LIKE '%'|| #{mtitle} || '%'
 	</select>
 	
 	<select id="count" resultType="int">

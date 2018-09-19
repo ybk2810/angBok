@@ -1,6 +1,8 @@
 package kr.co.dinner.control;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 import javax.servlet.ServletContext;
@@ -47,6 +49,8 @@ public class ImgUploadController {
 		
 		try {
 			mfile.transferTo(f);//파일 저장
+			
+			fileCopy(filePath+"/"+f.getName(), "..\\WebContent\\image/"+f.getName());
 		} catch (IllegalStateException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -68,7 +72,23 @@ public class ImgUploadController {
 		
 	}
 	
-	
+	 public static void fileCopy(String inFileName, String outFileName) {
+		  try {
+		   FileInputStream fis = new FileInputStream(inFileName);
+		   FileOutputStream fos = new FileOutputStream(outFileName);
+		   
+		   int data = 0;
+		   while((data=fis.read())!=-1) {
+		    fos.write(data);
+		   }
+		   fis.close();
+		   fos.close();
+		   
+		  } catch (IOException e) {
+		   // TODO Auto-generated catch block
+		   e.printStackTrace();
+		  }
+		 }
 	
 	
 

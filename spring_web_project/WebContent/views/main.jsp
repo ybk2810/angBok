@@ -70,6 +70,7 @@ function clickme() {
     padding: 14px 16px;
     font-size: 17px;
     width: 10%;
+    
 }
 
 /* Change background color of buttons on hover */
@@ -145,6 +146,7 @@ text-align: center;
 </head>
 <body>
 	<%@ include file="header.jsp" %>
+	
 	
 	<div id="container">
 	<div id="">
@@ -310,7 +312,7 @@ text-align: center;
 <button class="tablink" onclick="openCity('Oslo4', this, 'green')">연예</button>
 <button class="tablink" onclick="openCity('Oslo5', this, 'green')">여행</button>
 <button class="tablink" onclick="openCity('Oslo6', this, 'green')">경제</button>
-<button class="tablink" onclick="allmagazine()">전체보기</button>
+<button class="tablink" onclick="allmagazine()" style="background-color: gray;">전체보기</button>
 
 	<br><br><br><br><br>
 	<p style="text-align: center; font-size: 32px; font-weight:bold;   background: -webkit-linear-gradient(30deg, #2f5d30, #e9ff2d);
@@ -333,6 +335,7 @@ text-align: center;
 		
 		</table>
 	</div>
+	
 	<button class="button" onclick=" clickme()" id="write">글쓰기</button>
 	
 	<br>
