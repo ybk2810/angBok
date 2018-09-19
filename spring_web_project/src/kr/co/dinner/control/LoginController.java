@@ -59,6 +59,9 @@ public class LoginController {
 			mav.setViewName("main");
 		}
 		
+		Object obj = session.getAttribute("id");
+		mav.addObject("id", obj);
+		
 		return mav;	
 	}
 	

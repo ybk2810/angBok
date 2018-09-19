@@ -16,7 +16,7 @@
 	</select>
 	
 	<select id="selectOne" resultType="mgdto" parameterType="int">
-		SELECT * FROM magazine
+		SELECT mtitle, mtimg, mcimg, to_char(mreg, 'yyyy/mm/dd') mreg, mno, mwriter, mcontents FROM magazine
 		WHERE mno = #{mno}
 	</select>
 	

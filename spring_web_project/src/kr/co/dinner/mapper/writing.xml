@@ -12,5 +12,10 @@
   		SELECT * FROM writing
   		where category = #{category}
   	</select>
+  	
+  	<insert id="insertOne" parameterType="wdto">
+		INSERT INTO writing
+		VALUES(0,'title',#{contents},'wname',sysdate,'timg','wimg','category',0)
+	</insert>
   
   </mapper>

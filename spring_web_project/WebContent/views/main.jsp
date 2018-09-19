@@ -147,6 +147,10 @@ text-align: center;
 <body>
 	<%@ include file="header.jsp" %>
 	
+	<%
+		String memberid = (String)session.getAttribute("id");
+	%>
+	
 	<div id="container">
 	<div id="">
 		<h2>
@@ -316,7 +320,7 @@ text-align: center;
 	<br><br><br><br><br>
 	<p style="text-align: center; font-size: 32px; font-weight:bold;   background: -webkit-linear-gradient(30deg, #2f5d30, #e9ff2d);
     color: transparent;
-    -webkit-background-clip: text; "> ~T O D A Y &nbsp&nbsp&nbsp&nbsp M A G A Z I N E~</p>
+    -webkit-background-clip: text; "> ~T O D A Y &nbsp;&nbsp;&nbsp;&nbsp; M A G A Z I N E~</p>
 	<div id="megazine">
 		
 		<table>
@@ -334,8 +338,14 @@ text-align: center;
 		
 		</table>
 	</div>
-	<button class="button" onclick=" clickme()" id="write">글쓰기</button>
 	
+	<%
+		if(memberid != null){
+	%>
+		<button class="button" onclick=" clickme()" id="write">글쓰기</button>
+	<%
+		}
+	%>
 	<br>
 	<br>
 		<h3 style="text-align: center; font-size: 18px;" >-추천 작가-</h3>

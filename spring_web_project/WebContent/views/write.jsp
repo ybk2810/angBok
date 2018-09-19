@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<form name="w_form" action="sample.asp" method="post">
+<form name="w_form" action="writingUpload.do" method="post">
 <input type="hidden" name="filepath" value="/file"> <!-- 이미지업로드 경로 변수처리 혹은 직접 코딩.. -->
   <p>
     <input type="button" onclick="pasteHTMLDemo()" value="본문에 HTML 삽입"></input>
@@ -20,7 +20,10 @@
   <textarea name="ir1" id="ir1" style="width:700px; height:400px"><p>에디터에 기본으로 삽입할 글(수정 모드)이 없다면 이 값을 지정하지 않으시면 됩니다.</p></textarea>
   <textarea id="content" name="content" style="display:none"></textarea>
 </form>
-
+<%
+	String ir1 = request.getParameter("ir1");
+	out.print(ir1);
+%>
 	<script>
 //form변수로 지정하여 이미지업로드 페이지에서 호출하여 사용됨. form.filepath.value
 var form = document.w_form;   // 사용할 폼 이름으로 수정.

@@ -11,4 +11,5 @@ public interface memberService {
 	public boolean selectId(String id);
 	public MemberDTO chooseOne(String id);
 	public List<MemberDTO> randomMember();
+	public void modifyOne(MemberDTO dto);
 }

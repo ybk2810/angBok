@@ -51,4 +51,9 @@ public class MemberDAO implements MDao {
 		return ss.selectList("kr.co.dinner.member.randomMember");
 	}
 
+	@Override
+	public void updateOne(MemberDTO dto) {
+		ss.update("kr.co.dinner.member.modifyOne", dto);
+	}
+
 }

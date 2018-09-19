@@ -6,7 +6,9 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -44,8 +46,8 @@ public class mainController {
 	}
 
 	@RequestMapping("/main.do")
-	public ModelAndView main() {
-		ModelAndView mav = new ModelAndView();
+	public ModelAndView main(HttpSession hs) {
+ModelAndView mav = new ModelAndView();
 		
 		List<MagazineDTO> mlist = ms.randomSelect();
 		List<MemberDTO> memberlist = member.randomMember();
@@ -133,17 +135,27 @@ public class mainController {
 	
 	
 	@RequestMapping("/myPage.do")
-	public ModelAndView myPage(@RequestParam("id")String id) {
-		ModelAndView mav = new ModelAndView();
-		MemberDTO mdto = ms1.chooseOne(id);
-			mav.addObject("mdto", mdto);
-			mav.setViewName("myPage");			
-			
-	
+	public String myPage() {
+
 		
-		return mav;	
+		return "myPage";	
 	}
 
+	@RequestMapping("/modify.do")
+	public ModelAndView modify(@RequestParam("id")String id) {
+		MemberDTO dto = ms1.chooseOne(id);
+		return new ModelAndView("modify","dto",dto);
 	}
+
+	@RequestMapping(value="/modifyOk.do", method=RequestMethod.POST)
+	public String modifyOk(@ModelAttribute("dto")MemberDTO dto, HttpSession hs) {
+		ms1.modifyOne(dto);
+
+		hs.setAttribute("member", dto);
+		
+		return "myPage";
+	}
+	
+}
 
 
