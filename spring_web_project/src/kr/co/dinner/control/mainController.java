@@ -140,9 +140,11 @@ ModelAndView mav = new ModelAndView();
 		ModelAndView mav = new ModelAndView();
 		MagazineDTO mdto = ms.selectOne(mno);
 		List<reviewDTO> rlist = rs.selectAll(mno); 
+		int count = rs.countAll(mno);
 		
 		mav.addObject("mgdto",mdto);
 		mav.addObject("rlist", rlist);
+		mav.addObject("count", count);
 		mav.setViewName("magazineDetail");
 		return mav;
 

@@ -22,4 +22,9 @@ public class ReviewServiceImple implements ReviewService{
 		dao.insertOne(dto);
 	}
 
+	@Override
+	public int countAll(int rwno) {
+		return dao.countAll(rwno);
+	}
+
 }

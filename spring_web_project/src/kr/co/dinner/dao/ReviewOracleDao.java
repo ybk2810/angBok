@@ -23,4 +23,9 @@ public class ReviewOracleDao implements ReviewDao {
 		ss.insert("kr.co.dinner.review.insertOne", dto);
 	}
 
+	@Override
+	public int countAll(int rwno) {
+		return ss.selectOne("kr.co.dinner.review.countAll", rwno);
+	}
+
 }
