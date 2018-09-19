@@ -174,12 +174,9 @@ function Search() {
 		%>
       <button class="button" onclick="write()"><span>글쓰기</span></button>
       	<%
-			}else{
-      	%>
-      <button class="button" onclick=" Start()"><span>LOGIN</span></button>
-      <%
 			}
-      %>
+      	%>
+      <!-- <button class="button" onclick=" Start()"><span>LOGIN</span></button> -->
  
 		<button class="btn success" onclick=" Search()">검색</button>
    </div>

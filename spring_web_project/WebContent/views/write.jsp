@@ -20,7 +20,10 @@
   <textarea name="ir1" id="ir1" style="width:700px; height:400px"><p>에디터에 기본으로 삽입할 글(수정 모드)이 없다면 이 값을 지정하지 않으시면 됩니다.</p></textarea>
   <textarea id="content" name="content" style="display:none"></textarea>
 </form>
-
+<%
+	String ir1 = request.getParameter("ir1");
+	out.print(ir1);
+%>
 	<script>
 //form변수로 지정하여 이미지업로드 페이지에서 호출하여 사용됨. form.filepath.value
 var form = document.w_form;   // 사용할 폼 이름으로 수정.
