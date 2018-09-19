@@ -118,9 +118,14 @@ ModelAndView mav = new ModelAndView();
 	@RequestMapping("/category.do")
 	public ModelAndView categoryList(@RequestParam("category")String category) {
 		ModelAndView mav = new ModelAndView();
-		List<WritingDTO> clist = ws.readAll(category);
-		System.out.println(clist);
-		mav.addObject("clist", clist);
+		if(category.equals("전체")) {
+			List<WritingDTO> clist = ws.selectAll();
+			mav.addObject("clist", clist);
+		}else {			
+			List<WritingDTO> clist = ws.readAll(category);
+			System.out.println(clist);
+			mav.addObject("clist", clist);
+		}
 		mav.setViewName("plates");
 		return mav;
 	}
