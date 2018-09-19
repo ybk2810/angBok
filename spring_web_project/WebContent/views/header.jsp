@@ -152,7 +152,7 @@ function Search() {
 		<%
 			}else{
 		%>
-			<a href="#"><div><img src="image/a.jpg" alt="a" id="profile" /></div></a>
+			<a href="#"><div><img src="image/DINNER.png" alt="a" id="profile" /></div></a>
 			<a href="login1.do">시작하기</a>
 		<%
 			}
