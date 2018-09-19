@@ -70,8 +70,13 @@ public class mainController {
 	}
 	
 	@RequestMapping("/searchForm.do")
-	public String search() {
-		return "search";
+	public ModelAndView search() {
+		
+		ModelAndView mav = new ModelAndView();
+		List<MemberDTO> memberlist = member.randomMember();
+		mav.addObject("memberlist", memberlist);
+		mav.setViewName("search");
+		return mav;
 	}
 	
 	@RequestMapping("/search.do")

@@ -27,7 +27,7 @@
 		SELECT * FROM (
 		SELECT * FROM member
 		ORDER BY dbms_random.value)
-		WHERE rownum &lt;= 4
+		WHERE rownum &lt;= 6
 	</select>
 
 	<insert id="insertOne" parameterType="mdto">
