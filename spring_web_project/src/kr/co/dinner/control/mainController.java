@@ -137,8 +137,6 @@ ModelAndView mav = new ModelAndView();
 
 	}
 	
-	
-	
 	@RequestMapping("/myPage.do")
 	public String myPage() {
 
@@ -159,6 +157,13 @@ ModelAndView mav = new ModelAndView();
 		hs.setAttribute("member", dto);
 		
 		return "myPage";
+	}
+	
+	@RequestMapping("/reviewOk.do")
+	public ModelAndView reviewOk() {
+		ModelAndView mav = new ModelAndView();
+		
+		return mav;
 	}
 	
 }

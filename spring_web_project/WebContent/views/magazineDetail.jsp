@@ -77,14 +77,18 @@
 		</div>
 		<div class="reply">
 			<span>댓글</span>
-			<table>
-				<tr>
-					<td>
-						<input type="text" name="rcontents" id="" />
-						<a href=""><p>등록</p></a>
-					</td>
-				</tr>
-			</table>
+			<form action="reviewOk.do">
+				<table>
+					<tr>
+						<td>댓글작성</td>
+						<td>
+							<textarea name="rcontents" id="" cols="30" rows="10"></textarea>
+							<input type="hidden" name="rno" />
+							<input type="submit" value="등록" />
+						</td>
+					</tr>
+				</table>
+			</form>
 		</div>
 	</div>
 
