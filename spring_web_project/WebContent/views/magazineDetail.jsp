@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -60,6 +62,10 @@
 <body>
 	<div class="header">
 		<%@ include file="header.jsp" %>
+		<%
+			Object obj1 = session.getAttribute("member");
+	  		MemberDTO member1 = (MemberDTO) obj1;
+		%>
 	</div>
 
 	<div class="container">
@@ -77,13 +83,25 @@
 		</div>
 		<div class="reply">
 			<span>댓글</span>
-			<form action="reviewOk.do">
+			
+			<table>
+				<c:forEach var="rdto" items="${rlist}">
+					<tr>
+						<td>${rdto.rname }</td>
+						<td>${rdto.rcontents }</td>
+					</tr>
+				</c:forEach>
+			</table>
+			
+			<form action="reviewOk.do" method="post">
 				<table>
 					<tr>
 						<td>댓글작성</td>
 						<td>
-							<textarea name="rcontents" id="" cols="30" rows="10"></textarea>
-							<input type="hidden" name="rno" />
+							<textarea name="rcontents" id="" cols="80" rows="10"></textarea>
+							<input type="hidden" name="rwno" value="${mgdto.mno }" />
+							<input type="hidden" name="rimg" value="<%= member1.getImg() %>" />
+							<input type="hidden" name="rname" value="<%= member1.getName() %>" />
 							<input type="submit" value="등록" />
 						</td>
 					</tr>
