@@ -147,6 +147,7 @@ text-align: center;
 <body>
 	<%@ include file="header.jsp" %>
 	
+	
 	<div id="container">
 	<div id="">
 		<h2>
@@ -334,6 +335,7 @@ text-align: center;
 		
 		</table>
 	</div>
+	
 	<button class="button" onclick=" clickme()" id="write">글쓰기</button>
 	
 	<br>

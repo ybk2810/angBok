@@ -17,7 +17,7 @@ public class WritingOracleDao implements WritingDao{
 	}
 	@Override
 	public void insertOne(WritingDTO dto) {
-		// TODO Auto-generated method stub
+		ss.insert("kr.co.dinner.writing.insertOne",dto);
 		
 	}
 	@Override
