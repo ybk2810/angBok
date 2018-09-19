@@ -317,7 +317,7 @@ text-align: center;
 	<br><br><br><br><br>
 	<p style="text-align: center; font-size: 32px; font-weight:bold;   background: -webkit-linear-gradient(30deg, #2f5d30, #e9ff2d);
     color: transparent;
-    -webkit-background-clip: text; "> ~T O D A Y &nbsp&nbsp&nbsp&nbsp M A G A Z I N E~</p>
+    -webkit-background-clip: text; "> ~T O D A Y &nbsp;&nbsp;&nbs;&nbsp; M A G A Z I N E~</p>
 	<div id="megazine">
 		
 		<table>

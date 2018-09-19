@@ -14,4 +14,6 @@ public interface MDao {
 	public MemberDTO chooseOne(String id);
 
 	public List<MemberDTO> randomMember();
+
+	public void updateOne(MemberDTO dto);
 }

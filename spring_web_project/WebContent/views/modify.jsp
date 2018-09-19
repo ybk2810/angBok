@@ -40,32 +40,33 @@
 </head>
 <body>
 <%@ include file="header.jsp" %>
-
+<form action="modifyOk.do" method="post">
 <% if(id != null){ %>
 <div class="nickName">
 
-	 <div><%= member.getId() %></div>
-	 <span class="introduce"><%= member.getIntro() %><input type="hidden" value="nickName님의 디너입니다." name="introduce" /></span>
-	<span class="pic"><input type="image" src="<%= member.getImg() %>" alt="" class="myPic" name="myPic" /></span>
+	 <div><input type="text" name="id" value=<%= member.getId() %>></div>
+	 <span class="introduce"><textarea name="intro" id="" cols="30" rows="10"><%= member.getIntro() %></textarea></span>
+	<span class="pic"> <input type="image" src="<%= member.getImg() %>" alt="" class="myPic" name="myPic" /> 
+	</span>
 	
 	<div style="margin-left: 63%; margin-right: 11%; margin-top: 1%;"><input type="button" value="프로필 편집" /></div>
 	
 </div>
 <div class="myUrl">
-	<div><%= member.getAddrs1() %> <br /> <%= member.getAddrs2() %></div>
-	<span>www.dinner.com/<%= member.getName() %><input type="hidden" value="www.dinner.com/@nickName" name="myUrl" /></span>
+	<div><input type="text" name="addrs1" value=<%= member.getAddrs1() %>/> <br /> <input type="text" name="addrs2" value=<%= member.getAddrs2() %>/></div>
+	<span>www.dinner.com/<input type="text" name="name" value=<%= member.getName() %> /></span>
 	<span><input type="button" value="닉네임변경" /></span>
 
 </div>
 <div class="changeEmail">
-	<div><%= member.getEmail() %></div>
+	<div><input type="text" name="email" value=<%= member.getEmail() %>/></div>
 	<span><input type="button" value=" E-mail주소 수정" /></span>
 </div>
 <% } %>
 <div class="memberWithdraw">
-	<span><a href="">탈퇴하기</a></span>
-	<span><a href="modify.do?id=${id }">수정하기</a></span>
+	<span><input type="submit" value="수정완료" /></span>
 </div> 
+</form>
 <%@ include file="footer.jsp" %>
 </body>
 </html>
