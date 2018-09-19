@@ -77,7 +77,7 @@ font-size: 15px;
 <a href="https://www.google.com/" class="fa fa-google"></a>
 <a href="http://skype.daesung.com/main.asp" class="fa fa-skype"></a>
 
-<p> 이용약관 | 개인정보 처리방침 | 운영정책 | 고객센터 | 출간제안 |</p>
+<a href="/spring_web_project/views/rule.jsp"><p style="color: white;"> 서비스 약관 | 개인정보 보호정책 | 운영정책 | 고객센터 | 출간제안 | 광고 가이드 라인 | 저작권 </p></a>
 <p id="company">@corp.AngBok.</p>
 
 
