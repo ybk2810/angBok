@@ -50,4 +50,11 @@ public class MemberServiceImple implements memberService{
 		return mdao.randomMember();
 	}
 
+
+
+	@Override
+	public void modifyOne(MemberDTO dto) {
+		mdao.updateOne(dto);
+	}
+
 }

@@ -15,6 +15,7 @@
 		<property name="ms" ref="ms"></property>
 		<property name="ws" ref="ws"></property>
 		<property name="member" ref="memberservice"></property>
+		<property name="ms1" ref="memberservice"></property>
 	</bean>
 	
 	<bean id="ms" class="kr.co.dinner.service.MagazineServiceImple">
