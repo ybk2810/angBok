@@ -22,7 +22,7 @@
 	
 	<select id="searchList" parameterType="String" resultType="mgdto">
 		SELECT * FROM magazine
-		WHERE mtitle LIKE '% #{mtitle} %'
+		WHERE mtitle LIKE '%'|| #{mtitle} || '%'
 	</select>
 	
 	<select id="count" resultType="int">
