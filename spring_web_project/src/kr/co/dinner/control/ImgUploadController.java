@@ -50,7 +50,7 @@ public class ImgUploadController {
 		try {
 			mfile.transferTo(f);//파일 저장
 			
-			fileCopy(filePath+"/"+f.getName(), "C:\\Dinner\\spring_web_project\\WebContent\\image/"+f.getName());
+			fileCopy(filePath+"/"+f.getName(), "..\\WebContent\\image/"+f.getName());
 		} catch (IllegalStateException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
