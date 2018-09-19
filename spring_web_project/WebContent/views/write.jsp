@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<form name="w_form" action="sample.asp" method="post">
+<form name="w_form" action="writingUpload.do" method="post">
 <input type="hidden" name="filepath" value="/file"> <!-- 이미지업로드 경로 변수처리 혹은 직접 코딩.. -->
   <p>
     <input type="button" onclick="pasteHTMLDemo()" value="본문에 HTML 삽입"></input>
