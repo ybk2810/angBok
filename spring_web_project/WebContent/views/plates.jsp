@@ -11,7 +11,26 @@
 
 	<%@ include file="header.jsp" %>
 
-	<div>카테고리제목</div>
+	<div id="container">
+	<div id="">
+		<h2>
+			글이 작품이 되는 공간, 디너
+		</h2>
+		<span style="color:#607D8B; ">
+			디너에 담긴 아름다운 작품을 감상해 보세요.<br/>
+		</span>
+		<span style="color:#97b2bf; ">
+			그리고 다시 꺼내 보세요.<br/>
+		</span>
+		<span style="color:#cfd6da;; ">
+			서랍 속 간직하고 있는 글과 감성을.<br/>
+		</span>
+		
+	</div>
+	<br /><br /><br /><br /><br /><br /><br />
+	
+	<p style="text-align: center; font-size: 20px; ">-CATEGORY-</p>
+	
 	<div>
 	<a href="category.do?category=과학"><input type="button" value="과학" /></a>
 		<a href="category.do?category=음식"><input type="button" value="음식" /></a>
