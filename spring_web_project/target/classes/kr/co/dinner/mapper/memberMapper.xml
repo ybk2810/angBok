@@ -34,12 +34,14 @@
 		insert into member
 		values (SEQ_MEMBER_NO.NEXTVAL,#{name},#{id},#{pw},#{repw},#{addrs1},#{addrs2},#{email},#{img},#{intro},0,0,#{regisno1},#{regisno2})
 	</insert>
+	
 	<update id="modifyOne" parameterType="mdto">
 		update member
-		set name=#{name}, id=#{id}, intro=#{intro}, img=#{img}, addrs1=#{addrs1},
+		set name=#{name}, id=#{id}, intro=#{intro}, addrs1=#{addrs1},
 		addrs2=#{addrs2}, email=#{email}
 		where id = #{id}
 	</update>
+	
 	<delete id="deleteOne" parameterType="mdto">
 		delete member
 		where id = #{id}
