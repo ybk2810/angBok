@@ -36,7 +36,7 @@
 		margin: auto;
 	}
 	
-	#writeimg{
+	#timg{
 		width: 200px;
 		height: 150px;
 	}
@@ -96,12 +96,15 @@
 		<table>
 			<tr>
 				<td id="write">
-					<a href="writeDetail.do?wno=${wdto.wno }"><h3>${wdto.title}</h3></a>
-					${wdto.contents}
+					<a href="writeDetail.do?wno=${wdto.wno }">
+						<h3>${wdto.title}
+						${wdto.timg}
+						</h3>
+					</a>
 				</td>
-				<%-- <td>
-					<img src="image/${wdto.wno}.jpg" alt=""  id="writeimg"/>
-				</td> --%>
+				<td>
+					<img src="${wdto.timg}" alt=""  id="timg"/>
+				</td>
 			</tr>
 		</table>
 	</c:forEach>
@@ -110,12 +113,15 @@
 		<table>
 			<tr>
 				<td id="write">
-					<a href="writeDetail.do?wno=${wdto.wno }"><h3>${wdto.title}</h3></a>
-					${wdto.contents}
+					<a href="writeDetail.do?wno=${wdto.wno }">
+						<h3>${wdto.title}
+						${wdto.timg}
+						</h3>
+					</a>
 				</td>
-				<%-- <td>
-					<img src="image/${wdto.wno}.jpg" alt=""  id="writeimg"/>
-				</td> --%>
+				<td>
+					<img src="${wdto.timg}" alt=""  id="timg"/>
+				</td>
 			</tr>
 		</table>
 	</c:forEach>
