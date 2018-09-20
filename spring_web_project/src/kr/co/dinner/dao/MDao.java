@@ -16,6 +16,8 @@ public interface MDao {
 	public List<MemberDTO> randomMember();
 
 	public void updateOne(MemberDTO dto);
+	
+	public void imgModify(MemberDTO dto);
 
 	public void removeOne(MemberDTO dto);
 }

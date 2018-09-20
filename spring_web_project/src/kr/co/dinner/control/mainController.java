@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestAttribute;
@@ -185,6 +184,7 @@ public class mainController {
 		ms1.modifyOne(dto);
 
 		session.setAttribute("member", dto);
+
 		
 		return "myPage";
 	}
@@ -192,7 +192,7 @@ public class mainController {
 	@RequestMapping("/reviewOk.do")
 	public String reviewOk(@ModelAttribute("dto")reviewDTO dto) {
 		rs.insertOne(dto);
-		
+
 		return "redirect:/magazineDetail.do?mno="+dto.getRwno();
 	}
 	

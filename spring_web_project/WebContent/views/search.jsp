@@ -66,8 +66,8 @@ form.example::after {
   <input type="text" placeholder="Please enter in English." name="mtitle" >
   <button type="submit"><i class="fa fa-search"></i></button>
   
-  </div>
 </form>
+  </div>
 		<table >
 			<tr >
 	

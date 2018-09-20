@@ -1,12 +1,7 @@
 package kr.co.dinner.dao;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.List;
 
-import javax.activation.DataSource;
 
 import org.apache.ibatis.session.SqlSession;
 
@@ -57,8 +52,13 @@ public class MemberDAO implements MDao {
 	}
 
 	@Override
+	public void imgModify(MemberDTO dto) {
+		ss.update("kr.co.dinner.member.imgModify", dto);
+	}
+
+	@Override
 	public void removeOne(MemberDTO dto) {
-		ss.delete("kr.co.dinner.member.deleteOne", dto);
+	ss.delete("kr.co.dinner.member.deleteOne", dto);
 	}
 
 }
