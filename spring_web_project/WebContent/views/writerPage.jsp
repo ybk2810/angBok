@@ -2,6 +2,7 @@
 <%@page import="kr.co.dinner.dto.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,30 +41,25 @@
 </head>
 <body>
 <%@ include file="header.jsp" %>
-<form action="modifyOk.do" method="post">
-<% if(id != null){ 
-%>
+
 <div class="nickName">
-	 <div><input type="text" name="id" value=<%= member.getId() %>></div>
-	 <span class="introduce"><textarea name="intro" id="" cols="30" rows="10"><%= member.getIntro() %></textarea></span>
+
+	 <div>${mdto.id }</div>
+	 <span class="introduce">${mdto.intro }<input type="hidden" value="nickName님의 디너입니다." name="introduce" /></span>
+	<span class="pic"><input type="image" src="${mdto.img }" alt="" class="myPic" name="myPic" /></span>
 	
-	
+	<div style="margin-left: 58%; m argin-right: 11%; margin-top: 1%;">
+	</div>
 </div>
 <div class="myUrl">
-	<div><input type="text" name="addrs1" value=<%= member.getAddrs1() %>/> <br /> <input type="text" name="addrs2" value=<%= member.getAddrs2() %>/></div>
-	<span>www.dinner.com/<input type="text" name="name" value=<%= member.getName() %> /></span>
-	<span><input type="button" value="닉네임변경" /></span>
+	<div>${mdto.addrs1 } <br /> ${mdto.addrs2 }</div>
+	<span>www.dinner.com/${mdto.name }<input type="hidden" value="www.dinner.com/@nickName" name="myUrl" /></span>
 
 </div>
 <div class="changeEmail">
-	<div><input type="text" name="email" value=<%= member.getEmail() %>/></div>
-	<span><input type="button" value=" E-mail주소 수정" /></span>
+	<div>${mdto.email }</div>
 </div>
-<% } %>
-<div class="memberWithdraw">
-	<span><input type="submit" value="수정완료" /></span>
-</div> 
-</form>
+
 <%@ include file="footer.jsp" %>
 </body>
 </html>

@@ -54,13 +54,22 @@
 }
 
 .reply {
-	
-	border: 1px solid green;
+
 }
 
 .replyTable{
 	border-top: 1px solid #d8d8d8;
 	width: 800px;
+}
+
+#replyTitle{
+	font-size: 19px;
+}
+
+#countNum{
+	font-size: 20px;
+	color: #3f51b5;
+	font-weight: bold;
 }
 
 #writerimg{
@@ -96,6 +105,8 @@
 	margin-left: 700px;.
 }
 
+
+
 </style>
 </head>
 <body>
@@ -122,9 +133,11 @@
 		</div>
 
 		<div class="reply">
-			${count}<h2>댓글</h2>
+			<br />
+			<span id="replyTitle">댓글 </span>
+			<span id="countNum">${count}</span>
+			<br /><br />
 			<c:forEach var="rdto" items="${rlist}">
-				<br />
 				<table class="replyTable">
 					<tr>
 						<td rowspan="2">

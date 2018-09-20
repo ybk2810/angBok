@@ -66,14 +66,14 @@ form.example::after {
   <input type="text" placeholder="Please enter in English." name="mtitle" >
   <button type="submit"><i class="fa fa-search"></i></button>
   
-  </div>
 </form>
+  </div>
 		<table >
 			<tr >
 	
 				<c:forEach var="dto" items="${memberlist }">
 				<td style=" width: 220px; height: 200px; border-radius: 50%; position: relative; left: 220px; top: 100px;">
-					<img src="${dto.img }" alt="" class="memberimg" style="border-radius: 50%; position: relative; left: 30px; top: 18px; width: 150px; height: 140px;" />
+					<a href="writerPage.do?id=${dto.id}"><img src="${dto.img }" alt="" class="memberimg" style="border-radius: 50%; position: relative; left: 30px; top: 18px; width: 150px; height: 140px;" /></a>
 					<p style="text-align: center;"><strong>~${dto.name }~</strong></p><h6 style="color: gray;">${dto.intro }</h6>
 					
 				</td>

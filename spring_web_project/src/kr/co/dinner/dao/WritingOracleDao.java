@@ -48,5 +48,13 @@ public class WritingOracleDao implements WritingDao{
 	public List<WritingDTO> readAll(String category) {
 		return ss.selectList("kr.co.dinner.writing.readAll", category);
 	}
+	@Override
+	public List<WritingDTO> random(String category) {
+		return ss.selectList("kr.co.dinner.writing.random", category);
+	}
+	@Override
+	public List<WritingDTO> searchList(String title) {
+		return ss.selectList("kr.co.dinner.writing.searchList", title);
+	}
 
 }

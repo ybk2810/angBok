@@ -14,4 +14,6 @@ public interface WritingDao {
 	public void updateOne(WritingDTO dto);
 	public void deleteOne(WritingDTO dto);
 	public void raiseHits(int bno);
+	public List<WritingDTO> random(String category);
+	public List<WritingDTO> searchList(String title);
 }

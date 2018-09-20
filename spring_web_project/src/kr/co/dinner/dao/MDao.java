@@ -16,7 +16,14 @@ public interface MDao {
 	public List<MemberDTO> randomMember();
 
 	public void updateOne(MemberDTO dto);
+	
+	public void imgModify(MemberDTO dto);
 
 	public void removeOne(MemberDTO dto);
+<<<<<<< HEAD
 
+=======
+	
+	public MemberDTO selectIdOne(String id);
+>>>>>>> branch 'master' of https://github.com/ybk2810/angBok.git
 }

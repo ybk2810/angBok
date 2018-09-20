@@ -13,6 +13,7 @@
 	
 	<bean id="wup" class="kr.co.dinner.control.WritingUploadController">
 		<property name="ws" ref="ws"></property>
+		<property name="rs" ref="rs"></property>
 	</bean>
 		
 	<bean id="main" class="kr.co.dinner.control.mainController">
@@ -59,6 +60,7 @@
 	
 	<bean id="img"  class="kr.co.dinner.control.ImgUploadController">
 		<property name="fileValidator" ref="FileValidator"></property>
+		<property name="ms" ref="memberservice"></property>
 	</bean>	
 	
 	<bean id="mdao" class="kr.co.dinner.dao.MemberDAO">
