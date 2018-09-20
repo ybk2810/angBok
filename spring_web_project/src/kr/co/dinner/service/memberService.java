@@ -14,4 +14,7 @@ public interface memberService {
 	public void modifyOne(MemberDTO dto);
 	public void imgModify(MemberDTO dto);
 	public void deleteOne(MemberDTO dto);
+
+	public MemberDTO selectIdOne(String id);
+
 }

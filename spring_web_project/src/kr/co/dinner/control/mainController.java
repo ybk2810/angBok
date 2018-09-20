@@ -55,13 +55,29 @@ public class mainController {
 
 	@RequestMapping("/main.do")
 	public ModelAndView main(HttpSession hs) {
-ModelAndView mav = new ModelAndView();
+		ModelAndView mav = new ModelAndView();
 		
 		List<MagazineDTO> mlist = ms.randomSelect();
 		List<MemberDTO> memberlist = member.randomMember();
 		
 		mav.addObject("mlist", mlist);
 		mav.addObject("memberlist", memberlist);
+		mav.setViewName("main");
+		
+		return mav;
+	}
+	
+	@RequestMapping("/mainCategory.do")
+	public ModelAndView mainCategory(@RequestParam("category")String category, HttpSession hs) {
+		ModelAndView mav = new ModelAndView();
+		
+		List<MagazineDTO> mlist = ms.randomSelect();
+		List<MemberDTO> memberlist = member.randomMember();
+		List<WritingDTO> wlist = ws.random(category);
+		
+		mav.addObject("mlist", mlist);
+		mav.addObject("memberlist", memberlist);
+		mav.addObject("wlist", wlist);
 		mav.setViewName("main");
 		
 		return mav;
@@ -93,8 +109,10 @@ ModelAndView mav = new ModelAndView();
 	public ModelAndView searchForm(@RequestParam("mtitle")String mtitle) {
 		ModelAndView mav = new ModelAndView();
 		List<MagazineDTO> mglist = ms.searchList(mtitle);
+		List<WritingDTO> wglist = ws.searchList(mtitle);
 		
 		mav.addObject("mglist", mglist);
+		mav.addObject("wglist", wglist);
 		
 		mav.setViewName("allSearch");
 		
@@ -118,7 +136,7 @@ ModelAndView mav = new ModelAndView();
 	@RequestMapping("/category.do")
 	public ModelAndView categoryList(@RequestParam("category")String category) {
 		ModelAndView mav = new ModelAndView();
-		if(category.equals("전체")) {
+		if(category.equals("�쟾泥�")) {
 			List<WritingDTO> clist = ws.selectAll();
 			mav.addObject("clist", clist);
 		}else {			
@@ -179,6 +197,13 @@ ModelAndView mav = new ModelAndView();
 		return "redirect:/magazineDetail.do?mno="+dto.getRwno();
 	}
 	
+	@RequestMapping("/reviewOk2.do")
+	public String reviewOk2(@ModelAttribute("dto")reviewDTO dto) {
+		rs.insertOne(dto);
+
+		return "redirect:/writeDetail.do?wno="+dto.getRwno();
+	}
+	
 	@RequestMapping("/delete.do")
 	public String delete(@ModelAttribute("dto")MemberDTO dto, HttpSession session) {
 		member.deleteOne(dto);
@@ -188,6 +213,16 @@ ModelAndView mav = new ModelAndView();
 		return "main";
 	}
 	
+	@RequestMapping("/writerPage.do")
+	public ModelAndView writerPage(@RequestParam("id")String id) {
+		ModelAndView mav = new ModelAndView();
+		MemberDTO dto = member.selectIdOne(id);
+		
+		mav.addObject("mdto", dto);
+		mav.setViewName("writerPage");
+		
+		return mav;
+	}
 	
 }
 

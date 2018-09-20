@@ -20,7 +20,19 @@
   	
   	<insert id="insertOne" parameterType="wdto">
 		INSERT INTO writing
-		VALUES(SEQ_WRITING_WNO.NEXTVAL,#{title},#{wname},sysdate,#{timg}, 0,#{category},0,#{contents})
+		VALUES((SEQ_WRITING_WNO.NEXTVAL)+500,#{title},#{wname},sysdate,#{timg}, 0,#{category},0,#{contents})
 	</insert>
+	
+	<select id="random" resultType="wdto" parameterType="String">
+		SELECT * FROM (
+		SELECT * FROM writing
+		ORDER BY dbms_random.value)
+		WHERE rownum &lt;= 4 AND category = #{category}
+	</select>
+	
+	<select id="searchList" parameterType="String" resultType="wdto">
+		SELECT * FROM writing
+		WHERE UPPER(title) LIKE '%'|| UPPER(#{title}) || '%'
+	</select>
   
   </mapper>

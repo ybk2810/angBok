@@ -165,6 +165,8 @@ function Search() {
       <a href="main.do">Home</a> 
       <a href="#">최신글</a>
       <a href="allmagazine.do">전체 매거진 </a>
+      <a href="follow.do">구독자 확인</a>
+      
    </div>
    <div id="header">
       <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; <img src="image/DINNER.png" alt="" id="logoimg" /></span>
