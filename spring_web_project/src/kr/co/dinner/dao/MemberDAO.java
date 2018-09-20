@@ -61,4 +61,9 @@ public class MemberDAO implements MDao {
 	ss.delete("kr.co.dinner.member.deleteOne", dto);
 	}
 
+	@Override
+	public MemberDTO selectIdOne(String id) {
+		return ss.selectOne("kr.co.dinner.member.selectIdOne", id);
+	}
+
 }

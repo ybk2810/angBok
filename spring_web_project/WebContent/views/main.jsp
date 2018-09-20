@@ -352,7 +352,7 @@
 			<tr >
 				<c:forEach var="dto" items="${memberlist }">
 				<td style=" width: 200px; height: 130px; position: relative; left: 260px;     border-radius: 87px;">
-					<img src="${dto.img }" alt="" class="memberimg" style="border-radius: 50%; position: relative; left: 27.5px; top: 18px;" />
+					<a href="writerPage.do?id=${dto.id}"><img src="${dto.img }" alt="" class="memberimg" style="border-radius: 50%; position: relative; left: 27.5px; top: 18px;" /></a>
 					<p style="text-align: center;"><strong>~${dto.name }~</strong> </p><h6 style="color: gray;">${dto.intro }</h6>
 					
 				</td>
