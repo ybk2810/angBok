@@ -99,10 +99,10 @@
 	#Oslo6 {background-color:#84ff88;} */
 
 	#mtd{
-		border:4px solid #cceca7;
+		/* border:4px solid #cceca7; */
 		width: 25%;
 		height: 200px;
-		border-radius: 20px;
+		/* border-radius: 20px; */
 	}
 	#mimg{
 		width: 100%;

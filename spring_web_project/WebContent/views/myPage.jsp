@@ -3,6 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -70,6 +71,29 @@
 	<span><input type="button" value=" E-mail주소 수정" /></span>
 </div>
 <% } %>
+<% 
+	
+%>
+<div>
+	<table>
+		<tr>
+			<th>제목</th>
+			<th>카테고리</th>
+			<th>작성일자</th>
+		</tr>
+	<c:choose>
+	<c:when test="${mdto.name }=${wdto.wname }">
+		<tr>
+			<td>${wdto.title }</td>
+			<td>${wdto.category }</td>
+			<td>${wdto.reg }</td>
+		</tr>
+	</c:when>
+	</c:choose>
+	</table>
+</div>
+
+
 <div class="memberWithdraw">
 	<span><a href="delete.do?id=${id }">탈퇴하기</a></span>
 	<span><a href="modify.do?id=${id }">수정하기</a></span>

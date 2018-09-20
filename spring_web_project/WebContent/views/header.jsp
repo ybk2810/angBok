@@ -95,6 +95,7 @@ img{
 
 	position: absolute;
 	left: 800px;
+	height: 70px;
 }
 .btn {
     border: none;
@@ -163,9 +164,8 @@ function Search() {
       <a href="#">--------------</a>
       <a href="myPage.do?id=${mdto.id }">My Dinner</a> 
       <a href="main.do">Home</a> 
-      <a href="#">최신글</a>
+      <a href="plates.do">최신글</a>
       <a href="allmagazine.do">전체 매거진 </a>
-      <a href="follow.do">구독자 확인</a>
       
    </div>
    <div id="header">

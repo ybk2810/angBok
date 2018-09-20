@@ -22,6 +22,7 @@ public class LoginController {
 	
 	
 	
+	
 
 
 	public void setMg(MagazineService mg) {

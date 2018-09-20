@@ -170,8 +170,7 @@ public class mainController {
 	
 	@RequestMapping("/myPage.do")
 	public String myPage() {
-
-		
+	
 		return "myPage";	
 	}
 
