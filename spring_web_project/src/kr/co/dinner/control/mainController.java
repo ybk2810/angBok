@@ -212,6 +212,16 @@ public class mainController {
 		return "main";
 	}
 	
+	@RequestMapping("/writerPage.do")
+	public ModelAndView writerPage(@RequestParam("id")String id) {
+		ModelAndView mav = new ModelAndView();
+		MemberDTO dto = member.selectIdOne(id);
+		
+		mav.addObject("mdto", dto);
+		mav.setViewName("writerPage");
+		
+		return mav;
+	}
 	
 }
 
