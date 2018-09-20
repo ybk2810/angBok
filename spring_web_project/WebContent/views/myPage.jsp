@@ -2,6 +2,7 @@
 <%@page import="kr.co.dinner.dto.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -48,8 +49,16 @@
 	 <span class="introduce"><%= member.getIntro() %><input type="hidden" value="nickName님의 디너입니다." name="introduce" /></span>
 	<span class="pic"><input type="image" src="<%= member.getImg() %>" alt="" class="myPic" name="myPic" /></span>
 	
-	<div style="margin-left: 63%; margin-right: 11%; margin-top: 1%;"><input type="button" value="프로필 편집" /></div>
-	
+	<div style="margin-left: 58%; m argin-right: 11%; margin-top: 1%;">
+	<form:form method="post" action="uploadModify.do"
+				modelAttribute="uploadFile" enctype="multipart/form-data">
+		사진고르기<input type="file" name="file" />
+		<form:errors path="file"></form:errors>
+		<input type="submit" value="변경" id="img" />
+		<%-- <input type="hidden" name="img" value="${filePath}" /> --%>
+		<input type="hidden" name="id" value="<%= member.getId() %>" />
+	</form:form>
+	</div>
 </div>
 <div class="myUrl">
 	<div><%= member.getAddrs1() %> <br /> <%= member.getAddrs2() %></div>

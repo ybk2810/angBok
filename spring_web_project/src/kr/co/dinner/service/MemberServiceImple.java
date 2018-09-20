@@ -57,4 +57,11 @@ public class MemberServiceImple implements memberService{
 		mdao.updateOne(dto);
 	}
 
+
+
+	@Override
+	public void imgModify(MemberDTO dto) {
+		mdao.imgModify(dto);
+	}
+
 }

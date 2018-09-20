@@ -12,4 +12,5 @@ public interface memberService {
 	public MemberDTO chooseOne(String id);
 	public List<MemberDTO> randomMember();
 	public void modifyOne(MemberDTO dto);
+	public void imgModify(MemberDTO dto);
 }

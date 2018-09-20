@@ -35,7 +35,7 @@
 		location.href="plates.do";
 	}
 	function clickme() {
-		location.href="write.do"
+		location.href="write.do" 
 	}
 </script>
 <style type="text/css">
@@ -323,6 +323,7 @@
 					<div>
 					<a href="magazineDetail.do?mno=${mdto.mno }">
 						<img src="magazineImg/${mdto.mno }.jpg" alt="" class="magazineImg" id="mimg"/>
+						</a>
 						<p id="mtitle">${mdto.mtitle }</p>
 					</div>
 					</td>
