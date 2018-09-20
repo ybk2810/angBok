@@ -140,6 +140,46 @@ public class ImgUploadController {
 		  }
 		 }
 	
-	
+	 @RequestMapping(value="/upload2.do", method=RequestMethod.POST)
+		public  ModelAndView uploadImg2(@ModelAttribute("uploadFile")UploadFile file,HttpServletRequest req,BindingResult result ){
+			MultipartFile mfile = file.getFile();
+			fileValidator.validate(file, result);
+			
+			if (result.hasErrors()) {
+			
+				return new ModelAndView("registerForm");
+			}
+			HttpSession hs = req.getSession();
+			ServletContext application  = hs.getServletContext();
+			String filePath =application.getRealPath("/image");
+			
+			String filename =mfile.getOriginalFilename();
+			File f = new File(filePath+"/"+filename);
+			System.out.println(filePath);
+			
+			try {
+				mfile.transferTo(f);//파일 저장
+				
+				fileCopy(filePath+"/"+f.getName(), "..\\WebContent\\image/"+f.getName());
+			} catch (IllegalStateException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			ModelAndView mav = new ModelAndView();
+			mav.addObject("filename",f.getName());
+			mav.addObject("filePath", "image/"+f.getName());
+			mav.setViewName("write");
+			
+			System.out.println(filePath);
+			
+			
+			return mav;
+			
+			
+		}
 
 }

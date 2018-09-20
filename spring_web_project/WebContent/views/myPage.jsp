@@ -41,7 +41,6 @@
 </head>
 <body>
 <%@ include file="header.jsp" %>
-
 <% if(id != null){ %>
 <div class="nickName">
 
@@ -72,7 +71,7 @@
 </div>
 <% } %>
 <div class="memberWithdraw">
-	<span><a href="">탈퇴하기</a></span>
+	<span><a href="delete.do?id=${id }">탈퇴하기</a></span>
 	<span><a href="modify.do?id=${id }">수정하기</a></span>
 </div> 
 <%@ include file="footer.jsp" %>

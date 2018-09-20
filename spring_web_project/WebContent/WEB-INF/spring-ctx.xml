@@ -12,9 +12,9 @@
 	<mvc:annotation-driven />
 	
 	<bean id="wup" class="kr.co.dinner.control.WritingUploadController">
-		<property name="wdao" ref="wdao"></property>
+		<property name="ws" ref="ws"></property>
 	</bean>
-	
+		
 	<bean id="main" class="kr.co.dinner.control.mainController">
 		<property name="ms" ref="ms"></property>
 		<property name="ws" ref="ws"></property>

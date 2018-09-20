@@ -54,9 +54,48 @@
 }
 
 .reply {
-	height: 300px;
+	
 	border: 1px solid green;
 }
+
+.replyTable{
+	border-top: 1px solid #d8d8d8;
+	width: 800px;
+}
+
+#writerimg{
+	width: 50px;
+	height: 50px;
+	border-radius: 100px;
+	margin-top: 0px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+#reviewName{
+	width: 70px;
+}
+
+#reviewReg{
+	width: 680px;
+}
+
+.reviewForm{
+	margin: auto;
+}
+.reviewForm2{
+	margin-right: 0px;
+}
+
+#reviewTextarea{
+	width: 700px;
+	height: 100px;
+}
+
+#reviewSubmit{
+	margin-left: 700px;.
+}
+
 </style>
 </head>
 <body>
@@ -81,36 +120,53 @@
 		<div class="writing">
 			<img src="magazineImg/${mgdto.mno}.png" alt=""  id="magazineimg"/>
 		</div>
+
 		<div class="reply">
-			<span>댓글</span>
-			
-			<table>
-				<c:forEach var="rdto" items="${rlist}">
+			${count}<h2>댓글</h2>
+			<c:forEach var="rdto" items="${rlist}">
+				<br />
+				<table class="replyTable">
 					<tr>
-						<td>${rdto.rname }</td>
+						<td rowspan="2">
+							<img src="${rdto.rimg}" alt=""  id="writerimg"/>
+						</td>
+
+						<td id="reviewName">${rdto.rname }</td>
+						<td id="reviewReg">${rdto.rreg }</td>
+					</tr>
+
+					<tr>
 						<td>${rdto.rcontents }</td>
 					</tr>
-				</c:forEach>
-			</table>
+				</table>
+				<br />
+			</c:forEach>
 			
 			<form action="reviewOk.do" method="post">
-				<table>
+				<table class="reviewForm">
 					<tr>
-						<td>댓글작성</td>
 						<td>
-							<textarea name="rcontents" id="" cols="80" rows="10"></textarea>
+							<textarea name="rcontents" id="reviewTextarea" cols="80" rows="10"></textarea>
 							<input type="hidden" name="rwno" value="${mgdto.mno }" />
 							<input type="hidden" name="rimg" value="<%= member1.getImg() %>" />
 							<input type="hidden" name="rname" value="<%= member1.getName() %>" />
-							<input type="submit" value="등록" />
+						</td>
+					</tr>
+				</table>
+				<table class="reviewForm2">
+					<tr>
+						<td>						
+							<input type="submit" value="등록" id="reviewSubmit"/>
 						</td>
 					</tr>
 				</table>
 			</form>
 		</div>
+		
 	</div>
 
 	<div class="footer">
+	
 	</div>
 
 </body>

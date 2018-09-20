@@ -1,70 +1,82 @@
+<%@page import="kr.co.dinner.dto.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href="SmartEditor/css/default.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="SmartEditor/js/HuskyEZCreator.js" charset="utf-8"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.js"></script>
 </head>
 <body>
 
-<form name="w_form" action="writingUpload.do" method="post">
-<input type="hidden" name="filepath" value="/file"> <!-- 이미지업로드 경로 변수처리 혹은 직접 코딩.. -->
-  <p>
-    <input type="button" onclick="pasteHTMLDemo()" value="본문에 HTML 삽입"></input>
-    <input type="button" onclick="showHTML()" value="본문 HTML 보기"></input>
-    <input type="button" onclick="onSubmit()" value="서버에 전송"></input>
-  </p>
-  <textarea name="ir1" id="ir1" style="width:700px; height:400px"><p>에디터에 기본으로 삽입할 글(수정 모드)이 없다면 이 값을 지정하지 않으시면 됩니다.</p></textarea>
-  <textarea id="content" name="content" style="display:none"></textarea>
-</form>
+<%
+	Object obj = session.getAttribute("member");
+	MemberDTO member = (MemberDTO) obj;
+%>
 
-	<script>
-//form변수로 지정하여 이미지업로드 페이지에서 호출하여 사용됨. form.filepath.value
-var form = document.w_form;   // 사용할 폼 이름으로 수정.
- 
-//에디터호출 - <table> 안에 넣으면 안됨.
-var oEditors = [];
-nhn.husky.EZCreator.createInIFrame(oEditors, "ir1", "SmartEditor/SEditorSkin.html", "createSEditorInIFrame", null, true);
- 
-//이미지삽입 - 업로드 완료페이지에서 호출됨.
-function insertIMG(fname){
-  var filepath = form.filepath.value;
-  var sHTML = "<img src='" + filepath + "/" + fname + "' style='cursor:hand;' border='0'>";  
-    // filepath 는 변수처리 혹은 직접 코딩해도 상관없음. 
-    // imageUpload.asp 에서 insertIMG 호출시 경로를 포함하여 넣어주는 방법을 추천.
-  oEditors.getById["ir1"].exec("PASTE_HTML", [sHTML]);
-}
- 
-function pasteHTMLDemo(){
-  sHTML = "<span style='color:#FF0000'>이미지 등도 이렇게 삽입하면 됩니다.</span>";
-  oEditors.getById["ir1"].exec("PASTE_HTML", [sHTML]);
-}
- 
-function showHTML(){
-  alert(oEditors.getById["ir1"].getIR());
-}
- 
-function onSubmit(){
-  // 에디터의 내용을 에디터 생성시에 사용했던 textarea에 넣어 줍니다.
-  oEditors.getById["ir1"].exec("UPDATE_IR_FIELD", []);
- 
-  // 에디터의 내용에 대한 값 검증은 이곳에서 document.getElementById("ir1").value를 이용해서 처리하면 됩니다.
-  form.content.value = document.getElementById("ir1").value;
- 
-  if(form.content.value == ""){
-    alert("\'내용\'을 입력해 주세요");
-    return;
-  }
- 
-  var msg = "전송 하시겠습니까?"
-  if(confirm(msg)){
-    form.submit();
-  }
-  return;
-}
-</script>
+<div id="form">
+		<h4>제목 사진을 등록해주세요</h4>
+
+		<form:form method="post" action="upload2.do" modelAttribute="uploadFile" enctype="multipart/form-data">
+			<input type="file" name="file" id="" />
+
+			<form:errors path="file"></form:errors>
+
+			<input type="submit" value="등록" id="img" />
+		</form:form>
+</div>
+
+<form action="writing.do" method="get"> 
+<div>제목 : <input type="text" name="title" id="title" /></div>
+
+<SELECT name="category">
+    <OPTION value="">카테고리 선택</OPTION>
+    <OPTION value="과학">과학</OPTION>
+    <OPTION value="음식">음식</OPTION>
+    <OPTION value="스포츠">스포츠</OPTION>
+    <OPTION value="동물공감">동물공감</OPTION>
+    <OPTION value="패션뷰티">패션뷰티</OPTION>
+    <OPTION value="게임">게임</OPTION>
+    <OPTION value="연예">연예</OPTION>
+    <OPTION value="여행">여행</OPTION>
+    <OPTION value="경제">경제</OPTION>
+</SELECT>
+
+<div name="ir1" id="summernote"></div>
+    <script>
+      $('#summernote').summernote({
+        placeholder: 'Hello bootstrap 4',
+        tabsize: 2,
+        height: 500,
+        width: 1000
+      });
+            
+      function showContent() {
+          //$('.output').html($('#summernote').summernote('code'));
+          $("input[name=contents]").val($('#summernote').summernote('code'));
+
+          console.log($('#summernote').summernote('code'));
+      }
+      
+    </script>
+     
+	<input type="hidden" name="contents" >
+	<input type="hidden" name="wname" value="<%= member.getName() %>" >
+	<input type="hidden" name="timg" value="${filePath}" />
+
+    <input type="submit" value="작성"  onclick="showContent();"  />
+    <div id="summernote"></div>
+    <div class="output"></div>
+ </form> 
 </body>
 </html>

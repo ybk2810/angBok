@@ -13,4 +13,9 @@
 		SELECT * FROM review
 		WHERE rwno = #{rwno}
 	</select>
+	
+	<select id="countAll" parameterType="int" resultType="int">
+		SELECT COUNT(*) FROM review
+		WHERE rwno = #{rwno}
+	</select>
 </mapper>

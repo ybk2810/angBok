@@ -8,4 +8,6 @@ import kr.co.dinner.dto.WritingDTO;
 public interface WritingSerivce {
 	public List<WritingDTO> selectAll();
 	public List<WritingDTO> readAll(String category);
+	public void insertOne(WritingDTO dto);
+	public WritingDTO selectOne(int bno);
 }

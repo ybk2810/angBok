@@ -24,12 +24,14 @@ public class RegisterController {
 			@RequestParam("addrs1") String addrs1, @RequestParam("addrs2") String addrs2,
 			@RequestParam("email") String email, @RequestParam("intro") String intro, @RequestParam("img") String img) {
 
-		
+		MemberDTO mdto = new MemberDTO();
 		if(name.equals("") || id.equals("") || pw.equals("") || repw.equals("") || regisno1.equals("")
 				|| regisno2.equals("") || addrs1.equals("") || addrs2.equals("") || email.equals("") || intro.equals("")
 				|| img.equals("")) {
 			return "registerForm2";
-		}else if(pw.equals(repw)) {
+		}
+		
+		else if(pw.equals(repw)) {
 			
 			ms2.add(dto);
 			return "loginForm";
