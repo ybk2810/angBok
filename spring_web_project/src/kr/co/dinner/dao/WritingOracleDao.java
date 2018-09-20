@@ -18,7 +18,6 @@ public class WritingOracleDao implements WritingDao{
 	@Override
 	public void insertOne(WritingDTO dto) {
 		ss.insert("kr.co.dinner.writing.insertOne",dto);
-		
 	}
 	@Override
 	public int getTotalData() {
@@ -27,8 +26,8 @@ public class WritingOracleDao implements WritingDao{
 	}
 	@Override
 	public WritingDTO selectOne(int bno) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return ss.selectOne("kr.co.dinner.writing.selectOne", bno);
 	}
 	@Override
 	public void updateOne(WritingDTO dto) {
