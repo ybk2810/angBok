@@ -57,4 +57,11 @@ public class MemberServiceImple implements memberService{
 		mdao.updateOne(dto);
 	}
 
+
+
+	@Override
+	public void deleteOne(MemberDTO dto) {
+		mdao.removeOne(dto);
+	}
+
 }

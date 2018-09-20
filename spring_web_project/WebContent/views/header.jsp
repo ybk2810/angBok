@@ -148,7 +148,7 @@ function Search() {
 		<%
 			if(id != null){
 		%>
-			<a href="#"><div><img src="<%=member.getImg() %>" alt="a" id="profile" /></div></a>
+			<a href="#"><img src="<%=member.getImg() %>" alt="a" id="profile" /></a>
 			<a href="#"><%=member.getName() %></a>
 			<a href="write.do">글쓰기</a>
 		<%

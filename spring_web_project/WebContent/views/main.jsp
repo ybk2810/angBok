@@ -146,9 +146,9 @@
 <body>
 	<%@ include file="header.jsp" %>
 	
-	<%
+	<%-- <%
 		String memberid = (String)session.getAttribute("id");
-	%>
+	%> --%>
 	
 	<div id="container">
 		<div id="">
@@ -332,7 +332,7 @@
 	</div>
 	
 	<%
-		if(memberid != null){
+		if(id != null){
 	%>
 		<button class="button" onclick=" clickme()" id="write">글쓰기</button>
 	<%
