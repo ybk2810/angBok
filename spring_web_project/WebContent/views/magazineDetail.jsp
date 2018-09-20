@@ -122,7 +122,7 @@
 		</div>
 
 		<div class="reply">
-			${count}<h2>댓글</h2>
+			<span>${count}</span> <h2>댓글</h2>
 			<c:forEach var="rdto" items="${rlist}">
 				<br />
 				<table class="replyTable">
