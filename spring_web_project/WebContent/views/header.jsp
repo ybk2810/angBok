@@ -148,13 +148,13 @@ function Search() {
 		<%
 			if(id != null){
 		%>
-			<a href="#"><div><img src="<%=member.getImg() %>" alt="a" id="profile" /></div></a>
+			<a href="#"><img src="<%=member.getImg() %>" alt="a" id="profile" /></a>
 			<a href="#"><%=member.getName() %></a>
 			<a href="write.do">글쓰기</a>
 		<%
 			}else{
 		%>
-			<a href="#"><div><img src="image/a.jpg" alt="a" id="profile" /></div></a>
+			<a href="#"><div><img src="image/DINNER.png" alt="a" id="profile" /></div></a>
 			<a href="login1.do">시작하기</a>
 		<%
 			}
@@ -172,14 +172,14 @@ function Search() {
       	<%
 			if(id != null){
 		%>
-      <button class="button" onclick="write()"><span>글쓰기</span></button>
+      		<!-- <button class="button" onclick="write()"><span>글쓰기</span></button> -->
       	<%
 			}else{
       	%>
-      <button class="button" onclick=" Start()"><span>LOGIN</span></button>
-      <%
+     		<button class="button" onclick=" Start()"><span>LOGIN</span></button>
+      	<%
 			}
-      %>
+      	%>
  
 		<button class="btn success" onclick=" Search()">검색</button>
    </div>

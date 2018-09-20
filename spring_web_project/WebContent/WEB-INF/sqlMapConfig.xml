@@ -9,6 +9,7 @@
 		<typeAlias type="kr.co.dinner.dto.MagazineDTO" alias="mgdto"/>
 		<typeAlias type="kr.co.dinner.dto.MemberDTO" alias="mdto"/>
 		<typeAlias type="kr.co.dinner.dto.WritingDTO" alias="wdto"/>
+		<typeAlias type="kr.co.dinner.dto.reviewDTO" alias="rdto"/>
 	</typeAliases>
 
 	<environments default="dev">
@@ -27,5 +28,6 @@
 		<mapper resource="kr/co/dinner/mapper/magazine.xml" />
 		<mapper resource="kr/co/dinner/mapper/memberMapper.xml"/>
 		<mapper resource="kr/co/dinner/mapper/writing.xml" />
+		<mapper resource="kr/co/dinner/mapper/review.xml" />
 	</mappers>
 </configuration>

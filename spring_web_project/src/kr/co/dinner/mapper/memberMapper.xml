@@ -27,7 +27,7 @@
 		SELECT * FROM (
 		SELECT * FROM member
 		ORDER BY dbms_random.value)
-		WHERE rownum &lt;= 4
+		WHERE rownum &lt;= 6
 	</select>
 
 	<insert id="insertOne" parameterType="mdto">
@@ -40,5 +40,8 @@
 		addrs2=#{addrs2}, email=#{email}
 		where id = #{id}
 	</update>
-	
+	<delete id="deleteOne" parameterType="mdto">
+		delete member
+		where id = #{id}
+	</delete>
 </mapper>
