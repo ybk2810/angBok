@@ -36,4 +36,9 @@ public class WritingtServiceImple implements WritingSerivce{
 	public List<WritingDTO> random(String category) {
 		return dao.random(category);
 	}
+
+	@Override
+	public List<WritingDTO> searchList(String title) {
+		return dao.searchList(title);
+	}
 }

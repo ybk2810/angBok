@@ -34,6 +34,9 @@
 <body>
 	<%@ include file="header.jsp" %>
 	
+		<h3>매거진</h3>
+		  
+		
 	<c:forEach var="mdto" items="${mglist}" >
 		<table>
 			<tr>
@@ -44,6 +47,22 @@
 				<td>
 					<a href="magazineDetail.do?mno=${mdto.mno }">
 						<img src="magazineImg/${mdto.mno}.jpg" alt=""  id="magazineimg"/>
+					</a>
+				</td>
+			</tr>
+		</table>
+	</c:forEach>
+		<h3>작가글</h3>
+	<c:forEach var="wdto" items="${wglist}" >
+		<table>
+			<tr>
+				<td id="writing">
+					<h3>${wdto.wno}. ${wdto.title}</h3>
+					${wdto.contents}
+				</td>
+				<td>
+					<a href="writeDetail.do?wno=${wdto.wno }">
+						<img src="magazineImg/${wdto.wno}.jpg" alt=""  id="magazineimg"/>
 					</a>
 				</td>
 			</tr>

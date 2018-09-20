@@ -29,5 +29,10 @@
 		ORDER BY dbms_random.value)
 		WHERE rownum &lt;= 4 AND category = #{category}
 	</select>
+	
+	<select id="searchList" parameterType="String" resultType="wdto">
+		SELECT * FROM writing
+		WHERE UPPER(title) LIKE '%'|| UPPER(#{title}) || '%'
+	</select>
   
   </mapper>

@@ -11,4 +11,5 @@ public interface WritingSerivce {
 	public void insertOne(WritingDTO dto);
 	public WritingDTO selectOne(int bno);
 	public List<WritingDTO> random(String category);
+	public List<WritingDTO> searchList(String title);
 }

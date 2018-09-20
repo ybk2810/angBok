@@ -109,8 +109,10 @@ public class mainController {
 	public ModelAndView searchForm(@RequestParam("mtitle")String mtitle) {
 		ModelAndView mav = new ModelAndView();
 		List<MagazineDTO> mglist = ms.searchList(mtitle);
+		List<WritingDTO> wglist = ws.searchList(mtitle);
 		
 		mav.addObject("mglist", mglist);
+		mav.addObject("wglist", wglist);
 		
 		mav.setViewName("allSearch");
 		
@@ -134,7 +136,7 @@ public class mainController {
 	@RequestMapping("/category.do")
 	public ModelAndView categoryList(@RequestParam("category")String category) {
 		ModelAndView mav = new ModelAndView();
-		if(category.equals("전체")) {
+		if(category.equals("�쟾泥�")) {
 			List<WritingDTO> clist = ws.selectAll();
 			mav.addObject("clist", clist);
 		}else {			
