@@ -64,4 +64,8 @@ public class MemberServiceImple implements memberService{
 		mdao.removeOne(dto);
 	}
 
+
+
+
+
 }

@@ -61,4 +61,5 @@ public class MemberDAO implements MDao {
 		ss.delete("kr.co.dinner.member.deleteOne", dto);
 	}
 
+
 }

@@ -13,4 +13,5 @@ public interface memberService {
 	public List<MemberDTO> randomMember();
 	public void modifyOne(MemberDTO dto);
 	public void deleteOne(MemberDTO dto);
+
 }
