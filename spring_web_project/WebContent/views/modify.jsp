@@ -41,15 +41,12 @@
 <body>
 <%@ include file="header.jsp" %>
 <form action="modifyOk.do" method="post">
-<% if(id != null){ %>
+<% if(id != null){ 
+%>
 <div class="nickName">
-
 	 <div><input type="text" name="id" value=<%= member.getId() %>></div>
 	 <span class="introduce"><textarea name="intro" id="" cols="30" rows="10"><%= member.getIntro() %></textarea></span>
-	<span class="pic"> <input type="image" src="<%= member.getImg() %>" alt="" class="myPic" name="img" /> 
-	</span>
 	
-	<div style="margin-left: 63%; margin-right: 11%; margin-top: 1%;"><input type="button" value="프로필 편집" /></div>
 	
 </div>
 <div class="myUrl">
