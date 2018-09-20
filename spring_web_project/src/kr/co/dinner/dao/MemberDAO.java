@@ -56,4 +56,9 @@ public class MemberDAO implements MDao {
 		ss.update("kr.co.dinner.member.modifyOne", dto);
 	}
 
+	@Override
+	public void removeOne(MemberDTO dto) {
+		ss.delete("kr.co.dinner.member.deleteOne", dto);
+	}
+
 }

@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -146,10 +147,10 @@ ModelAndView mav = new ModelAndView();
 	}
 
 	@RequestMapping(value="/modifyOk.do", method=RequestMethod.POST)
-	public String modifyOk(@ModelAttribute("dto")MemberDTO dto, HttpSession hs) {
+	public String modifyOk(@ModelAttribute("dto")MemberDTO dto, HttpSession session) {
 		ms1.modifyOne(dto);
 
-		hs.setAttribute("member", dto);
+		session.setAttribute("member", dto);
 		
 		return "myPage";
 	}
@@ -160,6 +161,16 @@ ModelAndView mav = new ModelAndView();
 		
 		return mav;
 	}
+	
+	@RequestMapping("/delete.do")
+	public String delete(@ModelAttribute("dto")MemberDTO dto, HttpSession session) {
+		member.deleteOne(dto);
+		session.removeAttribute("member");
+		session.removeAttribute("id");
+		
+		return "main";
+	}
+	
 	
 }
 
