@@ -174,15 +174,14 @@
 		<div id="London" class="tabcontent">
 			<h1>과학</h1>
 			<table>
-				<tr>
-				
-					<td><img src="image/a.jpg" alt="" class="mainImg" /></td>
-					<td><img src="image/360.jpg" alt="" class="mainImg" /></td>
-				</tr>
-				<tr>
-					<td><img src="image/360.jpg" alt="" class="mainImg" /></td>
-					<td><img src="image/a.jpg" alt="" class="mainImg" /></td>
-				</tr>
+			<tr>
+				<c:forEach var="wdto" items="${wlist }">
+					<td>
+						<img src="${wdto.timg }" alt="" class="mainImg" />
+						<p>${wdto.title }</p>
+					</td>
+				</c:forEach>
+			</tr>
 			</table>		
 		</div>
 
@@ -303,7 +302,7 @@
 			</div>
 		</div>
 
-		<button class="tablink" onclick="openCity('London', this, 'green')" id="defaultOpen"><a href="#">과학</a></button>
+		<button class="tablink" onclick="openCity('London', this, 'green')" id="defaultOpen"><a href="mainCategory.do?category=과학">과학</a></button>
 		<button class="tablink" onclick="openCity('Paris', this, 'green')">음식</button>
 		<button class="tablink" onclick="openCity('Tokyo', this, 'green')">스포츠</button>
 		<button class="tablink" onclick="openCity('Oslo', this, 'green')">동물공감</button>
