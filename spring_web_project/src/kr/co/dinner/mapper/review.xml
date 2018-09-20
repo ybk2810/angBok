@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.co.dinner.review">
+	<insert id="insertOne" parameterType="rdto">
+		INSERT INTO review
+		VALUES(SEQ_REVIEW_RNO.NEXTVAL, #{rname}, #{rcontents}, #{rimg}, sysdate, #{rwno})
+	</insert>
+	
+	<select id="selectAll" parameterType="int" resultType="rdto">
+		SELECT * FROM review
+		WHERE rwno = #{rwno}
+	</select>
+	
+	<select id="countAll" parameterType="int" resultType="int">
+		SELECT COUNT(*) FROM review
+		WHERE rwno = #{rwno}
+	</select>
+</mapper>

@@ -20,6 +20,15 @@
 		<property name="ws" ref="ws"></property>
 		<property name="member" ref="memberservice"></property>
 		<property name="ms1" ref="memberservice"></property>
+		<property name="rs" ref="rs"></property>
+	</bean>
+	
+	<bean id="rs" class="kr.co.dinner.service.ReviewServiceImple">
+		<property name="dao" ref="rdao"></property>
+	</bean>
+	
+	<bean id="rdao" class="kr.co.dinner.dao.ReviewOracleDao">
+		<property name="ss" ref="sqlSessionTemplate"></property>
 	</bean>
 	
 	<bean id="ms" class="kr.co.dinner.service.MagazineServiceImple">

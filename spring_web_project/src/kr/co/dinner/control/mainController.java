@@ -16,7 +16,9 @@ import org.springframework.web.servlet.ModelAndView;
 import kr.co.dinner.dto.MagazineDTO;
 import kr.co.dinner.dto.MemberDTO;
 import kr.co.dinner.dto.WritingDTO;
+import kr.co.dinner.dto.reviewDTO;
 import kr.co.dinner.service.MagazineService;
+import kr.co.dinner.service.ReviewService;
 import kr.co.dinner.service.WritingSerivce;
 import kr.co.dinner.service.memberService;
 
@@ -26,6 +28,12 @@ public class mainController {
 	MagazineService ms;
 	WritingSerivce ws;
 	memberService ms1;
+	ReviewService rs;
+	
+	public void setRs(ReviewService rs) {
+		this.rs = rs;
+	}
+
 	public memberService getMs1() {
 		return ms1;
 	}
@@ -111,9 +119,14 @@ ModelAndView mav = new ModelAndView();
 	@RequestMapping("/category.do")
 	public ModelAndView categoryList(@RequestParam("category")String category) {
 		ModelAndView mav = new ModelAndView();
-		List<WritingDTO> clist = ws.readAll(category);
-		System.out.println(clist);
-		mav.addObject("clist", clist);
+		if(category.equals("전체")) {
+			List<WritingDTO> clist = ws.selectAll();
+			mav.addObject("clist", clist);
+		}else {			
+			List<WritingDTO> clist = ws.readAll(category);
+			System.out.println(clist);
+			mav.addObject("clist", clist);
+		}
 		mav.setViewName("plates");
 		return mav;
 	}
@@ -127,7 +140,12 @@ ModelAndView mav = new ModelAndView();
 	public ModelAndView magazineDetail(@RequestParam("mno")int mno) {
 		ModelAndView mav = new ModelAndView();
 		MagazineDTO mdto = ms.selectOne(mno);
+		List<reviewDTO> rlist = rs.selectAll(mno); 
+		int count = rs.countAll(mno);
+		
 		mav.addObject("mgdto",mdto);
+		mav.addObject("rlist", rlist);
+		mav.addObject("count", count);
 		mav.setViewName("magazineDetail");
 		return mav;
 
@@ -156,10 +174,10 @@ ModelAndView mav = new ModelAndView();
 	}
 	
 	@RequestMapping("/reviewOk.do")
-	public ModelAndView reviewOk() {
-		ModelAndView mav = new ModelAndView();
+	public String reviewOk(@ModelAttribute("dto")reviewDTO dto) {
+		rs.insertOne(dto);
 		
-		return mav;
+		return "redirect:/magazineDetail.do?mno="+dto.getRwno();
 	}
 	
 	@RequestMapping("/delete.do")
