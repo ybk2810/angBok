@@ -59,6 +59,16 @@
 	width: 800px;
 }
 
+#replyTitle{
+	font-size: 19px;
+}
+
+#countNum{
+	font-size: 20px;
+	color: #3f51b5;
+	font-weight: bold;
+}
+
 #writerimg{
 	width: 50px;
 	height: 50px;
@@ -116,9 +126,11 @@
 			${wdto.contents }
 		</div>
 		<div class="reply">
-			<span>${count}</span> <span>댓글</span>
+			<br />
+			<span id="replyTitle">댓글 </span>
+			<span id="countNum">${count}</span>
+			<br /><br />
 			<c:forEach var="rdto" items="${rlist}">
-				<br />
 				<table class="replyTable">
 					<tr>
 						<td rowspan="2">

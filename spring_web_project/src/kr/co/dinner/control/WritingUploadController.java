@@ -57,6 +57,8 @@ public class WritingUploadController {
 		ModelAndView mav = new ModelAndView();
 		WritingDTO dto = ws.selectOne(wno);
 		List<reviewDTO> rlist = rs.selectAll(wno); 
+		int count = rs.countAll(wno);
+		mav.addObject("count", count);
 		
 		mav.addObject("wdto", dto);
 		mav.addObject("rlist", rlist);
