@@ -52,14 +52,56 @@
 }
 
 .reply {
-	height: 300px;
+	
 	border: 1px solid green;
+}
+
+.replyTable{
+	border-top: 1px solid #d8d8d8;
+	width: 800px;
+}
+
+#writerimg{
+	width: 50px;
+	height: 50px;
+	border-radius: 100px;
+	margin-top: 0px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+#reviewName{
+	width: 70px;
+}
+
+#reviewReg{
+	width: 680px;
+}
+
+.reviewForm{
+	margin: auto;
+}
+.reviewForm2{
+	margin-right: 0px;
+}
+
+#reviewTextarea{
+	width: 700px;
+	height: 100px;
+}
+
+#reviewSubmit{
+	margin-left: 700px;.
 }
 </style>
 </head>
 <body>
 	<div class="header">
 		<%@ include file="header.jsp" %>
+		<%
+			Object obj1 = session.getAttribute("member");
+	  		MemberDTO member1 = (MemberDTO) obj1;
+		%>
 	</div>
 
 	<div class="container">
@@ -77,6 +119,45 @@
 		</div>
 		<div class="reply">
 			<span>댓글</span>
+			<c:forEach var="rdto" items="${rlist}">
+				<br />
+				<table class="replyTable">
+					<tr>
+						<td rowspan="2">
+							<img src="${rdto.rimg}" alt=""  id="writerimg"/>
+						</td>
+
+						<td id="reviewName">${rdto.rname }</td>
+						<td id="reviewReg">${rdto.rreg }</td>
+					</tr>
+
+					<tr>
+						<td>${rdto.rcontents }</td>
+					</tr>
+				</table>
+				<br />
+			</c:forEach>
+			
+			<form action="reviewOk2.do" method="post">
+				<table class="reviewForm">
+					<tr>
+						<td>
+							<textarea name="rcontents" id="reviewTextarea" cols="80" rows="10"></textarea>
+							<input type="hidden" name="rwno" value="${wdto.wno }" />
+							<input type="hidden" name="rimg" value="<%= member1.getImg() %>" />
+							<input type="hidden" name="rname" value="<%= member1.getName() %>" />
+						</td>
+					</tr>
+				</table>
+				<table class="reviewForm2">
+					<tr>
+						<td>						
+							<input type="submit" value="등록" id="reviewSubmit"/>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
 		</div>
 	</div>
 
