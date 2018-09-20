@@ -16,24 +16,38 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.js"></script>
+<style type="text/css">
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+</style>
 </head>
 <body>
 
 <%
-	Object obj = session.getAttribute("member");
-	MemberDTO member = (MemberDTO) obj;
+   Object obj = session.getAttribute("member");
+   MemberDTO member = (MemberDTO) obj;
 %>
 
+
+<form action="login2.do">
+  <div class="imgcontainer">
+    <img src="image/DINNER.png" alt="" />
+  </div>
+  
+  <hr  style="border: 3px solid gray;"/> 
+
 <div id="form">
-		<h4>제목 사진을 등록해주세요</h4>
+      <h4>제목 사진을 등록해주세요</h4>
 
-		<form:form method="post" action="upload2.do" modelAttribute="uploadFile" enctype="multipart/form-data">
-			<input type="file" name="file" id="" />
+      <form:form method="post" action="upload2.do" modelAttribute="uploadFile" enctype="multipart/form-data">
+         <input type="file" name="file" id="" />
 
-			<form:errors path="file"></form:errors>
+         <form:errors path="file"></form:errors>
 
-			<input type="submit" value="등록" id="img" />
-		</form:form>
+         <input type="submit" value="등록" id="img" />
+      </form:form>
 </div>
 
 <form action="writing.do" method="get"> 
@@ -51,7 +65,7 @@
     <OPTION value="여행">여행</OPTION>
     <OPTION value="경제">경제</OPTION>
 </SELECT>
-
+<div style="position: relative; left: 420px; width: ">
 <div name="ir1" id="summernote"></div>
     <script>
       $('#summernote').summernote({
@@ -70,13 +84,18 @@
       
     </script>
      
-	<input type="hidden" name="contents" >
-	<input type="hidden" name="wname" value="<%= member.getName() %>" >
-	<input type="hidden" name="timg" value="${filePath}" />
+   <input type="hidden" name="contents" >
+   <input type="hidden" name="wname" value="<%= member.getName() %>" >
+   <input type="hidden" name="timg" value="${filePath}" />
+   </div>
 
-    <input type="submit" value="작성"  onclick="showContent();"  />
+    <input type="submit" value="작성"  onclick="showContent();"  style="position: absolute; right: 30px; top: 40px; width: 100px; height: 60px; background-color: #82ce82;border-radius: 49px;  "/>
     <div id="summernote"></div>
     <div class="output"></div>
  </form> 
+ 
+ <br /><br />
+ 
+ <%@ include file="footer.jsp" %>
 </body>
 </html>
