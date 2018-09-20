@@ -30,8 +30,6 @@ public class RegisterController {
 				|| regisno2.equals("") || addrs1.equals("") || addrs2.equals("") || email.equals("") || intro.equals("")
 				|| img.equals("")) {
 			return "registerForm2";
-		}else if((mdto.getId()).equals(id)) {
-			return "registerForm2";
 		}
 		
 		else if(pw.equals(repw)) {
