@@ -176,9 +176,7 @@ public class ImgUploadController {
 			
 			System.out.println(filePath);
 			
-			
-			return mav;
-			
+			return mav;			
 			
 		}
 
