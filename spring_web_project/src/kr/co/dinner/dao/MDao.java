@@ -20,4 +20,6 @@ public interface MDao {
 	public void imgModify(MemberDTO dto);
 
 	public void removeOne(MemberDTO dto);
+	
+	public MemberDTO selectIdOne(String id);
 }

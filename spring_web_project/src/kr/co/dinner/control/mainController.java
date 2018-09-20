@@ -198,6 +198,13 @@ public class mainController {
 		return "redirect:/magazineDetail.do?mno="+dto.getRwno();
 	}
 	
+	@RequestMapping("/reviewOk2.do")
+	public String reviewOk2(@ModelAttribute("dto")reviewDTO dto) {
+		rs.insertOne(dto);
+
+		return "redirect:/writeDetail.do?wno="+dto.getRwno();
+	}
+	
 	@RequestMapping("/delete.do")
 	public String delete(@ModelAttribute("dto")MemberDTO dto, HttpSession session) {
 		member.deleteOne(dto);
@@ -207,6 +214,16 @@ public class mainController {
 		return "main";
 	}
 	
+	@RequestMapping("/writerPage.do")
+	public ModelAndView writerPage(@RequestParam("id")String id) {
+		ModelAndView mav = new ModelAndView();
+		MemberDTO dto = member.selectIdOne(id);
+		
+		mav.addObject("mdto", dto);
+		mav.setViewName("writerPage");
+		
+		return mav;
+	}
 	
 }
 

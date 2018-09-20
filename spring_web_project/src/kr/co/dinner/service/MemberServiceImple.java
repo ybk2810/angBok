@@ -69,4 +69,11 @@ public class MemberServiceImple implements memberService{
 	mdao.removeOne(dto);
 	}
 
+
+
+	@Override
+	public MemberDTO selectIdOne(String id) {
+		return mdao.selectIdOne(id);
+	}
+
 }

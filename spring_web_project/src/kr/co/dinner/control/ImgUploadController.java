@@ -147,7 +147,7 @@ public class ImgUploadController {
 			
 			if (result.hasErrors()) {
 			
-				return new ModelAndView("registerForm");
+				return new ModelAndView("write");
 			}
 			HttpSession hs = req.getSession();
 			ServletContext application  = hs.getServletContext();
@@ -176,9 +176,7 @@ public class ImgUploadController {
 			
 			System.out.println(filePath);
 			
-			
-			return mav;
-			
+			return mav;			
 			
 		}
 
