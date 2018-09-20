@@ -96,7 +96,7 @@
 		<table>
 			<tr>
 				<td id="write">
-					<h3>${wdto.title}</h3>
+					<a href="writeDetail.do?wno=${wdto.wno }"><h3>${wdto.title}</h3></a>
 					${wdto.contents}
 				</td>
 				<%-- <td>
@@ -110,7 +110,7 @@
 		<table>
 			<tr>
 				<td id="write">
-					<h3>${wdto.title}</h3>
+					<a href="writeDetail.do?wno=${wdto.wno }"><h3>${wdto.title}</h3></a>
 					${wdto.contents}
 				</td>
 				<%-- <td>

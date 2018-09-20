@@ -41,4 +41,15 @@ public class WritingUploadController {
 		ws.insertOne(wdto);		
 		return "redirect:/main.do";
 	}
+	
+	@RequestMapping("writeDetail.do")
+	public ModelAndView writeDetail(@RequestParam("wno")int wno) {
+		ModelAndView mav = new ModelAndView();
+		WritingDTO dto = ws.selectOne(wno);
+		
+		mav.addObject("wdto", dto);
+		mav.setViewName("writing");
+		
+		return mav;
+	}
 }

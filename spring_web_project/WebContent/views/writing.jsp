@@ -64,7 +64,7 @@
 
 	<div class="container">
 		<div class="titleContainer">
-			<span class="title">${wdto.ctitle}<br /></span> 
+			<span class="title">${wdto.title}<br /></span> 
 			<br />
 			<span class="writer" id="writer1">by </span>
 			<span class="writer" id="writer2">${wdto.wname} </span>
