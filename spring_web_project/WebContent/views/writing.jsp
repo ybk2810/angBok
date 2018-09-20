@@ -52,8 +52,6 @@
 }
 
 .reply {
-	
-	border: 1px solid green;
 }
 
 .replyTable{
@@ -118,7 +116,7 @@
 			${wdto.contents }
 		</div>
 		<div class="reply">
-			<span>댓글</span>
+			<span>${count}</span> <span>댓글</span>
 			<c:forEach var="rdto" items="${rlist}">
 				<br />
 				<table class="replyTable">
@@ -139,6 +137,7 @@
 			</c:forEach>
 			
 			<form action="reviewOk2.do" method="post">
+				<br />
 				<table class="reviewForm">
 					<tr>
 						<td>

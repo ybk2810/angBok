@@ -98,7 +98,6 @@
 				<td id="write">
 					<a href="writeDetail.do?wno=${wdto.wno }">
 						<h3>${wdto.title}
-						${wdto.timg}
 						</h3>
 					</a>
 				</td>
@@ -115,7 +114,6 @@
 				<td id="write">
 					<a href="writeDetail.do?wno=${wdto.wno }">
 						<h3>${wdto.title}
-						${wdto.timg}
 						</h3>
 					</a>
 				</td>
