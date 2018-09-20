@@ -7,6 +7,11 @@
   	<select id="selectAll" resultType="wdto">
   		SELECT * FROM writing
   	</select>
+  	
+  	<select id="selectOne" parameterType="int" resultType="wdto">
+  		SELECT * FROM writing
+		WHERE wno = #{wno}
+  	</select>
   
   	<select id="readAll" resultType="wdto" parameterType="String">
   		SELECT * FROM writing
@@ -15,7 +20,7 @@
   	
   	<insert id="insertOne" parameterType="wdto">
 		INSERT INTO writing
-		VALUES(0,'title',#{contents},'wname',sysdate,'timg','wimg','category',0)
+		VALUES(SEQ_WRITING_WNO.NEXTVAL,#{title},#{wname},sysdate,#{timg}, 0,#{category},0,#{contents})
 	</insert>
   
   </mapper>
