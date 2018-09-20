@@ -260,13 +260,17 @@
 					<h1>연예</h1>
 					<table>
 						<tr>
-							<td><img src="image/360.jpg" alt="" class="mainImg" /></td>
-							<td><img src="image/a.jpg" alt="" class="mainImg" /></td>
+							<c:forEach var="wdto" items="${wlist }">
+								<td>
+									<img src="${wdto.timg }" alt="" class="mainImg" />
+									<p>${wdto.title }</p>
+								</td>
+							</c:forEach>
 						</tr>
-						<tr>
+						<!-- <tr>
 							<td><img src="image/a.jpg" alt="" class="mainImg" /></td>
 							<td><img src="image/360.jpg" alt="" class="mainImg" /></td>
-						</tr>
+						</tr> -->
 					</table>
 				</div>
 					
@@ -299,13 +303,13 @@
 			</div>
 		</div>
 
-		<button class="tablink" onclick="openCity('London', this, 'green')" id="defaultOpen">과학</button>
+		<button class="tablink" onclick="openCity('London', this, 'green')" id="defaultOpen"><a href="#">과학</a></button>
 		<button class="tablink" onclick="openCity('Paris', this, 'green')">음식</button>
 		<button class="tablink" onclick="openCity('Tokyo', this, 'green')">스포츠</button>
 		<button class="tablink" onclick="openCity('Oslo', this, 'green')">동물공감</button>
 		<button class="tablink" onclick="openCity('Oslo2', this, 'green')">패션뷰티</button>
 		<button class="tablink" onclick="openCity('Oslo3', this, 'green')">게임</button>
-		<button class="tablink" onclick="openCity('Oslo4', this, 'green')">연예</button>
+		<button class="tablink" onclick="openCity('Oslo4', this, 'green')"><a href="mainCategory.do?category=연예">연예</a></button>
 		<button class="tablink" onclick="openCity('Oslo5', this, 'green')">여행</button>
 		<button class="tablink" onclick="openCity('Oslo6', this, 'green')">경제</button>
 		<button class="tablink" onclick="allmagazine()" style="background-color: gray;">전체보기</button>

@@ -10,4 +10,5 @@ public interface WritingSerivce {
 	public List<WritingDTO> readAll(String category);
 	public void insertOne(WritingDTO dto);
 	public WritingDTO selectOne(int bno);
+	public List<WritingDTO> random(String category);
 }

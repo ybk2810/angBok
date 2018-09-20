@@ -56,13 +56,29 @@ public class mainController {
 
 	@RequestMapping("/main.do")
 	public ModelAndView main(HttpSession hs) {
-ModelAndView mav = new ModelAndView();
+		ModelAndView mav = new ModelAndView();
 		
 		List<MagazineDTO> mlist = ms.randomSelect();
 		List<MemberDTO> memberlist = member.randomMember();
 		
 		mav.addObject("mlist", mlist);
 		mav.addObject("memberlist", memberlist);
+		mav.setViewName("main");
+		
+		return mav;
+	}
+	
+	@RequestMapping("/mainCategory.do")
+	public ModelAndView mainCategory(@RequestParam("category")String category, HttpSession hs) {
+		ModelAndView mav = new ModelAndView();
+		
+		List<MagazineDTO> mlist = ms.randomSelect();
+		List<MemberDTO> memberlist = member.randomMember();
+		List<WritingDTO> wlist = ws.random(category);
+		
+		mav.addObject("mlist", mlist);
+		mav.addObject("memberlist", memberlist);
+		mav.addObject("wlist", wlist);
 		mav.setViewName("main");
 		
 		return mav;
