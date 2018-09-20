@@ -95,6 +95,7 @@ img{
 
 	position: absolute;
 	left: 800px;
+	height: 70px;
 }
 .btn {
     border: none;
