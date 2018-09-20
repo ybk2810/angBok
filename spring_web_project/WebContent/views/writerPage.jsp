@@ -60,6 +60,23 @@
 	<div>${mdto.email }</div>
 </div>
 
+<div>
+	<table>
+		<tr>
+			<th>제목</th>
+			<th>카테고리</th>
+			<th>작성일자</th>
+		</tr>
+		<c:forEach var="wdto" items="${wlist }">
+		<tr>
+			<td>${wdto.title }</td>
+			<td>${wdto.category }</td>
+			<td>${wdto.reg }</td>
+		</tr>
+		</c:forEach>
+	</table>
+</div>
+
 <%@ include file="footer.jsp" %>
 </body>
 </html>

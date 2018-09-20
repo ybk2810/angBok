@@ -41,4 +41,9 @@ public class WritingtServiceImple implements WritingSerivce{
 	public List<WritingDTO> searchList(String title) {
 		return dao.searchList(title);
 	}
+
+	@Override
+	public List<WritingDTO> myList(String name) {
+		return dao.myList(name);
+	}
 }

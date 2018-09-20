@@ -34,5 +34,10 @@
 		SELECT * FROM writing
 		WHERE UPPER(title) LIKE '%'|| UPPER(#{title}) || '%'
 	</select>
+	
+	<select id="myList" parameterType="string" resultType="wdto">
+		SELECT * FROM writing
+		WHERE wname = #{wname}
+	</select>
   
   </mapper>
