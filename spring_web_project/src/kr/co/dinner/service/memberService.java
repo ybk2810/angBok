@@ -14,9 +14,7 @@ public interface memberService {
 	public void modifyOne(MemberDTO dto);
 	public void imgModify(MemberDTO dto);
 	public void deleteOne(MemberDTO dto);
-<<<<<<< HEAD
 
-=======
 	public MemberDTO selectIdOne(String id);
->>>>>>> branch 'master' of https://github.com/ybk2810/angBok.git
+
 }

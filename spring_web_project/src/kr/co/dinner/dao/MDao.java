@@ -20,10 +20,8 @@ public interface MDao {
 	public void imgModify(MemberDTO dto);
 
 	public void removeOne(MemberDTO dto);
-<<<<<<< HEAD
 
-=======
 	
 	public MemberDTO selectIdOne(String id);
->>>>>>> branch 'master' of https://github.com/ybk2810/angBok.git
+
 }
