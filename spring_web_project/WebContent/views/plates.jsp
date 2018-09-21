@@ -88,7 +88,7 @@
 			<a href="category.do?category=연예"><input type="button" value="연예" class="tablink" /></a>
 			<a href="category.do?category=여행"><input type="button" value="여행" class="tablink" /></a>
 			<a href="category.do?category=경제"><input type="button" value="경제" class="tablink" /></a>
-			<a href="category.do?category=전체"><input type="button" value="전체" class="tablink" /></a>
+			<a href="category.do?category=전체"><input type="button" value="all" class="tablink" /></a>
 		</div>
 	</div>
 	<br />

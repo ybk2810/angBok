@@ -16,6 +16,14 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.js"></script>
+
+<style type="text/css">
+.imgcontainer {
+    text-align: center;
+    margin: 80px 0 12px 0;
+}
+
+</style>
 </head>
 <body>
 
@@ -24,8 +32,10 @@
    MemberDTO member = (MemberDTO) obj;
 %>
 
-<div id="form">
-      <h4>제목 사진을 등록해주세요</h4>
+<br />
+
+<div id="form" style="position: relative; left: 400px;">
+      <h4 style="color: #697d52;"><h5>제목 사진을 등록해주세요</h5></h4>
 
       <form:form method="post" action="upload2.do" modelAttribute="uploadFile" enctype="multipart/form-data">
          <input type="file" name="file" id="" />
@@ -35,11 +45,12 @@
          <input type="submit" value="등록" id="img" />
       </form:form>
 </div>
-
+<br />
 <form action="writing.do" method="get"> 
-<div>제목 : <input type="text" name="title" id="title" /></div>
-
-<SELECT name="category">
+<div style="position: relative; left: 400px; "><h1 style="color: #c2c5be;">제목을 입력해 주세요</h1> <input type="text" name="title" id="title"  style="width: 1000px;
+    height: 40px; "/></div>
+<br />
+<SELECT name="category" style="position: relative; left: 400px;">
     <OPTION value="">카테고리 선택</OPTION>
     <OPTION value="과학">과학</OPTION>
     <OPTION value="음식">음식</OPTION>
@@ -52,7 +63,10 @@
     <OPTION value="경제">경제</OPTION>
 </SELECT>
 
-<div name="ir1" id="summernote"></div>
+<hr style="border: 2px solid gray;"/>
+
+<div style="position: relative; left: 400px;">
+<div name="ir1" id="summernote"  ></div>
     <script>
       $('#summernote').summernote({
         placeholder: 'Hello bootstrap 4',
@@ -74,9 +88,22 @@
    <input type="hidden" name="wname" value="<%= member.getName() %>" >
    <input type="hidden" name="timg" value="${filePath}" />
 
-    <input type="submit" value="작성"  onclick="showContent();"  />
+    <input type="submit" value="작성"  onclick="showContent();" style="  border-radius: 40%; width: 80px; height: 40px;     border: 2px solid green;
+    background-color: white;
+    color: green;
+    font-size: 21px;
+    text-align: center;
+    position: fixed;
+    right: 30px;
+    bottom: 20px;
+    
+    "  />
     <div id="summernote"></div>
     <div class="output"></div>
- </form> 
+    </div>
+ </form>
+ <div class="imgcontainer">
+    <img src="image/DINNER.png" alt="" />
+  </div> 
 </body>
 </html>

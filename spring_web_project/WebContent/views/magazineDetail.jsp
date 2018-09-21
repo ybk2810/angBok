@@ -132,6 +132,9 @@
 			<img src="magazineImg/${mgdto.mno}.png" alt=""  id="magazineimg"/>
 		</div>
 
+		<%
+			if(id != null){
+		%>
 		<div class="reply">
 			<br />
 			<span id="replyTitle">댓글 </span>
@@ -146,10 +149,16 @@
 
 						<td id="reviewName">${rdto.rname }</td>
 						<td id="reviewReg">${rdto.rreg }</td>
+						<td></td>
 					</tr>
 
 					<tr>
-						<td>${rdto.rcontents }</td>
+						<td colspan="2">${rdto.rcontents }</td>
+						<td>
+							<%-- <c:if test="${rdto.rname}==${name }">
+								<a href="#">삭제</a>
+							</c:if> --%>
+						</td>
 					</tr>
 				</table>
 				<br />
@@ -175,6 +184,8 @@
 				</table>
 			</form>
 		</div>
+		
+		<% } %>
 		
 	</div>
 

@@ -136,7 +136,7 @@ public class mainController {
 	@RequestMapping("/category.do")
 	public ModelAndView categoryList(@RequestParam("category")String category) {
 		ModelAndView mav = new ModelAndView();
-		if(category.equals("�쟾泥�")) {
+		if(category.equals("all")) {
 			List<WritingDTO> clist = ws.selectAll();
 			mav.addObject("clist", clist);
 		}else {			
