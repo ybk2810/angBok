@@ -57,10 +57,11 @@ body {
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
+    text-align: center;
 }
 
 .sidenav a {
-    padding: 8px 8px 8px 32px;
+    padding: 8px 8px 8px 0px;
     text-decoration: none;
     font-size: 25px;
     color: #818181;
@@ -80,8 +81,9 @@ body {
     margin-left: 50px;
 }
 #profile{
-	width: 60px;
-	height: 60px;
+	width: 80px;
+	height: 80px;
+	border-radius: 40px;
 }
 
 @media screen and (max-height: 450px) {

@@ -57,7 +57,7 @@
 	
 	/* Style the tab buttons */
 	.tablink {
-	    background-color:#99b775;
+	    background-color:#dcf1c5;
 	    color: white;
 	    float: left;
 	    border: none;
@@ -66,7 +66,6 @@
 	    padding: 14px 16px;
 	    font-size: 17px;
 	    width: 10%;
-	    
 	}
 
 	/* Change background color of buttons on hover */
@@ -80,6 +79,8 @@
 	    display: none;
 	    padding: 50px;
 	    text-align: center;
+	    position: relative;
+	    right: 180px;
 	}
  
 	/* Style each tab content individually */ 
@@ -143,6 +144,11 @@
 	#centralMsg{
 		text-align: center;
 	}
+	.ff{
+		color: #b7a6a6;
+		font-weight: bold;
+		text-decoration: none;
+	}
 	
 </style>
 </head>
@@ -169,13 +175,13 @@
 			</span>
 			
 		</div>
-		<br /><br /><br /><br /><br /><br /><br />
+		<br /><br /><br /><br />
 	
 	
 		<p style="text-align: center; font-size: 20px; margin-bottom: 50px;">-CATEGORY-</p>
 	
 		<div id="London" class="tabcontent">
-			<h1>과학</h1>
+		
 			<table>
 			<tr>
 				<c:forEach var="wdto" items="${wlist }">
@@ -189,7 +195,7 @@
 		</div>
 
 		<div id="Paris" class="tabcontent">
-			<h1>음식</h1>
+			
 				<table>
 					<tr>
 						<c:forEach var="wdto" items="${wlist }">
@@ -203,7 +209,7 @@
 			</div>
 
 			<div id="Tokyo" class="tabcontent">
-				<h1>스포츠</h1>
+				
 					<table>
 						<tr>
 							<c:forEach var="wdto" items="${wlist }">
@@ -217,7 +223,7 @@
 				</div>
 				
 				<div id="Oslo" class="tabcontent">
-					<h1>동물 공감</h1>
+					
 					<table>
 						<tr>
 							<c:forEach var="wdto" items="${wlist }">
@@ -231,7 +237,7 @@
 				</div>
 
 				<div id="Oslo2" class="tabcontent">
-					<h1>패션뷰티</h1>
+					
 					<table>
 						<tr>
 							<c:forEach var="wdto" items="${wlist }">
@@ -245,7 +251,7 @@
 				</div>
 				
 				<div id="Oslo3" class="tabcontent">
-					<h1>게임</h1>
+					
 					<table>
 						<tr>
 							<c:forEach var="wdto" items="${wlist }">
@@ -259,7 +265,7 @@
 				</div>
 				
 				<div id="Oslo4" class="tabcontent">
-					<h1>연예</h1>
+					
 					<table>
 						<tr>
 							<c:forEach var="wdto" items="${wlist }">
@@ -277,7 +283,7 @@
 				</div>
 					
 				<div id="Oslo5" class="tabcontent">
-					<h1>여행</h1>
+					
 					<table>
 					<tr>
 						<c:forEach var="wdto" items="${wlist }">
@@ -291,7 +297,7 @@
 			</div>
 		
 			<div id="Oslo6" class="tabcontent">
-				<h1>경제</h1>
+				
 				<table>
 					<tr>
 						<c:forEach var="wdto" items="${wlist }">
@@ -305,15 +311,15 @@
 			</div>
 		</div>
 
-		<button class="tablink" onclick="openCity('London', this, 'green')" id="defaultOpen"><a href="mainCategory.do?category=과학">과학</a></button>
-		<button class="tablink" onclick="openCity('Paris', this, 'green')"><a href="mainCategory.do?category=음식">음식</a></button>
-		<button class="tablink" onclick="openCity('Tokyo', this, 'green')"><a href="mainCategory.do?category=스포츠">스포츠</a></button>
-		<button class="tablink" onclick="openCity('Oslo', this, 'green')"><a href="mainCategory.do?category=동물공감">동물공감</a></button>
-		<button class="tablink" onclick="openCity('Oslo2', this, 'green')"><a href="mainCategory.do?category=패션뷰티">패션뷰티</a></button>
-		<button class="tablink" onclick="openCity('Oslo3', this, 'green')"><a href="mainCategory.do?category=게임">게임</a></button>
-		<button class="tablink" onclick="openCity('Oslo4', this, 'green')"><a href="mainCategory.do?category=연예">연예</a></button>
-		<button class="tablink" onclick="openCity('Oslo5', this, 'green')"><a href="mainCategory.do?category=여행">여행</a></button>
-		<button class="tablink" onclick="openCity('Oslo6', this, 'green')"><a href="mainCategory.do?category=경제">경제</a></button>
+		<button class="tablink" onclick="openCity('London', this, 'green')" id="defaultOpen"><a href="mainCategory.do?category=과학" class="ff">과학</a></button>
+		<button class="tablink" onclick="openCity('Paris', this, 'green')"><a href="mainCategory.do?category=음식" class="ff">음식</a></button>
+		<button class="tablink" onclick="openCity('Tokyo', this, 'green')"><a href="mainCategory.do?category=스포츠" class="ff">스포츠</a></button>
+		<button class="tablink" onclick="openCity('Oslo', this, 'green')"><a href="mainCategory.do?category=동물공감" class="ff">동물공감</a></button>
+		<button class="tablink" onclick="openCity('Oslo2', this, 'green')"><a href="mainCategory.do?category=패션뷰티" class="ff">패션뷰티</a></button>
+		<button class="tablink" onclick="openCity('Oslo3', this, 'green')"><a href="mainCategory.do?category=게임" class="ff">게임</a></button>
+		<button class="tablink" onclick="openCity('Oslo4', this, 'green')"><a href="mainCategory.do?category=연예" class="ff">연예</a></button>
+		<button class="tablink" onclick="openCity('Oslo5', this, 'green')"><a href="mainCategory.do?category=여행" class="ff">여행</a></button>
+		<button class="tablink" onclick="openCity('Oslo6', this, 'green')"><a href="mainCategory.do?category=경제" class="ff">경제</a></button>
 		<button class="tablink" onclick="allmagazine()" style="background-color: gray;">전체보기</button>
 
 		<br><br><br><br><br>
