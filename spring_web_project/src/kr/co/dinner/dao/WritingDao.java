@@ -16,4 +16,5 @@ public interface WritingDao {
 	public void raiseHits(int bno);
 	public List<WritingDTO> random(String category);
 	public List<WritingDTO> searchList(String title);
+	public List<WritingDTO> myList(String name);
 }
