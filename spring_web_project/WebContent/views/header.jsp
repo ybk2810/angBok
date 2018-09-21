@@ -169,7 +169,7 @@ function Logout() {
 		%>
 
       <a href="main.do">Home</a> 
-      <a href="plates.do">최신글</a>
+      <a href="plates.do">작가들의 글</a>
       <a href="allmagazine.do">전체 매거진 </a>
       
    </div>
