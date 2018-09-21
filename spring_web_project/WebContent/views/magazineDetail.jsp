@@ -149,7 +149,7 @@
 					</tr>
 
 					<tr>
-						<td>${rdto.rcontents }</td>
+						<td colspan="2">${rdto.rcontents }</td>
 					</tr>
 				</table>
 				<br />

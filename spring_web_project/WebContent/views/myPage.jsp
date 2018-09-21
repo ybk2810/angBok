@@ -10,7 +10,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-.nickName, .myUrl, .changeEmail, .memberWithdraw{
+.myW, .nickName, .myUrl, .changeEmail, .memberWithdraw{
 	border-top: 1px solid orange; 
 	margin-left: 18%;
 	margin-right: 18%;
@@ -38,6 +38,25 @@
 	border: 1px solid orange; 
 	display: inline-block;
 }
+
+table {
+    width: 100%;
+    border-top: 1px solid #444444;
+    border-collapse: collapse;
+  }
+  th, td {
+    border-bottom: 1px solid #444444;
+    padding: 10px;
+    text-align: center;
+  }
+  th {
+    background-color: #bbdefb;
+  }
+  td {
+    background-color: #e3f2fd;
+  }
+  
+  
 </style>
 </head>
 <body>
@@ -74,20 +93,24 @@
 <% 
 	
 %>
-<div>
+<div class="myW">
 	<table>
+		<thead>
 		<tr>
 			<th>제목</th>
 			<th>카테고리</th>
 			<th>작성일자</th>
 		</tr>
+		</thead>
+		<tbody>
 		<c:forEach var="wdto" items="${wlist }">
 		<tr>
 			<td>${wdto.title }</td>
-			<td>${wdto.category }</td>
+			<td><center>${wdto.category }</center></td>
 			<td>${wdto.reg }</td>
 		</tr>
 		</c:forEach>
+		</tbody>
 	</table>
 </div>
 

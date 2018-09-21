@@ -35,15 +35,16 @@
 	<%@ include file="header.jsp" %>
 	
 		<h3>매거진</h3>
-		
+		<hr />
 		  
 		
 	<c:forEach var="mdto" items="${mglist}" >
 		<table>
 			<tr>
 				<td id="magazine">
-					<h3>${mdto.mno}. ${mdto.mtitle}</h3>
-					${mdto.mcontents}
+					<a href="magazineDetail.do?mno=${mdto.mno }">
+						<h3>${mdto.mno}. ${mdto.mtitle}</h3>
+					</a>
 				</td>
 				<td>
 					<a href="magazineDetail.do?mno=${mdto.mno }">
@@ -53,17 +54,20 @@
 			</tr>
 		</table>
 	</c:forEach>
+		<hr />
 		<h3>작가글</h3>
+		<hr />
 	<c:forEach var="wdto" items="${wglist}" >
 		<table>
 			<tr>
-				<td id="writing">
-					<h3>${wdto.wno}. ${wdto.title}</h3>
-					${wdto.contents}
+				<td id="magazine">
+					<a href="writeDetail.do?wno=${wdto.wno }">
+						<h3>${wdto.title}</h3>
+					</a>
 				</td>
 				<td>
 					<a href="writeDetail.do?wno=${wdto.wno }">
-						<img src="magazineImg/${wdto.wno}.jpg" alt=""  id="magazineimg"/>
+						<img src="${wdto.timg}" alt=""  id="magazineimg"/>
 					</a>
 				</td>
 			</tr>
