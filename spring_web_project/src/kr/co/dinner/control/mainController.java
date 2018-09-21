@@ -231,6 +231,13 @@ public class mainController {
 		return mav;
 	}
 	
+	@RequestMapping("/logout.do")
+	public String logout(HttpSession session) {
+		session.removeAttribute("member");
+		session.removeAttribute("id");
+		
+		return "redirect:/main.do";
+	}
 }
 
 

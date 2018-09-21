@@ -134,7 +134,10 @@ function Search() {
     location.href = "searchForm.do";
 }
 
-
+function Logout() {
+	   
+    location.href = "logout.do";
+}
 
 </script>
 
@@ -166,7 +169,7 @@ function Search() {
 		%>
 
       <a href="main.do">Home</a> 
-      <a href="plates.do">최신글</a>
+      <a href="plates.do">작가들의 글</a>
       <a href="allmagazine.do">전체 매거진 </a>
       
    </div>
@@ -176,7 +179,7 @@ function Search() {
       	<%
 			if(id != null){
 		%>
-      		<!-- <button class="button" onclick="write()"><span>글쓰기</span></button> -->
+     		<button class="button" onclick=" Logout()"><span>LOGOUT</span></button>
       	<%
 			}else{
       	%>
