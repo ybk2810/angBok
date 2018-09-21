@@ -134,7 +134,10 @@ function Search() {
     location.href = "searchForm.do";
 }
 
-
+function Logout() {
+	   
+    location.href = "logout.do";
+}
 
 </script>
 
@@ -176,7 +179,7 @@ function Search() {
       	<%
 			if(id != null){
 		%>
-      		<!-- <button class="button" onclick="write()"><span>글쓰기</span></button> -->
+     		<button class="button" onclick=" Logout()"><span>LOGOUT</span></button>
       	<%
 			}else{
       	%>
