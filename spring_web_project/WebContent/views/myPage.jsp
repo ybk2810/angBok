@@ -45,19 +45,21 @@
 
 table {
     width: 100%;
-    border-top: 1px solid #444444;
+    border-top: 1px solid #dce0dc;
     border-collapse: collapse;
   }
   th, td {
-    border-bottom: 1px solid #444444;
+    border-bottom: 1px solid #dce0dc;
     padding: 10px;
     text-align: center;
   }
   th {
-    background-color: #bbdefb;
+    background-color: #92c594ba;
+    color: white;
   }
   td {
-    background-color: #e3f2fd;
+    background-color: #edf5ed;
+    color: #54673f;
   }
   
   #my{
@@ -65,6 +67,12 @@ table {
   	float: right;
   	width: 100%;
   	margin: 0;
+  }
+  
+  .con{
+  	color: #54673f;
+	font-weight: bold;
+	text-decoration: none;
   }
   
 </style>
@@ -120,7 +128,7 @@ table {
 		<tbody>
 		<c:forEach var="wdto" items="${wlist }">
 		<tr>
-			<td><a href="writeDetail.do?wno=${wdto.wno }">${wdto.title }</a></td>
+			<td><a href="writeDetail.do?wno=${wdto.wno }" class="con">${wdto.title }</a></td>
 			<td><center>${wdto.category }</center></td>
 			<td>${wdto.reg }</td>
 		</tr>
