@@ -169,9 +169,14 @@ public class mainController {
 	}
 	
 	@RequestMapping("/myPage.do")
-	public String myPage() {
+	public ModelAndView myPage(@RequestParam("name")String name) {
+		ModelAndView mav = new ModelAndView();
+		List<WritingDTO> wlist = ws.myList(name);
+		
+		mav.addObject("wlist", wlist);
+		mav.setViewName("myPage");
 	
-		return "myPage";	
+		return mav;	
 	}
 
 	@RequestMapping("/modify.do")
@@ -217,7 +222,9 @@ public class mainController {
 	public ModelAndView writerPage(@RequestParam("id")String id) {
 		ModelAndView mav = new ModelAndView();
 		MemberDTO dto = member.selectIdOne(id);
+		List<WritingDTO> wlist = ws.myList(dto.getName());
 		
+		mav.addObject("wlist", wlist);
 		mav.addObject("mdto", dto);
 		mav.setViewName("writerPage");
 		

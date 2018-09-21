@@ -12,4 +12,5 @@ public interface WritingSerivce {
 	public WritingDTO selectOne(int bno);
 	public List<WritingDTO> random(String category);
 	public List<WritingDTO> searchList(String title);
+	public List<WritingDTO> myList(String name);
 }

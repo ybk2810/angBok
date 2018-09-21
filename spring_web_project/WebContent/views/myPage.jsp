@@ -81,15 +81,13 @@
 			<th>카테고리</th>
 			<th>작성일자</th>
 		</tr>
-	<c:choose>
-	<c:when test="${mdto.name }=${wdto.wname }">
+		<c:forEach var="wdto" items="${wlist }">
 		<tr>
 			<td>${wdto.title }</td>
 			<td>${wdto.category }</td>
 			<td>${wdto.reg }</td>
 		</tr>
-	</c:when>
-	</c:choose>
+		</c:forEach>
 	</table>
 </div>
 

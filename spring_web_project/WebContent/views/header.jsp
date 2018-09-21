@@ -95,6 +95,7 @@ img{
 
 	position: absolute;
 	left: 800px;
+	height: 70px;
 }
 .btn {
     border: none;
@@ -151,17 +152,19 @@ function Search() {
 			<a href="#"><img src="<%=member.getImg() %>" alt="a" id="profile" /></a>
 			<a href="#"><%=member.getName() %></a>
 			<a href="write.do">글쓰기</a>
+			<a href="#">--------------</a>
+      		<a href="myPage.do?name=<%= member.getName() %>">My Dinner</a> 
 		<%
 			}else{
 		%>
 			<a href="#"><img src="image/DINNER.png" alt="a" id="profile" /></a>
 			<a href="login1.do">시작하기</a>
+			 <a href="#">--------------</a>
+    		  <a href="myPage.do">My Dinner</a> 
 		<%
 			}
 		%>
 
-      <a href="#">--------------</a>
-      <a href="myPage.do?id=${mdto.id }">My Dinner</a> 
       <a href="main.do">Home</a> 
       <a href="plates.do">최신글</a>
       <a href="allmagazine.do">전체 매거진 </a>

@@ -56,5 +56,9 @@ public class WritingOracleDao implements WritingDao{
 	public List<WritingDTO> searchList(String title) {
 		return ss.selectList("kr.co.dinner.writing.searchList", title);
 	}
+	@Override
+	public List<WritingDTO> myList(String name) {
+		return ss.selectList("kr.co.dinner.writing.myList", name);
+	}
 
 }
