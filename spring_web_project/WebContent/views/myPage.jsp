@@ -11,7 +11,7 @@
 <title>Insert title here</title>
 <style type="text/css">
 .myW, .nickName, .myUrl, .changeEmail, .memberWithdraw{
-	border-top: 1px solid orange; 
+	/* border-top: 1px solid orange;  */
 	margin-left: 18%;
 	margin-right: 18%;
 	padding-top: 3%;
@@ -20,10 +20,13 @@
 	
 }
 .introduce{
-	width: 55%;
+	width: 45%;
 	display: inline-block;
-	
-	border: 1px solid green;
+	border: 1px solid #6e946eb3;
+	height: 250px;
+	text-align: center;
+	float: left;
+	font-size: 17px;
 }
 .pic{
 	
@@ -35,7 +38,8 @@
 .myPic{
 	width: 180px;
 	height: 200px;
-	border: 1px solid orange; 
+	border-radius: 80px;
+	/* border: 1px solid orange;  */
 	display: inline-block;
 }
 
@@ -56,6 +60,12 @@ table {
     background-color: #e3f2fd;
   }
   
+  #my{
+  	text-align: center;
+  	float: right;
+  	width: 100%;
+  	margin: 0;
+  }
   
 </style>
 </head>
@@ -64,32 +74,35 @@ table {
 <% if(id != null){ %>
 <div class="nickName">
 
-	 <div>ID : <%= member.getId() %></div>
-	 <span class="introduce">INTRO : <br /><%= member.getIntro() %></span>
-	<span class="pic"><input type="image" src="<%= member.getImg() %>" alt="" class="myPic" name="myPic" /></span>
+	 <h4>INTRO</h4>
+	 <hr /> 
 	
-	<div style="margin-left: 58%; m argin-right: 11%; margin-top: 1%;">
+	<div style="margin-left: 58%; m argin-right: 11%; margin-top: 1%;" id="my">
+	 <span class="introduce"><br /><%= member.getIntro() %></span>
+	<span class="pic"><input type="image" src="<%= member.getImg() %>" alt="" class="myPic" name="myPic" /></span>
 	<form:form method="post" action="uploadModify.do"
 				modelAttribute="uploadFile" enctype="multipart/form-data">
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;프로필 사진
+		<i>ID : <%= member.getId() %></i>
 		<br /><br /><input type="file" name="file" />
-		<form:errors path="file"></form:errors><br />
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="변경" id="img" />
+		<form:errors path="file"></form:errors>
+		<input type="submit" value="변경" id="img" />
 		<%-- <input type="hidden" name="img" value="${filePath}" /> --%>
 		<input type="hidden" name="id" value="<%= member.getId() %>" />
 	</form:form>
 	</div>
 </div>
 <div class="myUrl">
+	<h4>ADDRESS</h4>
+	<hr />
 	<div><%= member.getAddrs1() %> <br /> <%= member.getAddrs2() %></div>
 	<span>www.dinner.com/<%= member.getName() %><input type="hidden" value="www.dinner.com/@nickName" name="myUrl" /></span>
 	<br />
-	<span><input type="button" value="닉네임변경" /></span>
 
 </div>
 <div class="changeEmail">
+	<h4>EMAIL</h4>
+	<hr />
 	<div><%= member.getEmail() %></div>
-	<span><input type="button" value=" E-mail주소 수정" /></span>
 </div>
 <% } %>
 <% 

@@ -170,7 +170,6 @@
 			</form>
 		</div>
 		</div>
-	</div>
 
 	<div class="footer">
 	</div>
