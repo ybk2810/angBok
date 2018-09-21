@@ -170,7 +170,6 @@ function Logout() {
 			<a href="#"><img src="image/DINNER.png" alt="a" id="profile" /></a>
 			<a href="login1.do">시작하기</a>
 			 <a href="#">--------------</a>
-    		  <a href="myPage.do">My Dinner</a> 
 		<%
 			}
 		%>
