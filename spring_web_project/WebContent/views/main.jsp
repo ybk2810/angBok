@@ -140,6 +140,9 @@
 		box-shadow: 0 5px #666;
 		transform: translateY(4px);
 	}
+	#centralMsg{
+		text-align: center;
+	}
 	
 </style>
 </head>
@@ -151,7 +154,7 @@
 	%> --%>
 	
 	<div id="container">
-		<div id="">
+		<div id="centralMsg">
 			<h2>
 				글이 작품이 되는 공간, 디너
 			</h2>
@@ -169,7 +172,7 @@
 		<br /><br /><br /><br /><br /><br /><br />
 	
 	
-		<p style="text-align: center; font-size: 20px; ">-CATEGORY-</p>
+		<p style="text-align: center; font-size: 20px; margin-bottom: 50px;">-CATEGORY-</p>
 	
 		<div id="London" class="tabcontent">
 			<h1>과학</h1>
