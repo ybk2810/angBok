@@ -64,16 +64,17 @@ table {
 <% if(id != null){ %>
 <div class="nickName">
 
-	 <div><%= member.getId() %></div>
-	 <span class="introduce"><%= member.getIntro() %><input type="hidden" value="nickName님의 디너입니다." name="introduce" /></span>
+	 <div>ID : <%= member.getId() %></div>
+	 <span class="introduce">INTRO : <br /><%= member.getIntro() %></span>
 	<span class="pic"><input type="image" src="<%= member.getImg() %>" alt="" class="myPic" name="myPic" /></span>
 	
 	<div style="margin-left: 58%; m argin-right: 11%; margin-top: 1%;">
 	<form:form method="post" action="uploadModify.do"
 				modelAttribute="uploadFile" enctype="multipart/form-data">
-		사진고르기<input type="file" name="file" />
-		<form:errors path="file"></form:errors>
-		<input type="submit" value="변경" id="img" />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;프로필 사진
+		<br /><br /><input type="file" name="file" />
+		<form:errors path="file"></form:errors><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="변경" id="img" />
 		<%-- <input type="hidden" name="img" value="${filePath}" /> --%>
 		<input type="hidden" name="id" value="<%= member.getId() %>" />
 	</form:form>
@@ -82,6 +83,7 @@ table {
 <div class="myUrl">
 	<div><%= member.getAddrs1() %> <br /> <%= member.getAddrs2() %></div>
 	<span>www.dinner.com/<%= member.getName() %><input type="hidden" value="www.dinner.com/@nickName" name="myUrl" /></span>
+	<br />
 	<span><input type="button" value="닉네임변경" /></span>
 
 </div>
