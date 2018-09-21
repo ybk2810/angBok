@@ -146,10 +146,16 @@
 
 						<td id="reviewName">${rdto.rname }</td>
 						<td id="reviewReg">${rdto.rreg }</td>
+						<td></td>
 					</tr>
 
 					<tr>
 						<td colspan="2">${rdto.rcontents }</td>
+						<td>
+							<c:if test="${rdto.rname}==${name }">
+								<a href="#">삭제</a>
+							</c:if>
+						</td>
 					</tr>
 				</table>
 				<br />

@@ -136,7 +136,7 @@ public class mainController {
 	@RequestMapping("/category.do")
 	public ModelAndView categoryList(@RequestParam("category")String category) {
 		ModelAndView mav = new ModelAndView();
-		if(category.equals("�쟾泥�")) {
+		if(category.equals("all")) {
 			List<WritingDTO> clist = ws.selectAll();
 			mav.addObject("clist", clist);
 		}else {			
@@ -154,15 +154,18 @@ public class mainController {
 	}
 	
 	@RequestMapping("/magazineDetail.do")
-	public ModelAndView magazineDetail(@RequestParam("mno")int mno) {
+	public ModelAndView magazineDetail(@RequestParam("mno")int mno, HttpSession hs) {
 		ModelAndView mav = new ModelAndView();
 		MagazineDTO mdto = ms.selectOne(mno);
 		List<reviewDTO> rlist = rs.selectAll(mno); 
 		int count = rs.countAll(mno);
+		MemberDTO dto = (MemberDTO) hs.getAttribute("member");
+		String name = dto.getName();
 		
 		mav.addObject("mgdto",mdto);
 		mav.addObject("rlist", rlist);
 		mav.addObject("count", count);
+		mav.addObject("name", name);
 		mav.setViewName("magazineDetail");
 		return mav;
 
