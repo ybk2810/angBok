@@ -154,18 +154,15 @@ public class mainController {
 	}
 	
 	@RequestMapping("/magazineDetail.do")
-	public ModelAndView magazineDetail(@RequestParam("mno")int mno, HttpSession hs) {
+	public ModelAndView magazineDetail(@RequestParam("mno")int mno) {
 		ModelAndView mav = new ModelAndView();
 		MagazineDTO mdto = ms.selectOne(mno);
 		List<reviewDTO> rlist = rs.selectAll(mno); 
 		int count = rs.countAll(mno);
-		MemberDTO dto = (MemberDTO) hs.getAttribute("member");
-		String name = dto.getName();
 		
 		mav.addObject("mgdto",mdto);
 		mav.addObject("rlist", rlist);
 		mav.addObject("count", count);
-		mav.addObject("name", name);
 		mav.setViewName("magazineDetail");
 		return mav;
 
