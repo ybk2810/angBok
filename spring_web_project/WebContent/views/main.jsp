@@ -81,7 +81,7 @@
 	    padding: 50px;
 	    text-align: center;
 	}
-
+ 
 	/* Style each tab content individually */ 
 
 
