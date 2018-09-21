@@ -360,7 +360,7 @@
 		<table >
 			<tr >
 				<c:forEach var="dto" items="${memberlist }">
-				<td style=" width: 200px; height: 130px; position: relative; left: 260px;     border-radius: 87px;">
+				<td style=" width: 200px; height: 130px; position: relative; left: 170px;     border-radius: 87px;">
 					<a href="writerPage.do?id=${dto.id}"><img src="${dto.img }" alt="" class="memberimg" style="border-radius: 50%; position: relative; left: 27.5px; top: 18px;" /></a>
 					<p style="text-align: center;"><i>${dto.name }</i></p><h6 style="color: gray; text-align: center;">${dto.intro }</h6>
 					

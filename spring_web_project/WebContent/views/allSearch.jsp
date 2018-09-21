@@ -34,7 +34,7 @@
 <body>
 	<%@ include file="header.jsp" %>
 	
-		<h3>매거진</h3>
+		<h3 style="text-align: center;">매거진</h3>
 		<hr />
 		  
 		
@@ -55,7 +55,7 @@
 		</table>
 	</c:forEach>
 		<hr />
-		<h3>작가글</h3>
+		<h3 style="text-align: center;">작가글</h3>
 		<hr />
 	<c:forEach var="wdto" items="${wglist}" >
 		<table>
