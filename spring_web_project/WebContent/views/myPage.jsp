@@ -107,7 +107,7 @@ table {
 		<tbody>
 		<c:forEach var="wdto" items="${wlist }">
 		<tr>
-			<td>${wdto.title }</td>
+			<td><a href="writeDetail.do?wno=${wdto.wno }">${wdto.title }</a></td>
 			<td><center>${wdto.category }</center></td>
 			<td>${wdto.reg }</td>
 		</tr>
