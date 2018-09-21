@@ -35,6 +35,7 @@
 	<%@ include file="header.jsp" %>
 	
 		<h3>매거진</h3>
+		
 		  
 		
 	<c:forEach var="mdto" items="${mglist}" >
