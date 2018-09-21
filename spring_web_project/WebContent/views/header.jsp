@@ -94,7 +94,7 @@ img{
 #logoimg{
 
 	position: absolute;
-	left: 800px;
+	left: 730px;
 	height: 70px;
 }
 .btn {
@@ -132,6 +132,11 @@ function write() {
 function Search() {
 	   
     location.href = "searchForm.do";
+}
+
+function backHome() {
+	   
+    location.href = "main.do";
 }
 
 function Logout() {
@@ -189,4 +194,5 @@ function Logout() {
       	%>
  
 		<button class="btn success" onclick=" Search()">검색</button>
+		<button class="btn success" onclick=" backHome()">홈</button>
    </div>

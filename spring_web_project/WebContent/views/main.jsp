@@ -140,6 +140,9 @@
 		box-shadow: 0 5px #666;
 		transform: translateY(4px);
 	}
+	#centralMsg{
+		text-align: center;
+	}
 	
 </style>
 </head>
@@ -151,7 +154,7 @@
 	%> --%>
 	
 	<div id="container">
-		<div id="">
+		<div id="centralMsg">
 			<h2>
 				글이 작품이 되는 공간, 디너
 			</h2>
@@ -169,7 +172,7 @@
 		<br /><br /><br /><br /><br /><br /><br />
 	
 	
-		<p style="text-align: center; font-size: 20px; ">-CATEGORY-</p>
+		<p style="text-align: center; font-size: 20px; margin-bottom: 50px;">-CATEGORY-</p>
 	
 		<div id="London" class="tabcontent">
 			<h1>과학</h1>
@@ -189,12 +192,12 @@
 			<h1>음식</h1>
 				<table>
 					<tr>
-						<td><img src="image/a.jpg" alt="" class="mainImg" /></td>
-						<td><img src="image/a.jpg" alt="" class="mainImg" /></td>
-					</tr>
-					<tr>
-						<td><img src="image/a.jpg" alt="" class="mainImg" /></td>
-						<td><img src="image/a.jpg" alt="" class="mainImg" /></td>
+						<c:forEach var="wdto" items="${wlist }">
+							<td>
+							<img src="${wdto.timg }" alt="" class="mainImg" />
+							<p>${wdto.title }</p>
+							</td>
+						</c:forEach>
 					</tr>
 				</table>
 			</div>
@@ -203,12 +206,12 @@
 				<h1>스포츠</h1>
 					<table>
 						<tr>
-							<td><img src="image/360.jpg" alt="" class="mainImg" /></td>
-							<td><img src="image/360.jpg" alt="" class="mainImg" /></td>
-						</tr>
-						<tr>
-							<td><img src="image/360.jpg" alt="" class="mainImg" /></td>
-							<td><img src="image/360.jpg" alt="" class="mainImg" /></td>
+							<c:forEach var="wdto" items="${wlist }">
+							<td>
+							<img src="${wdto.timg }" alt="" class="mainImg" />
+							<p>${wdto.title }</p>
+							</td>
+						</c:forEach>
 						</tr>
 					</table>
 				</div>
@@ -217,12 +220,12 @@
 					<h1>동물 공감</h1>
 					<table>
 						<tr>
-							<td><img src="image/360.jpg" alt="" class="mainImg" /></td>
-							<td><img src="image/a.jpg" alt="" class="mainImg" /></td>
-						</tr>
-						<tr>
-							<td><img src="image/a.jpg" alt="" class="mainImg" /></td>
-							<td><img src="image/360.jpg" alt="" class="mainImg" /></td>
+							<c:forEach var="wdto" items="${wlist }">
+							<td>
+							<img src="${wdto.timg }" alt="" class="mainImg" />
+							<p>${wdto.title }</p>
+							</td>
+							</c:forEach>
 						</tr>
 					</table>
 				</div>
@@ -231,12 +234,12 @@
 					<h1>패션뷰티</h1>
 					<table>
 						<tr>
-							<td><img src="image/360.jpg" alt="" class="mainImg" /></td>
-							<td><img src="image/a.jpg" alt="" class="mainImg" /></td>
-						</tr>
-						<tr>
-							<td><img src="image/a.jpg" alt="" class="mainImg" /></td>
-							<td><img src="image/360.jpg" alt="" class="mainImg" /></td>
+							<c:forEach var="wdto" items="${wlist }">
+							<td>
+							<img src="${wdto.timg }" alt="" class="mainImg" />
+							<p>${wdto.title }</p>
+							</td>
+							</c:forEach>
 						</tr>
 					</table>
 				</div>
@@ -245,12 +248,12 @@
 					<h1>게임</h1>
 					<table>
 						<tr>
-							<td><img src="image/360.jpg" alt="" class="mainImg" /></td>
-							<td><img src="image/a.jpg" alt="" class="mainImg" /></td>
-						</tr>
-						<tr>
-							<td><img src="image/a.jpg" alt="" class="mainImg" /></td>
-							<td><img src="image/360.jpg" alt="" class="mainImg" /></td>
+							<c:forEach var="wdto" items="${wlist }">
+							<td>
+							<img src="${wdto.timg }" alt="" class="mainImg" />
+							<p>${wdto.title }</p>
+							</td>
+							</c:forEach>
 						</tr>
 					</table>
 				</div>
@@ -277,12 +280,12 @@
 					<h1>여행</h1>
 					<table>
 					<tr>
-						<td><img src="image/360.jpg" alt="" class="mainImg" /></td>
-						<td><img src="image/a.jpg" alt="" class="mainImg" /></td>
-					</tr>
-					<tr>
-						<td><img src="image/a.jpg" alt="" class="mainImg" /></td>
-						<td><img src="image/360.jpg" alt="" class="mainImg" /></td>
+						<c:forEach var="wdto" items="${wlist }">
+							<td>
+							<img src="${wdto.timg }" alt="" class="mainImg" />
+							<p>${wdto.title }</p>
+							</td>
+						</c:forEach>
 					</tr>
 				</table>
 			</div>
@@ -291,26 +294,26 @@
 				<h1>경제</h1>
 				<table>
 					<tr>
-						<td><img src="image/360.jpg" alt="" class="mainImg" /></td>
-						<td><img src="image/a.jpg" alt="" class="mainImg" /></td>
-					</tr>
-					<tr>
-						<td><img src="image/a.jpg" alt="" class="mainImg" /></td>
-						<td><img src="image/360.jpg" alt="" class="mainImg" /></td>
+						<c:forEach var="wdto" items="${wlist }">
+							<td>
+							<img src="${wdto.timg }" alt="" class="mainImg" />
+							<p>${wdto.title }</p>
+							</td>
+						</c:forEach>
 					</tr>
 				</table>
 			</div>
 		</div>
 
 		<button class="tablink" onclick="openCity('London', this, 'green')" id="defaultOpen"><a href="mainCategory.do?category=과학">과학</a></button>
-		<button class="tablink" onclick="openCity('Paris', this, 'green')">음식</button>
-		<button class="tablink" onclick="openCity('Tokyo', this, 'green')">스포츠</button>
-		<button class="tablink" onclick="openCity('Oslo', this, 'green')">동물공감</button>
-		<button class="tablink" onclick="openCity('Oslo2', this, 'green')">패션뷰티</button>
-		<button class="tablink" onclick="openCity('Oslo3', this, 'green')">게임</button>
+		<button class="tablink" onclick="openCity('Paris', this, 'green')"><a href="mainCategory.do?category=음식">음식</a></button>
+		<button class="tablink" onclick="openCity('Tokyo', this, 'green')"><a href="mainCategory.do?category=스포츠">스포츠</a></button>
+		<button class="tablink" onclick="openCity('Oslo', this, 'green')"><a href="mainCategory.do?category=동물공감">동물공감</a></button>
+		<button class="tablink" onclick="openCity('Oslo2', this, 'green')"><a href="mainCategory.do?category=패션뷰티">패션뷰티</a></button>
+		<button class="tablink" onclick="openCity('Oslo3', this, 'green')"><a href="mainCategory.do?category=게임">게임</a></button>
 		<button class="tablink" onclick="openCity('Oslo4', this, 'green')"><a href="mainCategory.do?category=연예">연예</a></button>
-		<button class="tablink" onclick="openCity('Oslo5', this, 'green')">여행</button>
-		<button class="tablink" onclick="openCity('Oslo6', this, 'green')">경제</button>
+		<button class="tablink" onclick="openCity('Oslo5', this, 'green')"><a href="mainCategory.do?category=여행">여행</a></button>
+		<button class="tablink" onclick="openCity('Oslo6', this, 'green')"><a href="mainCategory.do?category=경제">경제</a></button>
 		<button class="tablink" onclick="allmagazine()" style="background-color: gray;">전체보기</button>
 
 		<br><br><br><br><br>

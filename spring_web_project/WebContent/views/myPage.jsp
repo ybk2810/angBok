@@ -10,7 +10,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-.nickName, .myUrl, .changeEmail, .memberWithdraw{
+.myW, .nickName, .myUrl, .changeEmail, .memberWithdraw{
 	border-top: 1px solid orange; 
 	margin-left: 18%;
 	margin-right: 18%;
@@ -38,6 +38,25 @@
 	border: 1px solid orange; 
 	display: inline-block;
 }
+
+table {
+    width: 100%;
+    border-top: 1px solid #444444;
+    border-collapse: collapse;
+  }
+  th, td {
+    border-bottom: 1px solid #444444;
+    padding: 10px;
+    text-align: center;
+  }
+  th {
+    background-color: #bbdefb;
+  }
+  td {
+    background-color: #e3f2fd;
+  }
+  
+  
 </style>
 </head>
 <body>
@@ -45,16 +64,17 @@
 <% if(id != null){ %>
 <div class="nickName">
 
-	 <div><%= member.getId() %></div>
-	 <span class="introduce"><%= member.getIntro() %><input type="hidden" value="nickName님의 디너입니다." name="introduce" /></span>
+	 <div>ID : <%= member.getId() %></div>
+	 <span class="introduce">INTRO : <br /><%= member.getIntro() %></span>
 	<span class="pic"><input type="image" src="<%= member.getImg() %>" alt="" class="myPic" name="myPic" /></span>
 	
 	<div style="margin-left: 58%; m argin-right: 11%; margin-top: 1%;">
 	<form:form method="post" action="uploadModify.do"
 				modelAttribute="uploadFile" enctype="multipart/form-data">
-		사진고르기<input type="file" name="file" />
-		<form:errors path="file"></form:errors>
-		<input type="submit" value="변경" id="img" />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;프로필 사진
+		<br /><br /><input type="file" name="file" />
+		<form:errors path="file"></form:errors><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="변경" id="img" />
 		<%-- <input type="hidden" name="img" value="${filePath}" /> --%>
 		<input type="hidden" name="id" value="<%= member.getId() %>" />
 	</form:form>
@@ -63,6 +83,7 @@
 <div class="myUrl">
 	<div><%= member.getAddrs1() %> <br /> <%= member.getAddrs2() %></div>
 	<span>www.dinner.com/<%= member.getName() %><input type="hidden" value="www.dinner.com/@nickName" name="myUrl" /></span>
+	<br />
 	<span><input type="button" value="닉네임변경" /></span>
 
 </div>
@@ -74,20 +95,24 @@
 <% 
 	
 %>
-<div>
+<div class="myW">
 	<table>
+		<thead>
 		<tr>
 			<th>제목</th>
 			<th>카테고리</th>
 			<th>작성일자</th>
 		</tr>
+		</thead>
+		<tbody>
 		<c:forEach var="wdto" items="${wlist }">
 		<tr>
 			<td>${wdto.title }</td>
-			<td>${wdto.category }</td>
+			<td><center>${wdto.category }</center></td>
 			<td>${wdto.reg }</td>
 		</tr>
 		</c:forEach>
+		</tbody>
 	</table>
 </div>
 
