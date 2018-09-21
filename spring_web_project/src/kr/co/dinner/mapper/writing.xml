@@ -27,7 +27,7 @@
 		SELECT * FROM (
 		SELECT * FROM writing
 		ORDER BY dbms_random.value)
-		WHERE rownum &lt;= 4 AND category = #{category}
+		WHERE rownum &lt;= 3 AND category = #{category}
 	</select>
 	
 	<select id="searchList" parameterType="String" resultType="wdto">
